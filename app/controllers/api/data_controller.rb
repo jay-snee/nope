@@ -3,7 +3,7 @@ class Api::DataController < ApplicationController
   skip_before_action :verify_authenticity_token, only: ['inbound']
 
   def inbound
-    envelope = inbound_params[:envelope]
+    envelope = JSON.parse(inbound_params[:envelope])
 
     profile = Profile.where(email_address: envelope['to']).first
 
