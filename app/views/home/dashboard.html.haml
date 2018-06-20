@@ -26,8 +26,7 @@
           Nothing here yet!
       - else
         - @messages.each do |m|
-          %li.list-group-item
-            = link_to m.subject, message_path(m)
+          = render m
 
 
 
