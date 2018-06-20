@@ -10,7 +10,9 @@
 .row
   .col-sm-12
     - # is this really safe?
-    = @message.html.html_safe
+    .card
+      .card-body
+        = @message.html.html_safe
 
 .row
   .col-sm-12
