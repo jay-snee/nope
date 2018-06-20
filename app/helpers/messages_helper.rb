@@ -1,2 +1,2 @@
-module MessagesControllerHelper
+module MessagesHelper
 end
