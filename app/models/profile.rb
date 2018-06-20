@@ -12,7 +12,7 @@ class Profile < ApplicationRecord
 
 
   def generate_email
-    self.email_address = "#{self.secure_token}@parse.datawrks.io"
+    self.email_address = "#{self.secure_token}@parse.datawrks.io".downcase
   end
 
   def insert_dummy_email
