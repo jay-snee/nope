@@ -29,5 +29,8 @@ module Profiler
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.secret_key = 'a53c8a1a425764980e073676512f12d7f4a0da6c6c212d5e6cc5e223fcffe42eb32cab0bf6e1cb58a2acb9dbead6cab73d3d2878d485de99b3a0d98f10394cff'
+    
   end
 end
