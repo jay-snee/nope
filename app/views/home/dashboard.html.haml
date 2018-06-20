@@ -1,0 +1,47 @@
+%h1 Dashboard
+%hr
+
+.row
+  .col-sm-4
+    
+    %h3.mt-2 Profiles
+
+    %ul.list-group
+      - if @profiles.empty?
+        %li.list-group-item
+          No profiles yet! Click the link below to create one.
+      - else
+        - @profiles.each do |p|
+          %li.list-group-item
+            = link_to p.name, profile_path(p)
+      %li.list-group-item
+        = link_to 'New Profile', '', class: 'btn btn-outline-primary btn-block', data: {toggle: 'modal', target: '#new-profile-modal'}
+  
+  .col-sm-8
+    %h3.mt-2 Messages
+
+    %ul.list-group
+      - if @messages.empty?
+        %li.list-group-item
+          Nothing here yet!
+      - else
+        - @messages.each do |m|
+          %li.list-group-item
+            = link_to m.subject, message_path(m)
+
+
+
+#new-profile-modal.modal{tabindex: "-1", role: 'dialog'}
+  .modal-dialog{role: "document"}
+    .modal-content
+      = form_for Profile.new, class: 'form' do |f|
+        .modal-header
+          %h5.modal-title New Profile
+          %button.close{type: 'button', data: {dismiss: 'modal'}}
+            %span &times;
+        .modal-body
+          %label Name your new profile: 
+          = f.text_field :name, class: 'form-control'
+        .modal-footer
+          %button.btn.btn-secondary{data: {dismiss: 'modal'}} Close
+          = f.submit 'Create', class: 'btn btn-outline-primary btn-block'

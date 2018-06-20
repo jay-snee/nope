@@ -1,0 +1,18 @@
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  %a.navbar-brand{href: '/'} Profiler
+  %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
+    %span.navbar-toggler-icon
+
+  #navbarSupportedContent.collapse.navbar-collapse
+    %ul.navbar-nav.mr-auto
+      
+
+    %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
+      - if !current_user
+        %li.mx-3
+          = link_to 'Sign up', new_user_registration_path
+        %li.mr-auto
+          = link_to 'Sign in', new_user_session_path
+      - else
+        %li
+          = link_to 'Log Out', destroy_user_session_path, method: :delete

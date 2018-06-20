@@ -1,0 +1,26 @@
+.row
+  .col-sm-12
+    .d-flex.justify-content-center.align-items-center
+      .mr-auto.p-2 
+        %h1= @profile.name
+      .mr-auto.p-2
+        %h5= @profile.email_address
+      .p-2
+        = link_to 'Delete profile', profile_path(@profile), method: :delete, class: 'btn btn-outline-danger'
+%hr
+
+.row
+  #dashboard-charts.col-sm-12
+    .jumbotron
+      %hi.display-4 Big fuck off chart
+.row
+  .col-sm-12
+    %h5 Recent Messages
+    - unless @profile.messages.empty?
+      %ul.list-group
+        - @profile.messages.each do |m|
+          %li.list-group-item
+            = link_to m.subject, m
+    - else
+      %li.list-group-item
+        %strong You have no friends :'(
