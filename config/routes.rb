@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'messages_controller/index'
+  get 'messages_controller/show'
   get 'profiles/create'
   get 'profiles/show'
   devise_for :users

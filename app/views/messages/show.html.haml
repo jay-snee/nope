@@ -1,0 +1,17 @@
+.row
+  .col-sm-12
+    .d-flex.justify-content-center.align-items-center
+      .mr-auto.p-2 
+        %h1= @message.subject
+      .p-2
+        = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
+%hr
+
+.row
+  .col-sm-12
+    - # is this really safe?
+    = @message.body.html_safe
+
+.row
+  .col-sm-12
+    %pre= @messge.inspect
