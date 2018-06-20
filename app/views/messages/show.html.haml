@@ -3,6 +3,7 @@
     .d-flex.justify-content-center.align-items-center
       .mr-auto.p-2 
         %h1= @message.subject
+        %h5= @message.from
       .p-2
         = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
 %hr
