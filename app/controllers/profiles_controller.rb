@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.find params[:id]
+    @profile = current_user.profiles.find params[:id]
   end
 
   def destroy

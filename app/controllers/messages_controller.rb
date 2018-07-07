@@ -3,11 +3,11 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find params[:id]
+    @message = current_user.messages.find params[:id]
   end
 
   def destroy
-    @message = Message.find params[:id]
+    @message =current_user.messages.find params[:id]
     @message.destroy
 
     redirect_to root_path, notice: 'Message destroyed'
