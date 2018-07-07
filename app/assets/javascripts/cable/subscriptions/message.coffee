@@ -1,10 +1,10 @@
-App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
+App.cable.subscriptions.create { channel: "MessagesChannel" },
   received: (data) ->
-    @appendLine(data)
+    @prependLine(data)
  
-  appendLine: (data) ->
+  prependLine: (data) ->
     html = @createLine(data)
-    $("[data-chat-room='Best Room']").append(html)
+    $("[data-chat-room='Best Room']").prepend(html)
  
   createLine: (data) ->
     """
