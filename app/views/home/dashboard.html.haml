@@ -30,7 +30,7 @@
         %li.list-group-item
           Nothing here yet!
       - else
-        - @messages.each do |m|
+        - @messages.order(created_at: :desc).each do |m|
           = render m
 
 

@@ -22,6 +22,8 @@ ready = ->
         time = convdt.toTimeString()
         time_string = time.split(' ')[0].slice(0, -3);
 
+        console.log data.envelope
+
         """
         <li class='list-group-item' data-envelope='#{data.envelope}'>
           <div class='d-flex justify-content-center align-items-center'>
@@ -29,7 +31,7 @@ ready = ->
               <a href="/messages/#{data.id}">#{data.subject}</a>
             </div>
             <div class='mr-auto p2'>
-              #{data.from} <#{data.envelope[1]}>
+              #{data.from} <#{data.envelope.from}>
             </div>
             <div class='p1'>
               #{time_string} #{date_string}
