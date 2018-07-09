@@ -15,12 +15,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile = current_user.profiles.find params[:id]
-    @profile.messages.each do |message|
-      message.destroy
-    end
-    
     @profile.destroy
-
     redirect_to root_path, notice: 'Profile destroyed'
   end
 
