@@ -14,7 +14,7 @@ class Api::DataController < ApplicationController
 
       if message.save
         logger.info 'Message saved'
-        ProfilesChannel.broadcast_to(profile, message)
+        ApplicationCable::ProfilesChannel.broadcast_to(profile, message)
       else
         logger.info 'Message is fucked yo'
       end
