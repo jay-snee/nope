@@ -36,8 +36,6 @@ ready = ->
             </div>
           </div>
         </li>
-          #{data.inspect}
-        </li>
         """
 
 $(document).on 'turbolinks:load', ready
