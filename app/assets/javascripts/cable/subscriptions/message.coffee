@@ -29,7 +29,7 @@ ready = ->
               <a href="/messages/#{data.id}">#{data.subject}</a>
             </div>
             <div class='mr-auto p2'>
-              #{data.envelope['from']}
+              #{data.from} <#{data.envelope[1]}>
             </div>
             <div class='p1'>
               #{time_string} #{date_string}
