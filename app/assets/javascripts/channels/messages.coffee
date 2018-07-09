@@ -1,1 +1,0 @@
-App.cable.subscriptions.create { channel: "MessagesChannel", account: $('#account').data('account') }
