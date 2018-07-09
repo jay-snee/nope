@@ -23,6 +23,8 @@ ready = ->
         time_string = time.split(' ')[0].slice(0, -3)
 
         from_string = new String(data.from)
+        from_string = from_string.replace('<', '&lt;')
+        from_string = from_string.replace('>', '&gt;')
 
         """
         <li class='list-group-item' data-envelope='#{data.envelope}'>
