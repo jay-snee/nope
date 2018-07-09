@@ -23,7 +23,7 @@ ready = ->
         time_string = time.split(' ')[0].slice(0, -3);
 
         console.log data.envelope
-        console.log data.envelope["from"]
+        console.log data.envelope.from
 
         """
         <li class='list-group-item' data-envelope='#{data.envelope}'>
