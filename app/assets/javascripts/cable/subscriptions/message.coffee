@@ -23,13 +23,13 @@ ready = ->
         time_string = time.split(' ')[0].slice(0, -3);
 
         """
-        <li class='list-group-item'>
+        <li class='list-group-item' data-envelope='#{data.envelope}'>
           <div class='d-flex justify-content-center align-items-center'>
             <div class='mr-auto p2'>
               <a href="/messages/#{data.id}">#{data.subject}</a>
             </div>
             <div class='mr-auto p2'>
-              #{data.envelope.from}
+              #{data.envelope['from']}
             </div>
             <div class='p1'>
               #{time_string} #{date_string}
