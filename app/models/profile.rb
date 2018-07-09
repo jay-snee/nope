@@ -1,7 +1,7 @@
 class Profile < ApplicationRecord
 
   belongs_to :user
-  has_many :messages, dependent: :destroy, -> { order(created_at: :desc) }
+  has_many :messages, -> { order(created_at: :desc) }, dependent: :destroy
 
   
   before_create :insert_dummy_email
