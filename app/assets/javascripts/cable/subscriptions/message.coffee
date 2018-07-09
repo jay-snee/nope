@@ -17,10 +17,10 @@ ready = ->
         # JS months are zero indexed, IS08601 aren't...
         dtcomps[1]--;
         convdt = new Date(Date.UTC(dtcomps[0],dtcomps[1],dtcomps[2],dtcomps[3],dtcomps[4],dtcomps[5]))
-        date_string = convdt.toLocaleDateString("en-GB");
+        date_string = convdt.toLocaleDateString("en-GB")
         # extract the time
         time = convdt.toTimeString()
-        time_string = time.split(' ')[0].slice(0, -3);
+        time_string = time.split(' ')[0].slice(0, -3)
 
         console.log data.envelope
         console.log data.envelope.from
@@ -32,7 +32,7 @@ ready = ->
               <a href="/messages/#{data.id}">#{data.subject}</a>
             </div>
             <div class='mr-auto p2'>
-              #{data.from} &lt; #{data.envelope.from} &gt;
+              #{data.from}
             </div>
             <div class='p1'>
               #{time_string} #{date_string}
