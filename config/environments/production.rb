@@ -93,4 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { host: 'profiler.datawrks.io' }
+
+  config.session_store :cookie_store, key: '_datawrks_profiler_session', domain: '.profiler.datawrks.io', tld_length: 3
+
 end
