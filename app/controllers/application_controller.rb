@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
 
   after_action :log_tenant
 
-  before_filter :validate_tenant
+  before_action :validate_tenant
 
   private
 
@@ -17,5 +17,5 @@ class ApplicationController < ActionController::Base
   def validate_tenant
     redirect_to root_path unless Apartment::Tenant.current == current_user.account.name && !current_user.admin
   end
-  
+
 end

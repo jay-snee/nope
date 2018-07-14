@@ -1,7 +1,7 @@
 class AccountsController < ApplicationController
   
-  before_filter :verify_admin
-  before_filter :set_account, except: [:index]
+  before_action :verify_admin
+  before_action :set_account, except: [:index]
 
   def index
     @accounts = Account.all
