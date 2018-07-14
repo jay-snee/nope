@@ -1,0 +1,10 @@
+.row
+  .col-sm-8
+    %pre= pp @account.inspect
+  .col-sm-4
+    %ul.list-group
+      %li.list-group-header
+        %h4 Users
+      - @account.users.each do |user|
+        %li.list-group-item
+          = link_to user.email, user

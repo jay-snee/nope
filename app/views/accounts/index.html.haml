@@ -1,0 +1,9 @@
+.row
+  .col-sm-12
+    %ul.list-group
+      %li.list-group-header
+        %h4 Accounts
+
+      - @accounts.all.each do |account|
+        %li.list-group-item  
+          = link_to account.name, account
