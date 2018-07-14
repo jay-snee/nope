@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   has_many :profiles, dependent: :destroy
   has_many :messages, dependent: :destroy
+
+  belongs_to :account, dependent: :destroy
   
 end
