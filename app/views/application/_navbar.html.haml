@@ -13,13 +13,13 @@
           %a.nav-link.dropdown-toggle#navbarDropdown{href: '#'}
             Admin
           .dropdown-menu
-            %a{href: accounts_path} Accounts
+            %a.drop-down-item{href: accounts_path} Accounts
 
-      %li.nav-item
+      %li.nav-item.mr-auto
         = Apartment::Tenant.current
 
       - if !current_user
-        %li.nav-itemmx-3
+        %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path
         %li.nav-item.mr-auto
           = link_to 'Sign in', new_user_session_path
