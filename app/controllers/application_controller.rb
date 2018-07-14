@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def validate_tenant
-    redirect_to root_path unless Apartment::Tenant.current == current_user.account.name && !current_user.admin
+    redirect_to root_path unless current_user && Apartment::Tenant.current == current_user.account.name && !current_user.admin
   end
 
 end
