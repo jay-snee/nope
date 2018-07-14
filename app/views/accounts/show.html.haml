@@ -3,7 +3,7 @@
     %ul.list-group
       %li.list-group-item
         %h4 Account Data
-      - @account.to_json.each do |k,v|
+      - JSON.parse(@account.to_json).each do |k,v|
         %li.list-group-item
           %strong= k
           .pull-right
