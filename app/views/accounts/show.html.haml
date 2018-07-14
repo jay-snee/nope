@@ -1,6 +1,14 @@
 .row
   .col-sm-8
-    = pp @account.to_json
+    %ul.list-group
+      %li.list-group-item
+        %h4 Account Data
+      - @account.to_json.each do |k,v|
+        %li.list-group-item
+          %strong= k
+          .pull-right
+            = v
+
   .col-sm-4
     %ul.list-group
       %li.list-group-item
