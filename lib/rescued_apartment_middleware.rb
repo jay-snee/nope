@@ -3,7 +3,7 @@ module RescuedApartmentMiddleware
     begin
       super
     rescue Apartment::TenantNotFound
-      return [ 302, {'Location' =>"https://www.profiler.datawrks.io"}, [] ]
+      return [ 302, {'Location' =>"http://www.profiler.datawrks.io"}, [] ]
     end
   end
 end
