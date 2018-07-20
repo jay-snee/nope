@@ -14,9 +14,6 @@
       
 
     %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
-      %li.nav-item.mx-3
-        = Apartment::Tenant.current
-
       - if !current_user
         %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path
