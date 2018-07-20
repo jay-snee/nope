@@ -1,14 +1,4 @@
 .row
-  .col-sm-8
-    %ul.list-group
-      %li.list-group-item
-        %h4 Account Data
-      - JSON.parse(@account.to_json).each do |k,v|
-        %li.list-group-item
-          %strong= k
-          .pull-right
-            = v
-.row
   .col-sm-4
     %ul.list-group
       %li.list-group-item
@@ -30,3 +20,14 @@
             = link_to p.name, profile_path(p)
       %li.list-group-item
         = link_to 'New Profile', '', class: 'btn btn-outline-primary btn-block', data: {toggle: 'modal', target: '#new-profile-modal'}
+
+.row.mt-5
+  .col-sm-8
+    %ul.list-group
+      %li.list-group-item
+        %h4 Account Data
+      - JSON.parse(@account.to_json).each do |k,v|
+        %li.list-group-item
+          %strong= k
+          .pull-right
+            = v
