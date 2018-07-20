@@ -7,22 +7,7 @@
       %hi.display-4 Big fuck off chart
 
 .row
-  .col-sm-4
-    
-    %h3.mt-2 Profiles
-
-    %ul.list-group
-      - if @profiles.empty?
-        %li.list-group-item
-          No profiles yet! Click the link below to create one.
-      - else
-        - @profiles.each do |p|
-          %li.list-group-item
-            = link_to p.name, profile_path(p)
-      %li.list-group-item
-        = link_to 'New Profile', '', class: 'btn btn-outline-primary btn-block', data: {toggle: 'modal', target: '#new-profile-modal'}
-  
-  .col-sm-8
+  .col-sm-12
     %h3.mt-2 All Messages
 
     %ul.list-group

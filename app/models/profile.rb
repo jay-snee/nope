@@ -1,6 +1,6 @@
 class Profile < ApplicationRecord
 
-  belongs_to :user
+  belongs_to :accounts
   has_many :messages, -> { order(created_at: :desc) }, dependent: :destroy
 
   

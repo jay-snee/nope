@@ -10,11 +10,11 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = current_user.profiles.find params[:id]
+    @profile = current_user.account.profiles.find params[:id]
   end
 
   def destroy
-    @profile = current_user.profiles.find params[:id]
+    @profile = current_user.account.profiles.find params[:id]
     @profile.destroy
     redirect_to root_path, notice: 'Profile destroyed'
   end

@@ -8,7 +8,7 @@
           %strong= k
           .pull-right
             = v
-
+.row
   .col-sm-4
     %ul.list-group
       %li.list-group-item
@@ -16,3 +16,17 @@
       - @account.users.each do |user|
         %li.list-group-item
           = link_to user.email, user
+
+  .col-sm-8 
+    %h3.mt-2 Profiles
+
+    %ul.list-group
+      - if @account.profiles.empty?
+        %li.list-group-item
+          No profiles yet! Click the link below to create one.
+      - else
+        - @account.profiles.each do |p|
+          %li.list-group-item
+            = link_to p.name, profile_path(p)
+      %li.list-group-item
+        = link_to 'New Profile', '', class: 'btn btn-outline-primary btn-block', data: {toggle: 'modal', target: '#new-profile-modal'}

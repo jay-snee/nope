@@ -58,6 +58,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise' # authentication
 gem 'haml' # templating
 
-gem 'apartment' # multi-tenancy
+# gem 'apartment' # multi-tenancy
 
 

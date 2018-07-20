@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_101306) do
+ActiveRecord::Schema.define(version: 2018_07_20_154907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2018_07_14_101306) do
     t.string "contact_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gifts", force: :cascade do |t|
+    t.integer "retailer_id"
+    t.integer "scoring_metric_id"
+    t.integer "required_score"
+    t.string "name"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "active"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -41,13 +52,38 @@ ActiveRecord::Schema.define(version: 2018_07_14_101306) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "email_address", null: false
     t.string "name", default: "New Profile", null: false
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "secure_token"
+    t.integer "account_id"
+  end
+
+  create_table "qualifications", force: :cascade do |t|
+    t.integer "gift_id"
+    t.integer "user_id"
+    t.boolean "redeemed"
+    t.integer "running_total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "receipts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "retailer_id"
+    t.integer "basket_total"
+    t.boolean "processed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "retailers", force: :cascade do |t|
+    t.string "name"
+    t.string "logo_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

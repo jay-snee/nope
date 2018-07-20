@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  get 'accounts/index'
-  get 'accounts/show'
-  get 'accounts/edit'
-  get 'messages_controller/index'
-  get 'messages_controller/show'
-  get 'profiles/create'
-  get 'profiles/show'
   devise_for :users
   get 'home/index'
   get 'home/dashboard'
