@@ -31,3 +31,18 @@
           %strong= k
           .pull-right
             = v
+
+#new-profile-modal.modal{tabindex: "-1", role: 'dialog'}
+  .modal-dialog{role: "document"}
+    .modal-content
+      = form_for Profile.new, class: 'form' do |f|
+        .modal-header
+          %h5.modal-title New Profile
+          %button.close{type: 'button', data: {dismiss: 'modal'}}
+            %span &times;
+        .modal-body
+          %label Name your new profile: 
+          = f.text_field :name, class: 'form-control'
+        .modal-footer
+          %button.btn.btn-secondary{data: {dismiss: 'modal'}} Close
+          = f.submit 'Create', class: 'btn btn-outline-primary btn-block'
