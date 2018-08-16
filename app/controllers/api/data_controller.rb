@@ -18,13 +18,10 @@ class Api::DataController < ApplicationController
       else
         logger.info 'Message is fucked yo'
       end
-
     end
 
     render json: { status: "ok" }, status: 200
   end
-
-
 
   private
 

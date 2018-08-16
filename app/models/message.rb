@@ -4,7 +4,7 @@ class Message < ApplicationRecord
   belongs_to :user
 
   def parsed_html
-    page = Nokogiri::HTML(html)
+    Nokogiri::HTML(html)
   end
 
 end
