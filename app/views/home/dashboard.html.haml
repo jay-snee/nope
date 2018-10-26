@@ -2,12 +2,21 @@
 %hr
 
 .row
-  #dashboard-charts.col-sm-12
-    .jumbotron
-      %hi.display-4 Big fuck off chart
+  .col-sm-5
+    %h3.mt-2 Profiles
+    %ul.list-group
+      - if @profiles.empty?
+        %li.list-group-item
+          Nothing here yet!
+      - else
+        - @profiles.order(created_at: :desc).each do |p|
+          = render p
+    = form_for Profile.new, url: profiles_path, html: { class: 'mt-3' } do |f|
+      .input-group
+        = f.text_field :name, class: 'form-control ml-1'
+        = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
 
-.row
-  .col-sm-12
+  .col-sm-7
     %h3.mt-2 All Messages
 
     %ul.list-group
