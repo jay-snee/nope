@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/dashboard'
 
-  resources :profiles
+  resources :profiles do
+    post :toggle_forwarding
+    post :toggle_processing
+  end
+
+
   resources :messages
   
   namespace :api do
