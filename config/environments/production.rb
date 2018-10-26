@@ -92,8 +92,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: 'profiler.datawrks.io' }
+  config.action_mailer.default_url_options = { host: 'beta.faircustodian.com' }
 
-  config.session_store :cookie_store, key: '_datawrks_profiler_session', domain: '.profiler.datawrks.io', tld_length: 3
+  config.session_store :cookie_store, key: '_faircustodian_session', domain: '.beta.faircustodian.com', tld_length: 3
 
 end
