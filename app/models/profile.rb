@@ -11,11 +11,11 @@ class Profile < ApplicationRecord
 
 
   def generate_email
-    self.email_address = "#{self.secure_token}@faircustodian.com".downcase
+    self.email_address = "#{self.secure_token}@m.faircustodian.com".downcase
   end
 
   def insert_dummy_email
-    self.email_address = "example@faircustodian.com"
+    self.email_address = "example@m.faircustodian.com"
   end
 
 end
