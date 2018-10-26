@@ -7,9 +7,9 @@
         .mr-auto.p-2
           %h5= @profile.email_address
         .p-2
-          = button_to 'Toggle Email Forwarding', toggle_forwarding_profile_path, method: :post, class: 'btn btn-outline-warning', data: { state: @profile.email_forward }
+          = button_to 'Toggle Email Forwarding', toggle_forwarding_profile_path, method: :post, class: 'btn btn-outline-warning toggle-button', data: { state: @profile.email_forward }
         .p-2
-          = button_to 'Toggle Email Processing', toggle_processing_profile_path, method: :post, class: 'btn btn-outline-warning', data: { state: @profile.email_process }
+          = button_to 'Toggle Email Processing', toggle_processing_profile_path, method: :post, class: 'btn btn-outline-warning toggle-button', data: { state: @profile.email_process }
 
         .p-2
           = link_to 'Delete profile', profile_path(@profile), method: :delete, class: 'btn btn-outline-danger'
