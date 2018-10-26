@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'home/dashboard'
 
   resources :profiles do
-    post :toggle_forwarding
-    post :toggle_processing
+    member do
+      post :toggle_forwarding
+      post :toggle_processing
+    end
   end
 
 
