@@ -4,6 +4,7 @@
 
 ready = ->
   $('.toggle-button').each (index) ->
+    console.log $(this).data('state')
     if $(this).data('state') == 'true'
       $(this).removeClass('btn-outline-warning')
       $(this).addClass('btn-outline-success')
