@@ -4,6 +4,5 @@
       = link_to profile.name, profile
     .p-2
       %input.form-control.d-none{id: "profile-email-#{profile.id}", value: profile.email_address}
-      
-      %button.btn{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
+			%button.btn{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
       	Copy Address
