@@ -4,5 +4,5 @@
 			= link_to profile.name, profile
 		.p-2
 			%input.form-control-sm{id: "profile-email-#{profile.id}", value: profile.email_address}
-			%button.btn{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
+			%button.btn.btn-sm.btn-info{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
 				Copy Address
