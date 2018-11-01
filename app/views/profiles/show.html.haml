@@ -5,8 +5,8 @@
         .mr-auto.p-2 
           %h1= @profile.name
         .mr-auto.p-2
-          %input.form-control-sm{id: "profile-email-#{profile.id}", value: profile.email_address}
-          %button.btn{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
+          %input.form-control-sm{id: "profile-email-#{@profile.id}", value: @profile.email_address}
+          %button.btn{data: {clipboard: {target: "#profile-email-#{@profile.id}" } }}
             Copy Address
         .p-2
           = # button_to 'Toggle Email Forwarding', toggle_forwarding_profile_path, method: :post, class: 'btn btn-outline-warning toggle-button', data: { state: @profile.email_forward }
