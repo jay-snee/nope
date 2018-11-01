@@ -9,6 +9,8 @@ ready = ->
       $(this).removeClass('btn-outline-warning')
       $(this).addClass('btn-outline-success')
 
+  new ClipboardJS('.btn');
+
 
 
 

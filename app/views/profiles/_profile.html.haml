@@ -2,3 +2,6 @@
   .d-flex.justify-content-center.align-items-center
     .mr-auto.p-2
       = link_to profile.name, profile
+    .p-2
+      %input.form-control{id: "profile-email-#{profile.id}", value: profile.email}
+      %button.btn{data: {clipboard: {target: "profile-email-#{profile.id}" } }}
