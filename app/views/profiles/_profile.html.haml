@@ -3,6 +3,6 @@
 		.mr-auto.p-2
 			= link_to profile.name, profile
 		.p-2
-			%input.form-control.d-none{id: "profile-email-#{profile.id}", value: profile.email_address}
+			%input.form-control-sm{id: "profile-email-#{profile.id}", value: profile.email_address}
 			%button.btn{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
 				Copy Address
