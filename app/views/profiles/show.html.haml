@@ -1,9 +1,14 @@
+%nav{aria: {label: 'breadcrumb'}}
+  %ol.breadcrumb
+    %li.breadcrumb-item
+      = link_to 'Dashboard', root_path
+    %li.breadcrumb-item.active{aria: {current: 'page'}}
+      = @profile.name
+
 #profile.mb-5{data: {id: @profile.id}}
   .row
     .col-sm-12
       .d-flex.justify-content-center.align-items-center
-        .mr-auto.p-2 
-          %h1= @profile.name
         .mr-auto.p-2
           %input.form-control-sm{id: "profile-email-#{@profile.id}", value: @profile.email_address}
           %button.btn.btn-sm.btn-info{data: {clipboard: {target: "#profile-email-#{@profile.id}" } }}
