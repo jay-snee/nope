@@ -17,11 +17,6 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
-
-  def admin?
-    true
-  end
-
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
   end
