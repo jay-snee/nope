@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   use_doorkeeper
   devise_for :users
   
+  get '/me', to: 'api/v1/users#me'
+
   get 'home/index'
   get 'home/dashboard'
 

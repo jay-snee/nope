@@ -5,4 +5,8 @@ class Api::V1::UsersController <  ApplicationController
     render json: current_user.to_hash.to_json
   end 
 
+  def me
+  	render json: current_user.to_hash.to_json
+  end
+
 end
