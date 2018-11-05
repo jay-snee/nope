@@ -62,4 +62,6 @@ gem 'haml' # templating
 
 gem 'sidekiq'
 
+gem 'doorkeeper'
+
 

@@ -65,6 +65,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    doorkeeper (5.0.2)
+      railties (>= 4.2)
     erb2haml (0.1.5)
       html2haml
     erubi (1.7.1)
@@ -208,6 +210,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  doorkeeper
   erb2haml
   haml
   jbuilder (~> 2.5)
