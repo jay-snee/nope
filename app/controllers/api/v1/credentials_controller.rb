@@ -1,4 +1,4 @@
-class Api::V1::CredentialsController < Api::V1::ApiController
+class Api::V1::CredentialsController < ApplicationController
   before_action :doorkeeper_authorize!
   respond_to    :json
 
