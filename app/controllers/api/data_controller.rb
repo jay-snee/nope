@@ -23,6 +23,10 @@ class Api::DataController < ApplicationController
     render json: { status: "ok" }, status: 200
   end
 
+  def me
+    render json: current_user.to_hash
+  end
+
   private
 
   def inbound_params
