@@ -36,6 +36,7 @@ class Api::DataController < ApplicationController
       :to,
       :from,
       :html,
+      :text,
       :sender_ip,
       :envelope,
       :subject,

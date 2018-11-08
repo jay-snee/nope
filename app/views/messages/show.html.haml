@@ -18,7 +18,11 @@
 
 .row.mt-3
   .col-sm-12
-    - # is this really safe?
-    .card
-      .card-body
-        = @message.html.html_safe
+    - unless @message.html.nil?
+      .card
+        .card-body
+          = @message.html.html_safe
+    - else
+      .card
+        .card-body
+          = @message.html.html_safe
