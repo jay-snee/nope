@@ -14,7 +14,7 @@
           = render p
     = form_for Profile.new, url: profiles_path, html: { class: 'mt-3' } do |f|
       .input-group
-        = f.text_field :name, class: 'form-control ml-1', placeholder: 'Create new profile'
+        = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new profile'
         = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
 
   .col-sm-7
