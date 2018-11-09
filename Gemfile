@@ -64,4 +64,4 @@ gem 'sidekiq'
 
 gem 'doorkeeper'
 
-
+gem 'httparty'
