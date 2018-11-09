@@ -14,7 +14,7 @@
             %a.dropdown-item{href: oauth_authorized_applications_path} Authorised Applications
       
 
-    %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
+    %ul.navbar-nav.flex-row.ml-md-auto
       - if !current_user
         %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path
