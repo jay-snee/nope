@@ -12,8 +12,7 @@ ready = ->
   new ClipboardJS('.copy-button');
 
   $('.copy-button').on 'click', ->
-  	$(this).data 'title', 'Copied!'
-  	$(this).tooltip 'show'
+  	$.growl.notice({ title: "", message: "Copied!" })
 
 
 
