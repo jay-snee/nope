@@ -4,12 +4,16 @@
 
 ready = ->
   $('.toggle-button').each (index) ->
-    console.log $(this).data('state')
+
     if $(this).data('state') == 'true'
       $(this).removeClass('btn-outline-warning')
       $(this).addClass('btn-outline-success')
 
-  new ClipboardJS('.btn');
+  new ClipboardJS('.copy-button');
+
+  $('.copy-button').on 'click', ->
+  	$(this).data 'title', 'Copied!'
+  	$(this).tooltip 'show'
 
 
 

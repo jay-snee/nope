@@ -2,10 +2,9 @@
 	.d-flex.justify-content-center.align-items-center
 		= link_to profile do
 			.mr-auto.p-2
-				.btn.btn.btn-outline-primary
-					= profile.name
+				%h3= profile.name
 		.p-2.ml-auto
-			%button.btn.btn.btn-info{data: {toggle: 'tooltip', placement: 'top', title: profile.email_address, clipboard: { text: profile.email_address}}}
+			%button.btn.btn.btn-outline-info.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
 				Copy login
 
 				
