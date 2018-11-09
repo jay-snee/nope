@@ -22,7 +22,7 @@
     .col-sm-12
       %h5 Recent Messages
       - unless @profile.messages.empty?
-        %ul#messages-list.list-group
+        %ul#messages-list.list-group.mb-5
           - @profile.messages.each do |m|
             = render m
       - else
