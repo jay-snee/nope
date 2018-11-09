@@ -31,7 +31,7 @@ class User < ApplicationRecord
         'body': {
           "subscriber": {   
             "email": email,   
-            "source": "Home Page",   
+            "source": "beta-user",   
             "subscribed_at": DateTime.now.iso8601
           } 
         }
