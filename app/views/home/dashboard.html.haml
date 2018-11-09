@@ -3,7 +3,7 @@
     %li.breadcrumb-item.active{aria: {current: 'page'}} Dashboard
 
 .row
-  .col-sm-5
+  .col-sm-4
     %h3.mt-2 Profiles
     %ul.list-group
       - if @profiles.empty?
@@ -17,7 +17,7 @@
         = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new profile'
         = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
 
-  .col-sm-7
+  .col-sm-6
     %h3.mt-2 All Messages
 
     %ul.list-group
