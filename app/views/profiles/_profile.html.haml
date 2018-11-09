@@ -1,9 +1,11 @@
 %li.list-group-item.profile
-	= link_to profile do
-		.d-flex.justify-content-center.align-items-center
+	.d-flex.justify-content-center.align-items-center
+		= link_to profile do
 			.mr-auto.p-2
-				= profile.name
-			.p-2
-				%input.form-control-sm{id: "profile-email-#{profile.id}", value: profile.email_address}
-				%button.btn.btn-sm.btn-info{data: {clipboard: {target: "#profile-email-#{profile.id}" } }}
-					Copy
+				.btn.btn.btn-outline-primary
+					= profile.name
+		.p-2.ml-auto
+			%button.btn.btn.btn-info{data: {toggle: 'tooltip', placement: 'top', title: profile.email_address, clipboard: { text: profile.email_address}}}
+				Copy login
+
+				

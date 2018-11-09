@@ -10,14 +10,11 @@
     .col-sm-12
       .d-flex.justify-content-center.align-items-center
         .mr-auto.p-2
-          %input.form-control-sm{id: "profile-email-#{@profile.id}", value: @profile.email_address}
-          %button.btn.btn-sm.btn-info{data: {clipboard: {target: "#profile-email-#{@profile.id}" } }}
-            Copy
-        .p-2
-          = # button_to 'Toggle Email Forwarding', toggle_forwarding_profile_path, method: :post, class: 'btn btn-outline-warning toggle-button', data: { state: @profile.email_forward }
-        .p-2
-          = # button_to 'Toggle Email Processing', toggle_processing_profile_path, method: :post, class: 'btn btn-outline-warning toggle-button', data: { state: @profile.email_process }
-
+          .d-none.d-md-block
+            = @profile.email_address
+        .ml-auto  
+          %button.btn.btn.btn-info{data: {toggle: 'tooltip', placement: 'top', title: @profile.email_address, clipboard: { text: @profile.email_address}}}
+            Copy login
         .p-2
           = link_to 'Delete profile', profile_path(@profile), method: :delete, class: 'btn btn-outline-danger'
   %hr
