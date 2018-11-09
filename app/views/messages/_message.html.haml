@@ -1,9 +1,10 @@
 %li.list-group-item.message
-	= link_to message do
-		.d-flex.justify-content-space-between.align-items-center
-			.mr-auto.p-2
-				= message.subject
-			.p2.mr-auto.d-none.d-md-block
-				= message.from
-			.p1.d-none.d-md-block
-				= message.created_at.strftime('%H:%M %d/%m/%Y')
+	.list-group-item
+		= link_to message do
+			.row
+				.col-sm-12.col-md-6.p-2
+					= message.subject
+				.col-md-3.d-none.d-md-block
+					= message.from
+				.col-md-3.d-none.d-md-block
+					= message.created_at.strftime('%H:%M %d/%m/%Y')
