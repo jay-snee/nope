@@ -7,7 +7,8 @@ ready = ->
      
       prependLine: (data) ->
         html = @createLine(data)
-        $("#messages-list").prepend(html)
+        if !($('#message-#{data.id}').length)
+          $("#messages-list").prepend(html)
      
       createLine: (data) ->        
         # parse ISO8601 date and format for display
@@ -27,18 +28,20 @@ ready = ->
         from_string = from_string.replace('>', '&gt;')
 
         """
-        <li class='list-group-item' data-envelope='#{data.envelope}'>
-          <div class='d-flex justify-content-center align-items-center'>
-            <div class='mr-auto p2'>
-              <a href="/messages/#{data.id}">#{data.subject}</a>
+        <li id="message-#{data.id}" class="list-group-item message" data-envelope='#{data.envelope}'>
+          <a href="/messages/#{data.id}">
+            <div class="row">
+              <div class="col-sm-12 col-md-6 p-2">
+                #{data.subject}
+              </div>
+              <div class="col-md-3 d-none d-md-block">
+                #{from_string}
+              </div>
+              <div class="col-md-3 d-none d-md-block">
+                #{time_string} #{date_string}
+              </div>
             </div>
-            <div class='mr-auto p2'>
-              #{from_string}
-            </div>
-            <div class='p1'>
-              #{time_string} #{date_string}
-            </div>
-          </div>
+          </a>
         </li>
         """
 
