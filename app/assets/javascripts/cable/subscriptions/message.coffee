@@ -7,7 +7,7 @@ ready = ->
      
       prependLine: (data) ->
         html = @createLine(data)
-        if !($('#message-#{data.id}').length)
+        if !($("#message-#{data.id}").length)
           $("#messages-list").prepend(html)
      
       createLine: (data) ->        
