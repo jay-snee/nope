@@ -37,5 +37,16 @@ class User < ApplicationRecord
         }
       })
   end
-  
+
+  def after_confirmation
+    response = HTTParty.post(
+      ENV['SLACK_WEBHOOK_URL'],
+      body: {
+        payload: {
+          text: email
+        }.to_json
+      }
+    )
+  end
+
 end
