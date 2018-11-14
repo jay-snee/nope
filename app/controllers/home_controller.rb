@@ -5,9 +5,13 @@ class HomeController < ApplicationController
     end
   end
 
+  def privacy
+  end
+
   def dashboard
     redirect_to action: :index unless current_user
     @messages = current_user.messages
     @profiles = current_user.profiles
   end
+
 end
