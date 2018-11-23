@@ -9,7 +9,7 @@ class Api::DataController < ApplicationController
 
     # hard ignore for shit where we don't have an associated address 
     unless profile.nil?
-      message = profile.user.messages.new(inbound_params)
+      message = profile.user.messages.new(inbound_params.except(:spam_score, :attachments, :'attachment-info'))
       message.profile = profile
       message.raw_payload = inbound_params.to_s
 
