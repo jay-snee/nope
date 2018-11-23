@@ -8,6 +8,7 @@ class Profile < ApplicationRecord
 
   has_secure_token :secure_token
 
+  validates :name, presence: true, allow_blank: false
 
 
   def generate_email
