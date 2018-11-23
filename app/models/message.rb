@@ -3,6 +3,8 @@ class Message < ApplicationRecord
   belongs_to :profile
   belongs_to :user
 
+  validates :name, presence: true
+
   def parsed_html
     Nokogiri::HTML(html)
   end
