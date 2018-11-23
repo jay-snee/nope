@@ -11,6 +11,7 @@ class Api::DataController < ApplicationController
     unless profile.nil?
       message = profile.user.messages.new(inbound_params)
       message.profile = profile
+      message.raw_payload = inbound_params.to_s
 
       if message.save
         logger.info 'Message saved'
@@ -41,7 +42,10 @@ class Api::DataController < ApplicationController
       :envelope,
       :subject,
       :charsets,
-      :spf
+      :spf,
+      :spam_score,
+      :attachments,
+      :'attachment-info'
     )
   end
 end
