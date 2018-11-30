@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api do
+    post 'stripe/notifications'
     post 'data/inbound'
     namespace :v1 do
       resources :users
