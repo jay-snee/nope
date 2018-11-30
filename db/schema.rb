@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 2018_11_30_145416) do
     t.datetime "locked_at"
     t.string "stripe_customer_id"
     t.string "stripe_subscription_id"
+    t.integer "max_profiles", default: 3
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
