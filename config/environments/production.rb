@@ -92,8 +92,8 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { host: ENV['hostname'] }
+  config.action_mailer.default_url_options = { host: ENV['HOSTNAME'] }
 
-  config.session_store :cookie_store, key: '_faircustodian_session', domain: "#{ENV['hostname']}", tld_length: 3
+  config.session_store :cookie_store, key: '_faircustodian_session', domain: "#{ENV['HOSTNAME']}", tld_length: 3
 
 end
