@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   get 'home/dashboard'
   get '/privacy', to: 'home#privacy'
 
+  resources :charges
+
   root to: "home#index"
 
 end
