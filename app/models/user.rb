@@ -51,4 +51,9 @@ class User < ApplicationRecord
     end
   end
 
+  def can_create_profile?
+    return false if profiles.count >= max_profiles
+    return true
+  end
+
 end

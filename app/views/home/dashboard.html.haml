@@ -6,6 +6,9 @@
   .col-sm-4
     %h3.mt-2 Addresses
     %ul.list-group
+      %li.list-group-item
+        %strong
+          = "You have #{current_user.profiles.count} of #{current_user.max_profiles} max addresses"
       - if @profiles.empty?
         %li.list-group-item
           Nothing here yet!

@@ -1,11 +1,15 @@
 class ProfilesController < ApplicationController
   def create
-    @profile = current_user.profiles.create(name: profile_params[:name])
+    if current_user.can_create_profile?
+      @profile = current_user.profiles.create(name: profile_params[:name])
 
-    if @profile.save
-      redirect_to @profile, notice: "New profile '#{@profile.name}' created"
+      if @profile.save
+        redirect_to @profile, notice: "New profile '#{@profile.name}' created"
+      else
+        redirect_to root_path, alert: "Nope, that didn't work"
+      end
     else
-      redirect_to root_path, alert: "Nope, that didn't work"
+      redirect_to root_path, alert: "Sorry, you're out of profiles!"
     end
   end
 
