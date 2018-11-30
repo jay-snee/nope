@@ -7,4 +7,5 @@
     %label.amount
       %span
         Amount: £5.00
+  
   %script.stripe-button{data: {key: Rails.configuration.stripe[:publishable_key], description: "A month's subscription", amount: "500", locale: 'auto'}}

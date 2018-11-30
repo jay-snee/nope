@@ -1,5 +1,6 @@
 !!!
 %html
   %head
-  %body{data: {"no-turbolink": true}}
+  	%meta{name: "turbolinks-visit-control", content: 'reload'}
+  %body
     = yield
