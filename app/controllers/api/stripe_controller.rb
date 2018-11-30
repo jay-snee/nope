@@ -1,6 +1,6 @@
 class Api::StripeController < ApplicationController
 
-  def notification
+  def notifications
     Notification.create(payload: params.to_json)
     return status: 200
   end
