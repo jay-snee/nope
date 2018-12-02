@@ -70,6 +70,7 @@ class User < ApplicationRecord
 
   def cancel_stripe_subscription
     stripe_subscription.delete
+    update(stripe_subscription_id: nil)
   end
 
 end
