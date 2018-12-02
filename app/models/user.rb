@@ -17,7 +17,7 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
-  after_create :send_to_websand
+  after_create :send_to_websand, :generate_default_profiles
 
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
@@ -36,6 +36,13 @@ class User < ApplicationRecord
           } 
         }
       })
+  end
+
+  def generate_default_profiles
+    categories = ['Shopping', 'Social', 'Spam']
+    categories.each do |c|
+      profiles.create!(name: c)
+    end
   end
 
   def after_confirmation

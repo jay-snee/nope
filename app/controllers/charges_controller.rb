@@ -19,7 +19,8 @@ class ChargesController < ApplicationController
       stripe_subscription_id: subscription.id
     )
 
-
+    flash[:notice] = 'Subscription created, thank you!'
+    redirect_to root_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
