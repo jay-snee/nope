@@ -41,7 +41,9 @@ class User < ApplicationRecord
   def generate_default_profiles
     categories = ['Shopping', 'Social', 'Spam']
     categories.each do |c|
-      profiles.create!(name: c)
+      profile = profiles.create!(name: c)
+      profile.generate_email
+      profile.save
     end
   end
 
