@@ -31,9 +31,7 @@ Rails.application.routes.draw do
 
   resources :charges
 
-  authenticate :user, lambda { |u| u.admin? } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  mount Sidekiq::Web => '/sidekiq'
 
   root to: "home#index"
 
