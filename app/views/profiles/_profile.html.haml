@@ -3,6 +3,7 @@
 		= link_to profile do
 			.mr-auto.p-2
 				%strong= profile.name
+				.badge.badge-info= profile.messages.size
 		.p-2.ml-auto
 			%button.btn.btn.btn-outline-info.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
 				Copy address
