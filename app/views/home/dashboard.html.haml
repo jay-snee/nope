@@ -11,7 +11,7 @@
     %h3.mt-2 
       Addresses
       - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
-        = "#{current_user.profiles}/#{current_user.max_profiles}"
+        = "#{current_user.profiles.size}/#{current_user.max_profiles}"
     %ul.list-group
       - if @profiles.empty?
         %li.list-group-item
