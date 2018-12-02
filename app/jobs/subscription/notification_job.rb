@@ -6,7 +6,7 @@ class Subscription::NotificationJob < ApplicationJob
     notification = Notification.find notification_id
     data = JSON.parse notification.payload
 
-    case notification.payload['type']
+    case data['type']
     
     when "customer.subscription.created"
     
