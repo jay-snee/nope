@@ -5,6 +5,10 @@
 
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto
+      
+      
+
+    %ul.navbar-nav.flex-row.ml-md-auto
       - if current_user && current_user.admin
         %li.nav-item.dropdown.mx-3
           %a.nav-link.dropdown-toggle#navbarDropdown{href: '#', data: {toggle: 'dropdown'}}
@@ -12,9 +16,6 @@
           .dropdown-menu
             %a.dropdown-item{href: oauth_applications_path} OAuth Applications
             %a.dropdown-item{href: oauth_authorized_applications_path} Authorised Applications
-      
-
-    %ul.navbar-nav.flex-row.ml-md-auto
       - if !current_user
         %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path
