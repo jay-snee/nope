@@ -21,7 +21,7 @@
         %li.nav-item.mx-3
           = link_to 'Sign in', new_user_session_path
       - elsif current_user && !current_user.stripe_subscription_id.nil?
-        %li.nav-item
+        %li.nav-item.mx-3
           = link_to 'Cancel Subscription', charge_path(current_user.stripe_subscription_id), method: :delete
         %li.nav-item.mr-auto
           = link_to 'Log Out', destroy_user_session_path, method: :delete
