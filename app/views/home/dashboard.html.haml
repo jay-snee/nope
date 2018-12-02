@@ -10,7 +10,7 @@
   .col-sm-4
     %h3.mt-2 
       Addresses
-      - if if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT']
+      - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT']
         = "#{current_user.profiles}/#{current_user.max_profiles}"
     %ul.list-group
       - if @profiles.empty?
