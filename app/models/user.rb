@@ -63,4 +63,13 @@ class User < ApplicationRecord
     return true
   end
 
+  def stripe_subscription
+    return false if stripe_subscription_id.nil?
+    Stripe::Subscription.retrieve(stripe_subscription_id)
+  end
+
+  def cancel_stripe_subscription
+    stripe_subscription.delete
+  end
+
 end

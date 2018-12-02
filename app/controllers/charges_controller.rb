@@ -19,11 +19,21 @@ class ChargesController < ApplicationController
       stripe_subscription_id: subscription.id
     )
 
-    flash[:notice] = 'Subscription created, thank you!'
+    flash[:notice] = 'Thank you! We\'ll updgrade your subscription shortly, if you haven\'t recieved your upgrade in a couple of minutes please do harass us on twitter - @FairCustodianUK' 
     redirect_to root_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path
+  end
+
+  def destroy
+    if params[:id] == current_user.stripe_subscription_id
+      current_user.cancel_stripe_subscription
+      flash[:notice] = 'Subscription cancelled, sorry to see you go!'
+    else
+      flash[:notice] = 'Unable to cancel that subscription!'
+    end
+    redirect_to root_path
   end
 
 end
