@@ -25,7 +25,7 @@
           = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new address'
           = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
     - else
-      .alert.alert-primary
+      .alert.alert-primary.mt-3
         = form_tag charges_path do
           %article
             - if flash[:error].present?
