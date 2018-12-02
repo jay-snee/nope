@@ -11,7 +11,7 @@ class Subscription::NotificationJob < ApplicationJob
     when "customer.subscription.created"
     
     when "customer.subscription.deleted"
-      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['id']).first
+      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
       customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"], stripe_subscription_id: nil)
     
     when "customer.created"
@@ -27,10 +27,10 @@ class Subscription::NotificationJob < ApplicationJob
     when "invoice.payment_succeeded"
     
     when "charge.succeeded"
-      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['id']).first
+      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
       customer.update(max_profiles: ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"])
     when "charge.failed"
-      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['id']).first
+      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
       customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"])
     end
   end 
