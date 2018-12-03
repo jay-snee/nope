@@ -1,0 +1,11 @@
+stages:
+  - deploy
+
+deploy:
+  image: ilyasemenov/gitlab-ci-git-push
+  stage: deploy
+  environment: production
+  only:
+    - master
+  script:
+    - git-push ssh://git@deis-builder.fcctrl.com:2222/beta.git
