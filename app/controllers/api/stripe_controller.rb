@@ -1,4 +1,4 @@
-class Api::StripeController < ApplicationController
+class Api::StripeController < ApiController
 
   skip_before_action :verify_authenticity_token, only: ['notifications']
 

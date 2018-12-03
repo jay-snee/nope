@@ -1,4 +1,4 @@
-class Api::DataController < ApplicationController
+class Api::DataController < ApiController
   
   skip_before_action :verify_authenticity_token, only: ['inbound']
 
