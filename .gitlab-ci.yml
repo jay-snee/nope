@@ -6,6 +6,6 @@ deploy:
   stage: deploy
   environment: production
   only:
-    - master
+    - deploy
   script:
     - git-push ssh://git@deis-builder.fcctrl.com:2222/beta.git
