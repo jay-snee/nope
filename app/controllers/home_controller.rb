@@ -5,6 +5,8 @@ class HomeController < ApplicationController
   def index
     if current_user
       redirect_to action: 'dashboard'
+    else
+      render layout: 'front-page'
     end
   end
 
