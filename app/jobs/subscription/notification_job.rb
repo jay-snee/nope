@@ -28,10 +28,10 @@ class Subscription::NotificationJob < ApplicationJob
     
     when "charge.succeeded"
       customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
-      customer.update(max_profiles: ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"])
+      customer.update(max_profiles: ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"]) unless customer.nil?
     when "charge.failed"
       customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
-      customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"])
+      customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"]) unless customer.nil?
     end
   end 
 end
