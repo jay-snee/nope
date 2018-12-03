@@ -12,20 +12,14 @@
       Addresses
       - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
         = "#{current_user.profiles.size}/#{current_user.max_profiles}"
-    %ul.list-group
-      - if @profiles.empty?
-        %li.list-group-item
-          Nothing here yet!
-      - else
-        - @profiles.order(created_at: :desc).each do |p|
-          = render p
+    
     - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
       = form_for Profile.new, url: profiles_path, html: { class: 'mt-3' } do |f|
         .input-group
           = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new address'
           = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
     - else
-      .alert.alert-primary.mt-3
+      .alert.alert-primary.mt-2
         = form_tag charges_path do
           %article
             - if flash[:error].present?
@@ -37,6 +31,15 @@
                 = "Upgrade your account with up to #{(ENV['SUBSCRIPTION_MAX_PROFILE_COUNT'].to_i - ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i)} more custom addresses for £3.00/month"
         
           %script.stripe-button{src: "https://checkout.stripe.com/checkout.js", data: {key: Rails.configuration.stripe[:publishable_key], description: "Upgrade to a paid subscription ", amount: "300", locale: 'auto', name: 'FairCustodian', currency: 'GBP', email: current_user.email, label: "Subscribe to FairCustodian"}}
+
+    %ul.list-group.mt-2
+      - if @profiles.empty?
+        %li.list-group-item
+          Nothing here yet!
+      - else
+        - @profiles.order(created_at: :desc).each do |p|
+          = render p
+    
 
   .col-sm-8
     %h3.mt-2 All Messages
