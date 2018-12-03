@@ -39,7 +39,7 @@ class User < ApplicationRecord
   end
 
   def generate_default_profiles
-    categories = ['Shopping', 'Social', 'Spam']
+    categories = ['Profile #1', 'Profile #2', 'Profile #3']
     categories.each do |c|
       profile = profiles.create!(name: c)
       profile.generate_email
