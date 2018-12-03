@@ -12,7 +12,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    redirect_to action: :index if user_signed_in?
     @messages = current_user.messages
     @profiles = current_user.profiles
   end
