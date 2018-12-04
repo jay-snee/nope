@@ -69,3 +69,5 @@ gem 'httparty'
 gem 'stripe'
 
 gem 'faker' # for generating the address strings
+
+gem "aws-sdk-s3", require: false
