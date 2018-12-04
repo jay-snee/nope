@@ -6,7 +6,7 @@
 				.badge.badge-info= profile.messages.size
 		.p-2.ml-auto	
 			= link_to edit_profile_path(profile), class: 'btn btn-outline-info', remote: true do
-				%span.icon.icon-cog
+				Rename
 			%button.btn.btn-outline-info.copy-button.ml-2{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
-				%span.icon.icon-clipboard
+				Copy
 				
