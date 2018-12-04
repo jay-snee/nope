@@ -3,20 +3,15 @@ class Profile < ApplicationRecord
   has_many :messages, -> { order(created_at: :desc) }, dependent: :destroy
   belongs_to :user
   
-  before_create :insert_dummy_email
-  after_create :generate_email
-
-  has_secure_token :secure_token
+  before_create :generate_email
 
   validates :name, presence: true, allow_blank: false
+  validates :email_address, uniqueness: true
 
 
   def generate_email
-    self.email_address = "#{self.secure_token}@m.faircustodian.com".downcase
-  end
-
-  def insert_dummy_email
-    self.email_address = "example@m.faircustodian.com"
+    address_string = "#{Faker::Science.element.capitalize}#{Faker::Space.planet.capitalize}#{Faker::Hacker.verb.capitalize}".gsub(' ', '')
+    self.email_address = "#{address_string}@#{ENV['SEND_EMAIL_DOMAIN']}"
   end
 
 end
