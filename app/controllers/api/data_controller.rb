@@ -15,7 +15,7 @@ class Api::DataController < ApiController
 
       if inbound_params[:attachments].to_i > 0
         inbound_params[:attachments].to_i.times do |i|
-          message.attach(inbound_params["attachment#{i}"])
+          message.attach(inbound_params["attachment#{i+1}"])
         end
       end
 
