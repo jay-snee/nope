@@ -13,8 +13,8 @@ class Api::DataController < ApiController
       message = profile.user.messages.new(inbound_params.except(:spam_score, :attachments, :'attachment-info'))
       message.profile = profile
 
-      if inbound_params[:attachments]
-        inbound_params[:attachments].times do |i|
+      if inbound_params[:attachments].to_i > 0
+        inbound_params[:attachments].to_i.times do |i|
           message.attach(inbound_params["attachment#{i}"])
         end
       end
