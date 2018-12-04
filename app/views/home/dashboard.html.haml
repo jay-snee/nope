@@ -21,8 +21,8 @@
             %label.amount
               %span
                 = "Upgrade your account with up to #{(ENV['SUBSCRIPTION_MAX_PROFILE_COUNT'].to_i - ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i)} more custom addresses for £3.00/month"
-        
-          %script.stripe-button{src: "https://checkout.stripe.com/checkout.js", data: {key: Rails.configuration.stripe[:publishable_key], description: "Upgrade to a paid subscription ", amount: "300", locale: 'auto', name: 'FairCustodian', currency: 'GBP', email: current_user.email, label: "Subscribe to FairCustodian"}}
+
+          %script.stripe-button{src: "https://checkout.stripe.com/checkout.js", data: {key: Rails.configuration.stripe[:publishable_key], description: "Upgrade to a paid subscription ", amount: "300", locale: 'auto', name: 'FairCustodian', currency: 'GBP', email: current_user.email, label: "Upgrade FairCustodian"}}
 
     %ul.list-group.mt-2
       - if @profiles.empty?
