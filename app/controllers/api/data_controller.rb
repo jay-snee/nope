@@ -3,6 +3,7 @@ class Api::DataController < ApiController
   skip_before_action :verify_authenticity_token, only: ['inbound']
 
   def inbound
+
     envelope = JSON.parse(inbound_params[:envelope])
 
     profile = Profile.where(email_address: envelope['to']).first
@@ -11,13 +12,20 @@ class Api::DataController < ApiController
     unless profile.nil?
       message = profile.user.messages.new(inbound_params.except(:spam_score, :attachments, :'attachment-info'))
       message.profile = profile
+
+      if inbound_params[:attachments]
+        inbound_params[:attachments].times do |i|
+          message.attach(inbound_params["attachment#{i}"])
+        end
+      end
+
       message.raw_payload = inbound_params.to_s
 
       if message.save
         logger.info 'Message saved'
         ApplicationCable::ProfilesChannel.broadcast_to(profile, message)
       else
-        logger.info 'Message is fucked yo'
+        logger.info 'Message'
       end
     end
 
@@ -45,7 +53,12 @@ class Api::DataController < ApiController
       :spf,
       :spam_score,
       :attachments,
-      :'attachment-info'
+      :'attachment-info',
+      :attachment1,
+      :attachment2,
+      :attachment3,
+      :attachment4,
+      :attachment5
     )
   end
 end
