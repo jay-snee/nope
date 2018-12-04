@@ -1,0 +1,1 @@
+$("#profile-<%= @profile.id %>").html("<%= escape_javascript (render partial: 'edit_profile.html.haml') %>");

@@ -17,6 +17,16 @@ class ProfilesController < ApplicationController
     @profile = current_user.profiles.find params[:id]
   end
 
+  def edit
+    @profile = current_user.profiles.find params[:id]
+  end
+
+  def update
+    @profile = current_user.profiles.find params[:id]
+    @profile.update(name: profile_params['name'])
+    @profile.save
+  end
+
   def destroy
     @profile = current_user.profiles.find params[:id]
     @profile.destroy

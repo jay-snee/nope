@@ -1,0 +1,5 @@
+= form_for @profile, remote: true, html: {class: 'form-inline'} do |f|
+	.form-group
+		= f.text_field :name, class: 'form-control'
+	.form-group.mx-sm-3	
+		= f.submit 'Save', class: 'btn btn-primary'
