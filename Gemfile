@@ -67,3 +67,5 @@ gem 'doorkeeper'
 gem 'httparty'
 
 gem 'stripe'
+
+gem 'faker' # for generating the address strings
