@@ -16,6 +16,17 @@
         = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
 %hr
 
+- unless @message.files.empty?
+  .row.mt-3
+    .col-sm-14
+      %h3
+        Attachments
+        = "(#{@message.files.size})"
+      %ul.list-group
+        - @message.files.each do |file|
+          %li.list-group-item
+            = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
+
 .row.mt-3
   .col-sm-12
     - unless @message.html.nil?
