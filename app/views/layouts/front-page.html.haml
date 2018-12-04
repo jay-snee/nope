@@ -39,10 +39,5 @@
       #account{data: {account: current_user.id}}
     
     = render partial: 'application/navbar'
-
-    - if notice
-      .alert.alert-info.mt-2= notice
-    - if alert
-      .alert.alert-danger.mt-2= alert
     
     = yield
