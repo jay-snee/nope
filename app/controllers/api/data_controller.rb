@@ -10,7 +10,19 @@ class Api::DataController < ApiController
 
     # hard ignore for shit where we don't have an associated address 
     unless profile.nil?
-      message = profile.user.messages.new(inbound_params.except(:spam_score, :attachments, :'attachment-info'))
+      
+      message_params = inbound_params
+
+      if inbound_params[:attachments].to_i > 0
+        keys = []
+        inbound_params[:attachments].to_i.times do |i|
+          keys << "attachment#{i+1}"
+        end
+
+        message_params = inbound_params.except(keys)
+      end
+
+      message = profile.user.messages.new(message_params.except(:spam_score, :attachments, :'attachment-info'))
       message.profile = profile
 
       if inbound_params[:attachments].to_i > 0
