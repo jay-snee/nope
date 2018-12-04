@@ -16,10 +16,10 @@ class Api::DataController < ApiController
       if inbound_params[:attachments].to_i > 0
         keys = []
         inbound_params[:attachments].to_i.times do |i|
-          keys << "attachment#{i+1}"
+          keys << "attachment#{i+1}".to_sym
         end
 
-        message_params = inbound_params.except(keys)
+        message_params = inbound_params.except(*keys)
       end
 
       message = profile.user.messages.new(message_params.except(:spam_score, :attachments, :'attachment-info'))
