@@ -35,7 +35,7 @@
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    .container
+    .container-fluid
       - if current_user
         #account{data: {account: current_user.id}}
       

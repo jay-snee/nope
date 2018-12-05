@@ -1,5 +1,11 @@
-.block.block-inverse.text-center.block-fill-height
-  .block-foreground
-    %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '50%', height: '50%')
-  .block-background
-    = image_tag('FC-Image-1.jpg', width: '100%')
+.stage
+  .block.block-inverse.block-fill-height{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
+    <div class="container py-4 fixed-top app-navbar">
+    .container-fluid.py-4.fixed-top
+      = render partial: 'front_navbar'
+    #text-block.block-md-middle.pb-5.block-fill-height
+      .container-fluid
+        .row
+          .col-sm-12.col-lg-6
+            %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '175%', height: '175%')
+           
