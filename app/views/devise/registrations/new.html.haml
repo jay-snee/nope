@@ -1,36 +1,39 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "off", class: 'form-control'
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
-  
-  %p.mt-5
-    Transparency is important to us so we’d like to make it clear from the outset how we handle your data. 
-  %p
-    Email messages that are intercepted by the beta platform are not processed outside of initial capture, storage and display on your dashboard. 
-  %p
-    We do have plans to add automatic processing of these messages in the future for a variety of purposes, but that will only ever be opt-in and we’ll let you know about those features in advance. We will not use your data in any other way without your explicit consent.
-  %p
-    We can view the content of any emails but have no reason to do so, nor would we without being compelled to by law. We understand this may be a concern to some and we are actively investigating ways we can remove this ability in a manner which still allows us to operate effectively. 
-  %p
-    You are required to use a valid address to confirm account upon signup - this is a measure to prevent abuse. 
-  %p.mb-5
-    We use both Google Analytics & Hotjar for tracking engagement and user experience. This is important during the beta phase but will eventually be phased out as we implement our analytics services. You are able to block these services from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
+.row
+  .col-sm-2
+  .col-sm-8
+    %h2 Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+      .field
+        = f.label :password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "off", class: 'form-control'
+      .field
+        = f.label :password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control'
 
-  .actions.my-3
-    %center
-      = f.submit "Sign up", class: 'btn btn-primary btn-lg'
-= render "devise/shared/links"
+      %p.mt-5
+        Transparency is important to us so we’d like to make it clear from the outset how we handle your data. 
+      %p
+        Email messages that are intercepted by the beta platform are not processed outside of initial capture, storage and display on your dashboard. 
+      %p
+        We do have plans to add automatic processing of these messages in the future for a variety of purposes, but that will only ever be opt-in and we’ll let you know about those features in advance. We will not use your data in any other way without your explicit consent.
+      %p
+        We can view the content of any emails but have no reason to do so, nor would we without being compelled to by law. We understand this may be a concern to some and we are actively investigating ways we can remove this ability in a manner which still allows us to operate effectively. 
+      %p
+        You are required to use a valid address to confirm account upon signup - this is a measure to prevent abuse. 
+      %p.mb-5
+        We use both Google Analytics & Hotjar for tracking engagement and user experience. This is important during the beta phase but will eventually be phased out as we implement our analytics services. You are able to block these services from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
+
+      .actions.my-3
+        %center
+          = f.submit "Sign up", class: 'btn btn-primary btn-lg'
+    = render "devise/shared/links"
