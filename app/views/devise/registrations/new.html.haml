@@ -33,6 +33,14 @@
       %p.mb-5
         We use both Google Analytics & Hotjar for tracking engagement and user experience. This is important during the beta phase but will eventually be phased out as we implement our analytics services. You are able to block these services from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
 
+      .form-check
+        = f.check_box :marketing_consent, class: 'form-check-input'
+        = f.label :marketing_consent, class: 'form-check-label'
+
+      .form-check
+        = f.check_box :terms_consent, class: 'form-check-input'
+        = f.label :terms_consent, class: 'form-check-label'
+
       .actions.my-3
         %center
           = f.submit "Sign up", class: 'btn btn-primary btn-lg'
