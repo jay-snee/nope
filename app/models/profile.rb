@@ -211,12 +211,9 @@ class Profile < ApplicationRecord
     'ambiguous'
   ]
 
-
   def generate_email
     address_string = "#{WORD_LIST.sample.capitalize}#{WORD_LIST.sample.capitalize}#{WORD_LIST.sample.capitalize}".gsub(' ', '')
     self.email_address = "#{address_string}@#{ENV['SEND_EMAIL_DOMAIN']}"
   end
-
-
 
 end
