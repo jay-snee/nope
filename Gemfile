@@ -64,10 +64,19 @@ gem 'sidekiq'
 
 gem 'doorkeeper'
 
+# HTTP Libs
 gem 'httparty'
+gem 'typhoeus'
+
+# ElasticSearch
+gem 'elasticsearch'
+gem 'elasticsearch-model'
+
 
 gem 'stripe'
 
 gem 'faker' # for generating the address strings
 
 gem "aws-sdk-s3", require: false
+
+gem 'prometheus-client'
