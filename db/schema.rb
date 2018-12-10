@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_113018) do
+ActiveRecord::Schema.define(version: 2018_12_10_183838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,6 +122,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_113018) do
     t.integer "user_id", default: 0
     t.boolean "email_forward", default: true
     t.boolean "email_process", default: false
+    t.string "email_display"
   end
 
   create_table "users", force: :cascade do |t|
