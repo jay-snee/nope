@@ -82,6 +82,10 @@ GEM
       warden (~> 1.2.3)
     doorkeeper (5.0.2)
       railties (>= 4.2)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     elasticsearch (6.1.0)
       elasticsearch-api (= 6.1.0)
       elasticsearch-transport (= 6.1.0)
@@ -261,6 +265,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   doorkeeper
+  dotenv-rails
   elasticsearch
   elasticsearch-model
   erb2haml

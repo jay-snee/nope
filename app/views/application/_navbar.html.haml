@@ -17,7 +17,7 @@
             %a.dropdown-item{href: oauth_authorized_applications_path} Authorised Applications
             %a.dropdown-item{href: sidekiq_web_path} Sidekiq
       
-      - elsif !current_user
+      - if !current_user
         %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link my-3'
         %li.nav-item.mx-3
