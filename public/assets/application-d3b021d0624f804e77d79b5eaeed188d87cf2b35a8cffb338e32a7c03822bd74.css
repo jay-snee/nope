@@ -112,6 +112,9 @@ a {
 .message:hover {
   opacity: 1;
 }
+#fc-navbar {
+	flex-wrap: nowrap;
+}
 /* line 5, /Users/fc/code/beta/app/assets/stylesheets/profiles.scss */
 .profile {
   opacity: 0.6;
@@ -198,7 +201,7 @@ a {
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Work sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
