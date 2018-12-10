@@ -1,13 +1,15 @@
-%nav.navbar.navbar-transparent.navbar-padded.navbar-expand-md.navbar-fixed-top.app-navbar
+%nav.navbar.navbar-dark.navbar-expand-md
+  %a.navbar-brand{href: '/'}
+    
   %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
     %span.navbar-toggler-icon
 
   #navbarSupportedContent.collapse.navbar-collapse
     .d-block.d-sm-none
-      %ul.nav.nav-bordered.nav-stacked.flex-column{style: 'background-color: #fff; border-radius: 4px'}
-        %li.nav-item.py-3
+      %ul.nav.nav-bordered.nav-stacked.flex-column{style: 'background-color: #ddd; border-radius: 4px'}
+        %li.nav-item.my-3
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
-        %li.nav-item.py-3
+        %li.nav-item.my-3
           = link_to 'Sign in', new_user_session_path, class: 'nav-link'
     
     .d-none.d-sm-block  
