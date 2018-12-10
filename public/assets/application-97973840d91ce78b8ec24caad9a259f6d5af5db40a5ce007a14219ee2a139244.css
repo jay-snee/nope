@@ -128,6 +128,11 @@ a {
   opacity: 1;
 }
 
+/* line 9, /home/jake/src/faircustodian/beta/app/assets/stylesheets/profiles.scss */
+.email {
+  font-size-adjust: 1.2;
+}
+
 @media print {
   *,
   *::before,

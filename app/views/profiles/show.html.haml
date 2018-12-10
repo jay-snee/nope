@@ -10,9 +10,9 @@
     .col-sm-12
       .d-flex.justify-content-center.align-items-center
         .mr-auto.p-2
-          .d-none.d-md-block
+          .d-none.d-md-block.email
             = @profile.display_email_address
-        .ml-auto  
+        .ml-auto
           %button.btn.btn.btn-outline-info.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: @profile.email_address}}}
             Copy Address
         - if current_user.stripe_subscription_id
