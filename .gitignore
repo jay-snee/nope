@@ -26,3 +26,6 @@
 /config/master.key
 
 /dump.rdb
+
+# Ignore the environment variable file for dotenv
+.env
