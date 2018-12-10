@@ -2,7 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   use_doorkeeper
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
 
   namespace :api do
     post 'stripe/notifications'
