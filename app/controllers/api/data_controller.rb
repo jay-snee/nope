@@ -6,7 +6,7 @@ class Api::DataController < ApiController
 
     envelope = JSON.parse(inbound_params[:envelope])
 
-    profile = Profile.where(email_address: envelope['to'].downcase).first
+    profile = Profile.where(email_address: envelope['to'][0].downcase).first
 
     # hard ignore for shit where we don't have an associated address 
     unless profile.nil?
