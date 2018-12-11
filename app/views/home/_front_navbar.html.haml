@@ -1,21 +1,20 @@
 %nav.navbar.navbar-dark.navbar-expand-md
   %a.navbar-brand{href: '/'}
-    
+
   %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
     %span.navbar-toggler-icon
 
   #navbarSupportedContent.collapse.navbar-collapse
     .d-block.d-sm-none
       %ul.nav.nav-bordered.nav-stacked.flex-column{style: 'background-color: #ddd; border-radius: 4px'}
-        %li.nav-item.my-3
+        %li.nav-item.my-3.front-nav
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
-        %li.nav-item.my-3
+        %li.nav-item.my-3.front-nav
           = link_to 'Sign in', new_user_session_path, class: 'nav-link'
-    
-    .d-none.d-sm-block  
+
+    .d-none.d-sm-block
       %ul.navbar-nav.ml-md-auto
-        %li.nav-item.mx-3
+        %li.nav-item.mx-3.front-nav
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
-        %li.nav-item.mx-3
+        %li.nav-item.mx-3.front-nav
           = link_to 'Sign in', new_user_session_path, class: 'nav-link'
-      

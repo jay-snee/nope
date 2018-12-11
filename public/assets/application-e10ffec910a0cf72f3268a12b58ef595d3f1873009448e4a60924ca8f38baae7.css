@@ -12,6 +12,12 @@ a {
   background-repeat: no-repeat;
   background-position: right top;
 }
+
+/* line 14, /home/jake/src/faircustodian/beta/app/assets/stylesheets/home.scss */
+.front-nav {
+  font-size: 18px;
+  font-weight: bold;
+}
 /* jQuery Growl
  * Copyright 2015 Kevin Sylvestre
  * 1.3.5
