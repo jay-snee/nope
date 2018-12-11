@@ -129,6 +129,10 @@ a {
 .message:hover {
   opacity: 1;
 }
+.navbar_pre_sign_in {
+	font-size:18px;
+	font-weight: bold;
+}
 /* line 5, /home/jake/src/faircustodian/beta/app/assets/stylesheets/profiles.scss */
 .profile {
   opacity: 0.6;
