@@ -7,4 +7,21 @@
         .row
           .col-sm-12.col-lg-6
             %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '100%', height: '100%')
-           
+
+  #info-block.block.block-secondary
+    .container.text-center
+      .row.mb-3
+        .col-sm-4.px-3.mb-3
+          %h2 1. Keep your inbox clear and information safe
+          = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
+          %p Don't hand over your personal email when you sign up to a website, use our service to handle your email and keep your personal inbox clear for the important things.
+        .col-sm-4.px-3.mb-3
+          %h2 2. Use your Fair Custodian email addresses
+          = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
+          %p Create a profile with FairCustodian to generate a masked email address to use online.
+        .col-sm-4.px-3.mb-3
+          %h2 3. Sign up and protect your identity
+          = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
+          %p Sign up to the third party website using the masked email to protect your identity.
+
+
