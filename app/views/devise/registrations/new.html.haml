@@ -10,8 +10,8 @@
             = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
           .col-md-4.col-sm-12
             %h2= f.label :email
-            
-      
+
+
       .field.my-5
         .row
           .col-md-8.col-sm-12
@@ -21,36 +21,13 @@
         - if @minimum_password_length
           %em
             (#{@minimum_password_length} characters minimum)
-        
+
       .field.my-5
         .row
           .col-md-8.col-sm-12
             = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
           .col-md-4.col-sm-12
             %h2= f.label :password_confirmation
-        
-
-      
-      .card
-        .card-body
-          %h3.mt-5
-            Transparency is important to us so we’d like to make it clear from the outset how we handle your data. 
-          %p.mt-3
-            Email messages that are intercepted by the beta platform are not processed outside of initial capture, storage and display on your dashboard. 
-          %p
-            We do have plans to add automatic processing of these messages in the future for a variety of purposes, but that will only ever be opt-in and we’ll let you know about those features in advance. We will not use your data in any other way without your explicit consent.
-          %p
-            We can view the content of any emails but have no reason to do so, nor would we without being compelled to by law. We understand this may be a concern to some and we are actively investigating ways we can remove this ability in a manner which still allows us to operate effectively. 
-          %p
-            You are required to use a valid address to confirm account upon signup - this is a measure to prevent abuse. 
-          %p
-            We use both Google Analytics & Hotjar for tracking engagement and user experience. This is important during the beta phase but will eventually be phased out as we implement our analytics services. You are able to block these services from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
-          %p
-            You can find our privacy policy
-            = link_to 'here', privacy_path
-          %p.mb-5
-            If you should have any concerns or queries please contact us
-            = mail_to 'privacy@faircustodian.com', 'privacy@faircustodian.com'
 
       .form-check.my-3
         = f.check_box :marketing_consent, class: 'form-check-input'
@@ -62,7 +39,27 @@
         = f.check_box :terms_consent, class: 'form-check-input'
         = f.label :terms_consent, class: 'form-check-label'
 
-      
+
+      .card
+        .card-body
+          %h3.mt-5
+            Transparency is important to us so we’d like to make it clear from the outset how we handle your data.
+          %p.mt-3
+            Email messages that are intercepted by the beta platform are not processed outside of initial capture, storage and display on your dashboard.
+          %p
+            We do have plans to add automatic processing of these messages in the future for a variety of purposes, but that will only ever be opt-in and we’ll let you know about those features in advance. We will not use your data in any other way without your explicit consent.
+          %p
+            We can view the content of any emails but have no reason to do so, nor would we without being compelled to by law. We understand this may be a concern to some and we are actively investigating ways we can remove this ability in a manner which still allows us to operate effectively.
+          %p
+            You are required to use a valid address to confirm account upon signup - this is a measure to prevent abuse.
+          %p
+            We use both Google Analytics & Hotjar for tracking engagement and user experience. This is important during the beta phase but will eventually be phased out as we implement our analytics services. You are able to block these services from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
+          %p
+            You can find our privacy policy
+            = link_to 'here', privacy_path
+          %p.mb-5
+            If you should have any concerns or queries please contact us
+            = mail_to 'privacy@faircustodian.com', 'privacy@faircustodian.com'
 
       .actions.my-3
         %center
