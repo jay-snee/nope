@@ -1,6 +1,6 @@
 .row
-  .col-sm-3
-  .col-sm-6
+  .col-sm-2
+  .col-sm-8
     %h2.my-5 Log in
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .field
@@ -15,7 +15,7 @@
             = f.password_field :password, autocomplete: "off", class: 'form-control form-control-lg'
           .col-md-4.col-sm-12
             %h2.pt-1= f.label :password
-        
+
       - if devise_mapping.rememberable?
         .field.my-5
           = f.check_box :remember_me
