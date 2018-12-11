@@ -2,6 +2,11 @@
 a {
   text-decoration: none;
 }
+
+/* line 10, /home/jake/src/faircustodian/beta/app/assets/stylesheets/accounts.scss */
+#marketing_checkbox_label {
+  padding-left: 2%;
+}
 /* line 5, /home/jake/src/faircustodian/beta/app/assets/stylesheets/home.scss */
 #text-block {
   vertical-align: middle;
