@@ -1,27 +1,45 @@
 .stage
-  #home-block.block.block-inverse.block-fill-height{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
+  #home-block.block.block-inverse.block-fill-height.text-center{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
     .container-fluid.py-4.fixed-top
       = render partial: 'front_navbar'
     #text-block.block-xs-middle.pb-5
       .container-fluid
         .row
           .col-sm-12.col-lg-6
-            %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '100%', height: '100%')
-
+        %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '50%', height: '50%')
+        %h2.text-muted.my-3 The simple way to take control of your data
+        = link_to 'Get started', new_user_registration_path, class: 'btn btn-secondary btn-lg'
+  
   #info-block.block.block-secondary
     .container.text-center
-      .row.mb-3
+      .row.my-5
+        .col-sm-2
+        .col-s-8
+          %h2 
+            It’s your email address.  You choose how it’s being used. 
+
+
+      .row.my-5
         .col-sm-4.px-3.mb-3
-          %h2 1. Keep your inbox clear and information safe
-          = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
-          %p Don't hand over your personal email when you sign up to a website, use our service to handle your email and keep your personal inbox clear for the important things.
-        .col-sm-4.px-3.mb-3
-          %h2 2. Use your Fair Custodian email addresses
           = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
-          %p Create a profile with FairCustodian to generate a masked email address to use online.
+          %h3 Easy control of your online data
+          %p There can be an uncomfortable feeling when you sign in to a website: How will my email address be used? Should I have read all of the terms? Is this website secure? Fair Custodian helps you take back control
         .col-sm-4.px-3.mb-3
-          %h2 3. Sign up and protect your identity
+          = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
+          %h3 Relax about data security, privacy and shared information
+          %p 
+            Because sharing your email address online shouldn’t feel like a gamble, Fair Custodian lets you 
+            %strong create email addresses
+            for one off use or specific service types - if you stop using the service, simply 
+            %strong delete your email address
+            and relax
+        .col-sm-4.px-3.mb-3
           = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
-          %p Sign up to the third party website using the masked email to protect your identity.
+          %h3 How login should be done
+          %p 
+            We believe this is the right and fair way to login. Use Fair Custodian to create up to 
+            %strong three free email addresses. 
+            Use them for a clear, simple and secure way to access online services and keep control. 
+
 
 
