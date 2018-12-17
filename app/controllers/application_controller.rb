@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
     
       es_log_data(response_data, 'error')
 
-      render template: 'errors/500', status: 500, layout: 'front', locals: {exception: exception}
+      render template: 'errors/500', status: 500, layout: 'front-page', locals: {exception: exception}
     end
 
     # 404s
@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
       
         es_log_data(response_data, 'not-found')
 
-        render template: 'errors/404', status: 404, layout: 'front', locals: {exception: exception}
+        render template: 'errors/404', status: 404, layout: 'front-page', locals: {exception: exception}
       end
     end
   end
