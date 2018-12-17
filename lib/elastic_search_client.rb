@@ -19,11 +19,14 @@ class ElasticSearchClient
       path += "?scroll=#{params[:scroll]}"
     end
 
-
-    CONNECTION.run_request \
-      method.downcase.to_sym,
-      path,
-      ( body ? MultiJson.dump(body): nil ),
-      {'Content-Type' => 'application/json'}
+    begin
+      CONNECTION.run_request \
+        method.downcase.to_sym,
+        path,
+        ( body ? MultiJson.dump(body): nil ),
+        {'Content-Type' => 'application/json'}
+    rescue Faraday::ConnectionFailed
+      return false
+    end
   end
 end
