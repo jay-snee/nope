@@ -1,8 +1,9 @@
-%nav.navbar.navbar-dark.navbar-expand-md
+%nav#fc-navbar.navbar.navbar-expand-md.navbar-light.bg-light
   %a.navbar-brand{href: '/'}
+    = image_tag('FC_Logo_Grad_Blk.png', height: '30')
 
   %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
-    %span.navbar-toggler-icon
+    %span#hamburger.navbar-toggler-icon
 
   #navbarSupportedContent.collapse.navbar-collapse
     .d-block.d-sm-none.ml-auto
