@@ -82,15 +82,13 @@ class ApplicationController < ActionController::Base
       
       if data.has_key? 'ip'
         index_response = client.index(
-          index: 'data-requests', 
-          type: request_type,  
+          index: "data-#{request_type}-#{Date.current.to_s}"
           body: data,
           pipeline: 'geoip'
         )
       else
         index_response = client.index(
-          index: 'data-requests', 
-          type: request_type,  
+          index: "data-#{request_type}-#{Date.current.to_s}"
           body: data
         )
       end
