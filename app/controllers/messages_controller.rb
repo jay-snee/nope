@@ -8,7 +8,9 @@ class MessagesController < ApplicationController
 
   def destroy
     @message =current_user.messages.find params[:id]
-    @message.destroy
+    if @message.destroy
+      Processing::EventJob.perform_later("message destroyed", 'lifecycle', false)
+    end
 
     redirect_to root_path, notice: 'Message destroyed'
   end

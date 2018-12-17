@@ -17,7 +17,7 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
-  after_create :send_to_websand, :generate_default_profiles
+  after_create :send_to_websand, :generate_default_profiles, :notify_registration
 
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
@@ -48,16 +48,7 @@ class User < ApplicationRecord
   end
 
   def after_confirmation
-    if Rails.env.production?
-      response = HTTParty.post(
-        ENV['SLACK_WEBHOOK_URL'],
-        body: {
-          payload: {
-            text: email
-          }.to_json
-        }
-      )
-    end
+    Processing::EventJob.perform_later("new user confirmed - #{email}", 'sign up', true)
   end
 
   def can_create_profile?
@@ -73,6 +64,15 @@ class User < ApplicationRecord
   def cancel_stripe_subscription
     stripe_subscription.delete
     update(stripe_subscription_id: nil)
+    Processing::EventJob.perform_later("subscripton cancelled - #{email}", 'subscription', true)
+  end
+
+  def notify_registration
+    Processing::EventJob.perform_later("new user registration - #{email}", 'sign up', true)
+  end
+
+  def after_database_authentication
+    Processing::EventJob.perform_later("new login - #{email}", 'login', true)
   end
 
 end
