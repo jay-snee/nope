@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # before_action :log_request, unless: :devise_controller?
-  # after_action :log_response, unless: :devise_controller?
+  before_action :log_request, unless: :devise_controller?
+  after_action :log_response, unless: :devise_controller?
 
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
