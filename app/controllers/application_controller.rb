@@ -62,8 +62,7 @@ class ApplicationController < ActionController::Base
   def log_response
     response_data = {
       status: response.code,
-      message: response.message,
-      tenant: @current_tenant
+      message: response.message
     }
 
     response_data[:user] = current_user.email unless current_user.nil?
@@ -96,6 +95,7 @@ class ApplicationController < ActionController::Base
         )
       end
     rescue Faraday::ConnectionFailed
+      puts "ELASTIC: FARADAY CONNECTION FAILED"
       return false
     end
   end
