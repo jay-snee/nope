@@ -74,25 +74,29 @@ class ApplicationController < ActionController::Base
   private
 
   def log_data(data, request_type)
-    return true if Rails.env.test?
+    begin
+      return true if Rails.env.test?
 
-    client = ElasticSearchClient.new
-    
-    data[:request_time] = DateTime.now.iso8601
-    
-    if data.has_key? 'ip'
-      index_response = client.index(
-        index: 'data-requests', 
-        type: request_type,  
-        body: data,
-        pipeline: 'geoip'
-      )
-    else
-      index_response = client.index(
-        index: 'data-requests', 
-        type: request_type,  
-        body: data
-      )
+      client = ElasticSearchClient.new
+      
+      data[:request_time] = DateTime.now.iso8601
+      
+      if data.has_key? 'ip'
+        index_response = client.index(
+          index: 'data-requests', 
+          type: request_type,  
+          body: data,
+          pipeline: 'geoip'
+        )
+      else
+        index_response = client.index(
+          index: 'data-requests', 
+          type: request_type,  
+          body: data
+        )
+      end
+    rescue Faraday::ConnectionFailed
+      return false
     end
   end
 
