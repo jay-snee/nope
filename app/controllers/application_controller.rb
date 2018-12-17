@@ -84,16 +84,18 @@ class ApplicationController < ActionController::Base
         index_response = client.index(
           index: "data-#{request_type}-#{Date.current.to_s}",
           body: data,
-          pipeline: 'geoip'
+          pipeline: 'geoip',
+          type: request_type
         )
       else
         index_response = client.index(
           index: "data-#{request_type}-#{Date.current.to_s}",
-          body: data
+          body: data,
+          type: request_type
         )
       end
     rescue Faraday::ConnectionFailed
-      puts "ELASTIC: FARADAY CONNECTION FAILED"
+      puts "[ERROR][ELASTIC] FARADAY CONNECTION FAILED"
       return false
     end
   end
