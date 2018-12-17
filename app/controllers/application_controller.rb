@@ -8,49 +8,6 @@ class ApplicationController < ActionController::Base
 
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
-  ### Rescue blocks for rendering 500/404 pages
-  if Rails.env.production?
-    # Catch all
-    rescue_from StandardError do |exception|
-      response_data = {
-        status: 500,
-        message: exception.message,
-        tenant: @current_tenant,
-        backtrace: exception.backtrace[0]
-      }
-
-      response_data[:user] = current_user.email unless current_user.nil?
-    
-      es_log_data(response_data, 'error')
-
-      render template: 'errors/500', status: 500, layout: 'front-page', locals: {exception: exception}
-    end
-
-    # 404s
-
-    NOT_FOUND_ERRORS = [
-      ActionController::RoutingError,
-      ActiveRecord::RecordNotFound
-    ]
-
-    NOT_FOUND_ERRORS.each do |error|
-      rescue_from error do |exception|
-        response_data = {
-          status: 404,
-          message: exception.message,
-          tenant: @current_tenant,
-          backtrace: exception.backtrace[0]
-        }
-
-        response_data[:user] = current_user.email unless current_user.nil?
-      
-        es_log_data(response_data, 'not-found')
-
-        render template: 'errors/404', status: 404, layout: 'front-page', locals: {exception: exception}
-      end
-    end
-  end
-
   def log_request
     header_strings = [
     	"Authorization", 
