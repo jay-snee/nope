@@ -82,3 +82,5 @@ gem 'faker' # for generating the address strings
 gem "aws-sdk-s3", require: false
 
 gem 'prometheus-client'
+
+gem 'rails_admin', '~> 1.3'

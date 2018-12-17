@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
   def log_request
+    return false unless Rails.env.production?
+
     header_strings = [
     	"Authorization", 
     	"SCRIPT_NAME", 
@@ -60,6 +62,7 @@ class ApplicationController < ActionController::Base
   end
 
   def log_response
+    return false unless Rails.env.production?
     response_data = {
       status: response.code,
       message: response.message
