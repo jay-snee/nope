@@ -111,5 +111,4 @@ class ApplicationController < ActionController::Base
   def unfiltered_params
     params.permit!.to_unsafe_h
   end
-
 end
