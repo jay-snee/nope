@@ -76,7 +76,7 @@ class ApplicationController < ActionController::Base
     begin
       return true if Rails.env.test?
 
-      client = ElasticSearchClient.new
+      client = Elasticsearch::Client.new url: ENV['ELASTICSEARCH_CLUSTER_URL'], log: true
       
       data[:request_time] = DateTime.now.iso8601
       
