@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
 
       if @profile.save
         Processing::EventJob.perform_later("profile created", 'lifecycle', false)
-        redirect_to @profile, notice: "New profile '#{@profile.name}' created"
+        redirect_to @profile, notice: "new profile created - '#{@profile.name}'"
       else
         redirect_to root_path, alert: "Nope, that didn't work"
       end
