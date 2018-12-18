@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :log_request, unless: :devise_controller?
   after_action :log_response, unless: :devise_controller?
 
+  after_action :set_user_last_seen
+
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
   def log_request
@@ -113,5 +115,10 @@ class ApplicationController < ActionController::Base
 
   def unfiltered_params
     params.permit!.to_unsafe_h
+  end
+
+  def set_user_last_seen
+    return false if current_user.nil?
+    current_user.update(last_seen: DateTime.now)
   end
 end

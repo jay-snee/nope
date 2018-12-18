@@ -4,27 +4,29 @@
       .container-fluid
         .row
           .col-sm-12.col-lg-6
-        %h1.block-title= image_tag('FC_Logo_Wht.svg', width: '50%', height: '50%')
+        %h1.block-title.text-primary Making Login Fair
         %h2.text-muted.my-3 The simple way to take control of your data
-        = link_to 'Get started', new_user_registration_path, class: 'btn btn-primary btn-lg'
+        = link_to 'Get started', new_user_registration_path, class: 'btn btn-outline-primary btn-lg px-4 my-5'
 
   #info-block.block.block-secondary
     .container.text-center
-      .row.my-5
+      .row
         .col-sm-2
-        .col-s-8
+        .col-sm-8
           %h2
-            It’s your email address. You choose how it’s being used.
+            It’s your email address. 
+            %br
+            You choose how it’s being used.
 
 
       .row.my-5
         .col-sm-4.px-3.mb-3
           = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
-          %h3.pb-5 Easy control of your online data
+          %h3 Easy control of your online data
           %p There can be an uncomfortable feeling when you sign in to a website: How will my email address be used? Should I have read all of the terms? Is this website secure? Fair Custodian helps you take back control.
         .col-sm-4.px-3.mb-3
           = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
-          %h3.pb-4 Relax about data security, privacy and shared information
+          %h3 Relax about data security, privacy and shared information
           %p
             Because sharing your email address online shouldn’t feel like a gamble, Fair Custodian lets you
             %strong create email addresses
@@ -33,7 +35,7 @@
             and relax.
         .col-sm-4.px-3.mb-3
           = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
-          %h3.pb-5 How login should be done
+          %h3 How login should be done
           %p
             We believe this is the right and fair way to login. Use Fair Custodian to create up to
             %strong three free email addresses.

@@ -1,7 +1,7 @@
-#dashboard
+#dashboard.mx-5
   .row.mb-5
     .col-sm-4
-      %h3.mt-2 
+      %h3.mt-2
         Addresses
         - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
           = "#{current_user.profiles.size}/#{current_user.max_profiles}"
