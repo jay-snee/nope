@@ -10,8 +10,6 @@ class ApplicationController < ActionController::Base
 
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
-  layout 'front-page', if: :devise_controller?
-
   def log_request
     return false unless Rails.env.production?
 
