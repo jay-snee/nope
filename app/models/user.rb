@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  if !Rails.env.test?
+  if Rails.env.production?
     # Elasticsearch-model setup
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks

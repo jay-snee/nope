@@ -8618,7 +8618,7 @@ textarea {
           transform: rotate(2deg); }
 
 .block-inverse .block-bg-img {
-  background-color: #000000; }
+  background-color: #050505; }
 
 .block-bg-img-top {
   background-position: top; }
@@ -8648,7 +8648,7 @@ textarea {
 
 .block-inverse {
   color: #fff;
-  background-color: #000; }
+  background-color: #050505; }
   .block-inverse.block-bordered:before,
   .block-inverse hr {
     border-color: rgba(255, 255, 255, 0.2); }
