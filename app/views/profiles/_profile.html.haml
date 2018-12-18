@@ -6,7 +6,7 @@
 				.badge.badge-info= profile.messages.size
 		.p-2.ml-auto
 			= link_to edit_profile_path(profile), class: 'btn btn-outline-info', remote: true do
-				= image_tag(asset_url('iconic/cog.svg'))
+				%i.fas.fa-cog
 			%button.btn.btn-outline-info.copy-button.ml-2{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
-				= image_tag(asset_url('iconic/clipboard.svg'))
+				%i.fas.fa-copy
 
