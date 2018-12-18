@@ -7,11 +7,19 @@
 }
 
 #home-block {
-	background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: right top;
 }
 
 .front-nav {
-	font-size: 18px;
-	font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#dashboard {
+	min-height: 1000px;
+}
+
+#login-block {
+	background-color: #050505;
 }

@@ -41,6 +41,8 @@ class Api::DataController < ApiController
       end
     end
 
+    Processing::EventJob.perform_later("inbound message", 'data', false)
+
     render json: { status: "ok" }, status: 200
   end
 
