@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_183838) do
+ActiveRecord::Schema.define(version: 2018_12_18_100929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,8 +147,8 @@ ActiveRecord::Schema.define(version: 2018_12_10_183838) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.string "stripe_customer_id"
-    t.string "stripe_subscription_id"
+    t.string "stripe_customer_id", default: ""
+    t.string "stripe_subscription_id", default: ""
     t.integer "max_profiles", default: 3
     t.boolean "marketing_consent", default: false
     t.boolean "terms_consent", default: false

@@ -347,7 +347,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Work sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 500;
   line-height: 1.2;
   color: #2D3238; }
@@ -3234,7 +3234,7 @@ tbody.collapse.show {
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
-  border: 1px solid transparent;
+  border: 1px solid black;
   border-radius: 0.25rem; }
   .navbar-toggler:hover, .navbar-toggler:focus {
     text-decoration: none; }
@@ -8618,7 +8618,7 @@ textarea {
           transform: rotate(2deg); }
 
 .block-inverse .block-bg-img {
-  background-color: #000000; }
+  background-color: #050505; }
 
 .block-bg-img-top {
   background-position: top; }
@@ -8648,7 +8648,7 @@ textarea {
 
 .block-inverse {
   color: #fff;
-  background-color: #000; }
+  background-color: #050505; }
   .block-inverse.block-bordered:before,
   .block-inverse hr {
     border-color: rgba(255, 255, 255, 0.2); }

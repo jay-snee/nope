@@ -1,20 +1,25 @@
-%nav.navbar.navbar-dark.navbar-expand-md
+%nav#fc-navbar.navbar.navbar-expand-md.navbar-light.bg-light
   %a.navbar-brand{href: '/'}
+    = image_tag('FC_Logo_Grad_Blk.png', height: '30')
 
   %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbarSupportedContent'}}
-    %span.navbar-toggler-icon
+    %span#hamburger.navbar-toggler-icon
 
   #navbarSupportedContent.collapse.navbar-collapse
-    .d-block.d-sm-none
+    .d-block.d-sm-none.ml-auto
       %ul.nav.nav-bordered.nav-stacked.flex-column{style: 'background-color: #ddd; border-radius: 4px'}
+        %li.nav-item.my-3.front-nav
+          = link_to 'Blog', '#'
         %li.nav-item.my-3.front-nav
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link'
         %li.nav-item.my-3.front-nav
           = link_to 'Sign in', new_user_session_path, class: 'nav-link'
 
-    .d-none.d-sm-block
+    .d-none.d-sm-block.ml-auto
       %ul.navbar-nav.ml-md-auto
+        %li.nav-item.my-3.front-nav
+          = link_to 'Blog', '#'
         %li.nav-item.mx-3.front-nav
-          = link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-secondary'
+          = link_to 'Sign up', new_user_registration_path, class: 'btn btn-secondary'
         %li.nav-item.mx-3.front-nav
-          = link_to 'Sign in', new_user_session_path, class: 'btn btn-outline-secondary'
+          = link_to 'Sign in', new_user_session_path, class: 'btn btn-secondary'

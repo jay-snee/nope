@@ -20,6 +20,7 @@ class ChargesController < ApplicationController
     )
 
     flash[:notice] = 'Thank you! We\'ll updgrade your subscription shortly, if you haven\'t recieved your upgrade in a couple of minutes please do harass us on twitter - @FairCustodianUK' 
+    Processing::EventJob.perform_later("subscription created - #{params[:stripeEmail]}", 'subscription', false)
     redirect_to root_path
   rescue Stripe::CardError => e
     flash[:error] = e.message

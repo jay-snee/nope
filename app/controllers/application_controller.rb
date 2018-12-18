@@ -3,12 +3,18 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # before_action :log_request, unless: :devise_controller?
-  # after_action :log_response, unless: :devise_controller?
+  before_action :log_request, unless: :devise_controller?
+  after_action :log_response, unless: :devise_controller?
+
+  after_action :set_user_last_seen
 
   BANNED_PARAMS = ["email", "password", "password_confirmation"]
 
+  layout 'front-page', if: :devise_controller?
+
   def log_request
+    return false unless Rails.env.production?
+
     header_strings = [
     	"Authorization", 
     	"SCRIPT_NAME", 
@@ -60,10 +66,10 @@ class ApplicationController < ActionController::Base
   end
 
   def log_response
+    return false unless Rails.env.production?
     response_data = {
       status: response.code,
-      message: response.message,
-      tenant: @current_tenant
+      message: response.message
     }
 
     response_data[:user] = current_user.email unless current_user.nil?
@@ -74,25 +80,30 @@ class ApplicationController < ActionController::Base
   private
 
   def log_data(data, request_type)
-    return true if Rails.env.test?
+    begin
+      return true if Rails.env.test?
 
-    client = ElasticSearchClient.new
-    
-    data[:request_time] = DateTime.now.iso8601
-    
-    if data.has_key? 'ip'
-      index_response = client.index(
-        index: 'data-requests', 
-        type: request_type,  
-        body: data,
-        pipeline: 'geoip'
-      )
-    else
-      index_response = client.index(
-        index: 'data-requests', 
-        type: request_type,  
-        body: data
-      )
+      client = Elasticsearch::Client.new url: ENV['ELASTICSEARCH_CLUSTER_URL'], log: true
+      
+      data[:request_time] = DateTime.now.iso8601
+      
+      if data.has_key? 'ip'
+        index_response = client.index(
+          index: "data-#{request_type}-#{Date.current.to_s}",
+          body: data,
+          pipeline: 'geoip',
+          type: request_type
+        )
+      else
+        index_response = client.index(
+          index: "data-#{request_type}-#{Date.current.to_s}",
+          body: data,
+          type: request_type
+        )
+      end
+    rescue Faraday::ConnectionFailed
+      puts "[ERROR][ELASTIC] FARADAY CONNECTION FAILED"
+      return false
     end
   end
 
@@ -108,4 +119,9 @@ class ApplicationController < ActionController::Base
     params.permit!.to_unsafe_h
   end
 
+  def set_user_last_seen
+    return false if current_user.nil?
+    return false unless Rails.env.production?
+    current_user.update(last_seen: DateTime.now)
+  end
 end
