@@ -6,35 +6,38 @@
       = link_to @message.profile.name, @message.profile
     %li.breadcrumb-item.active{aria: {current: 'page'}}
       = @message.subject
-.row
-  .col-sm-12
-    .d-flex.justify-content-center.align-items-center
-      .mr-auto.p-2 
-        %h1= @message.subject
-        %h5= @message.from
-      .p-2
-        = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
-%hr
 
-- unless @message.files.empty?
+#page.p-5
+  .row
+    .col-sm-12
+      .d-flex.justify-content-center.align-items-center
+        .mr-auto.p-2 
+          %h1= @message.subject
+          %h5= @message.from
+        .p-2
+          = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
+  %hr
+
+  - unless @message.files.empty?
+    .row.my-3
+      .col-sm-14
+        .p-5
+          %h3
+            %span.icon.icon-attachment
+            Attachments
+            = "(#{@message.files.size})"
+          %ul.list-group
+            - @message.files.each do |file|
+              %li.list-group-item
+                = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
+
   .row.mt-3
-    .col-sm-14
-      %h3
-        %span.icon.icon-attachment
-        Attachments
-        = "(#{@message.files.size})"
-      %ul.list-group
-        - @message.files.each do |file|
-          %li.list-group-item
-            = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
-
-.row.mt-3
-  .col-sm-12
-    - unless @message.html.nil?
-      .card
-        .card-body
-          = @message.html.html_safe
-    - else
-      .card
-        .card-body
-          = @message.text
+    .col-sm-12
+      - unless @message.html.nil?
+        .card
+          .card-body.p-5
+            = @message.html.html_safe
+      - else
+        .card
+          .card-body.p-5
+            = @message.text
