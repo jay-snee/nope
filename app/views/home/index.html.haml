@@ -14,7 +14,7 @@
         .col-sm-2
         .col-sm-8
           %h2
-            It’s your email address. 
+            It’s your email address.
             %br
             You choose how it’s being used.
 
@@ -41,5 +41,37 @@
             %strong three free email addresses.
             Use them for a clear, simple and secure way to access online services and keep control.
 
-
-
+  .block.app-price-plans.block-bordered
+    .container.text-center
+      .row.mb-5.justify-content-center
+        .col-10.col-md-8.col-lg-6
+          %h2.text-uppercase.mb-2 Pricing
+      .row
+        .col-md-6.px-4.pb-2.mb-5
+          .px-2.mb-2
+            %h3.text-uppercase.mb-4 Free
+          %ul.list-unstyled.list-bordered.text-xs-left.my-4
+            %li.py-4
+              %strong 3
+              profiles
+            %li.py-4
+              %strong Rename
+              profiles to match your use
+            %li.py-4
+              %strong Unlimited
+              incoming emails
+            = link_to 'Start a free account', free_path, class: 'button btn btn-lg btn-primary btn-block'
+        .col-md-6.px-4.pb-1.mb-5
+          .px-2
+            %h3.text-uppercase.mb-4 Premium
+          %ul.list-unstyled.list-bordered.text-xs-left.my-4
+            %li.py-4
+              %strong 30
+              profiles
+            %li.py-4
+              %strong Delete and create
+              profiles
+            %li.py-4
+              %strong Everything
+              in the free tier
+            = link_to 'Start a premium account', premium_path, class: 'button btn btn-lg btn-primary btn-block'

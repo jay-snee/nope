@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'home/dashboard'
   get '/privacy', to: 'home#privacy'
+  get '/free', to: 'home#free_acct'
+  get '/premium', to: 'home#premium_acct'
 
   resources :charges
 
