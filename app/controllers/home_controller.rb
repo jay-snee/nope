@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :privacy, :premium_acct, :free_acct]
+  before_action :authenticate_user!, except: [:index, :privacy, :premium_acct, :free_acct, :terms]
 
   def index
     if current_user
@@ -21,6 +21,9 @@ class HomeController < ApplicationController
   def premium_acct
     Processing::EventJob.perform_later 'Signup premium', 'signup_pref', true
     redirect_to new_user_registration_path
+  end
+
+  def terms
   end
 
   def dashboard
