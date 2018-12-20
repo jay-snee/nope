@@ -1,4 +1,4 @@
-#login-block.block.block-inverse
+#login-block.block.block-inverse.pt-5
   .row
     .col-sm-5.offset-sm-1
       %h2.my-4 Sign up
@@ -9,7 +9,7 @@
             .col-md-8.col-sm-12
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
             .col-md-4.col-sm-12
-              %h2= f.label :email
+              %h3= f.label :email
 
 
         .field.my-4
@@ -17,7 +17,7 @@
             .col-md-8.col-sm-12
               = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control'
             .col-md-4.col-sm-12
-              %h2= f.label :password
+              %h3= f.label :password
           - if @minimum_password_length
             %em
               (#{@minimum_password_length} characters minimum)
@@ -27,21 +27,27 @@
             .col-md-8.col-sm-12
               = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
             .col-md-4.col-sm-12
-              %h2= f.label :password_confirmation
+              %h3= f.label :password_confirmation
 
-        .form-check.my-3
+        .form-check
           = f.check_box :marketing_consent, class: 'form-check-input'
-          %label.form-check-label#marketing_checkbox_label{for: 'user_marketing_consent'}
-            If you'd like to join our mailing list to hear about service updates and receive other marketing material, please opt-in here.
+          %label.form-check-label.pl-3{for: 'user_marketing_consent'}
+            If you
+            %strong want to join our mailing list
+            to hear about service updates and receive other marketing material, please opt-in here.
         %br
 
-        .form-check.d-none
+        .form-check
           = f.check_box :terms_consent, class: 'form-check-input'
-          = f.label :terms_consent, class: 'form-check-label'
+          %label.form-check-label.pl-3#terms_consent{for: 'terms_consent'}
+            I agree to the
+            = link_to 'Terms and Conditions', terms_path
+            and have read the
+            = link_to 'Privacy Policy', privacy_path
 
         .actions.my-3
           %center
-            = f.submit "Sign up", class: 'btn btn-primary btn-lg my-4'
+            = f.submit "Sign up", class: 'btn btn-primary btn-lg my-4 disabled'
       .mb-5
         = render "devise/shared/links"
     .col-sm-5.offset-sm-1.pr-5
