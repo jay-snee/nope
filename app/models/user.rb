@@ -14,7 +14,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
-  has_many :profiles, dependent: :destroy, order: 'created_at DESC'
+  has_many :profiles, dependent: :destroy
   has_many :messages, dependent: :destroy
 
   has_many :access_grants, class_name: "Doorkeeper::AccessGrant",
@@ -47,7 +47,7 @@ class User < ApplicationRecord
   end
 
   def generate_default_profiles
-    categories = ['Profile #1', 'Profile #2', 'Profile #3']
+    categories = ['Profile #3', 'Profile #2', 'Profile #1']
     categories.each do |c|
       profile = profiles.create!(name: c)
       profile.generate_email
