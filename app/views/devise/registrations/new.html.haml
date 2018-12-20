@@ -9,7 +9,7 @@
             .col-md-8.col-sm-12
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
             .col-md-4.col-sm-12
-              %h2= f.label :email
+              %h3= f.label :email
 
 
         .field.my-4
@@ -17,7 +17,7 @@
             .col-md-8.col-sm-12
               = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control'
             .col-md-4.col-sm-12
-              %h2= f.label :password
+              %h3= f.label :password
           - if @minimum_password_length
             %em
               (#{@minimum_password_length} characters minimum)
@@ -27,7 +27,7 @@
             .col-md-8.col-sm-12
               = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
             .col-md-4.col-sm-12
-              %h2= f.label :password_confirmation
+              %h3= f.label :password_confirmation
 
         .form-check
           = f.check_box :marketing_consent, class: 'form-check-input'
