@@ -14,7 +14,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :trackable
 
-  has_many :profiles, dependent: :destroy
+  has_many :profiles, dependent: :destroy, order: 'created_at DESC'
   has_many :messages, dependent: :destroy
 
   has_many :access_grants, class_name: "Doorkeeper::AccessGrant",
