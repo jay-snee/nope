@@ -1,10 +1,10 @@
 #login-block.block.block-inverse
   .row
     .col-sm-5.offset-sm-1
-      %h2.my-5 Sign up
+      %h2.my-4 Sign up
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
-        .field.my-5
+        .field.my-4
           .row
             .col-md-8.col-sm-12
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
@@ -12,7 +12,7 @@
               %h2= f.label :email
 
 
-        .field.my-5
+        .field.my-4
           .row
             .col-md-8.col-sm-12
               = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control'
@@ -22,7 +22,7 @@
             %em
               (#{@minimum_password_length} characters minimum)
 
-        .field.my-5
+        .field.my-4
           .row
             .col-md-8.col-sm-12
               = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
@@ -41,7 +41,7 @@
 
         .actions.my-3
           %center
-            = f.submit "Sign up", class: 'btn btn-primary btn-lg my-5'
+            = f.submit "Sign up", class: 'btn btn-primary btn-lg my-4'
       .mb-5
         = render "devise/shared/links"
     .col-sm-5.offset-sm-1.pr-5
