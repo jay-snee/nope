@@ -39,7 +39,7 @@
 
         .form-check
           = f.check_box :terms_consent, class: 'form-check-input'
-          %label.form-check-label.pl-3#terms_consent{for: 'terms_consent'}
+          %label.form-check-label.pl-3#terms_consent{for: 'user_terms_consent'}
             I agree to the
             = link_to 'Terms and Conditions', terms_path
             and have read the
