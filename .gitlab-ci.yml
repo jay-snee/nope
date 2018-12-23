@@ -12,7 +12,7 @@ deploy:
 
 staging:
   image: ilyasemenov/gitlab-ci-git-push
-  stage: staging
+  stage: deploy
   environment: staging
   only:
     - master
