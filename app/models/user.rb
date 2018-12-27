@@ -25,7 +25,10 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
-  after_create :send_to_websand, :generate_default_profiles, :notify_registration, :generate_referral_code
+  before_validation :generate_referral_code
+
+  after_create :send_to_websand, :generate_default_profiles, :notify_registration
+
 
   validates :referral_code, uniqueness: true
 
@@ -88,7 +91,7 @@ class User < ApplicationRecord
 
   def generate_referral_code
     code = ('a'..'z').to_a.shuffle[0,8].join
-    update(referral_code: code)
+    self.referral_code = code
   end
 
 end

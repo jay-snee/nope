@@ -29,12 +29,15 @@
             .col-md-4.col-sm-12
               %h3= f.label :password_confirmation
 
-        .field.my-5
-          .row
-            .col-md-8.col-sm-12
-              = text_field_tag :referral_code, params[:referral_code].nil? ? '' : params[:referral_code], autocomplete: "off", class: 'form-control form-control-lg'
-            .col-md-4.col-sm-12
-              %h2= label_tag "Referral Code"
+        - if @referrer_code.nil?
+          .field.my-5
+            .row
+              .col-md-8.col-sm-12
+                = text_field_tag :referrer_code, '', autocomplete: "off", class: 'form-control form-control-lg'
+              .col-md-4.col-sm-12
+                %h2= label_tag "Referral Code"
+        - else
+          = hidden_field_tag :referrer_code, @referrer_code.to_s
 
         .form-check
           = f.check_box :marketing_consent, class: 'form-check-input'

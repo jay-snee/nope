@@ -1,5 +1,12 @@
 class RegistrationsController < Devise::RegistrationsController
   
+  layout 'front-page'
+
+  def new
+    @referrer_code = params[:referrer_code]
+    super
+  end
+
   def create
     build_resource(sign_up_params)
     resource.save
@@ -12,7 +19,7 @@ class RegistrationsController < Devise::RegistrationsController
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
         expire_data_after_sign_in!
-        respond_with resource, location: after_inactive_sign_up_path_for(resource)
+        respond_with resource, location: after_inactive_sign_up_path_for(resource, params[:referrer_code])
       end
     else
       clean_up_passwords resource
@@ -23,8 +30,8 @@ class RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def after_inactive_sign_up_path_for(resource)
-    logger.info 'firing inactive sign up path'
-    new_user_session_path # Or :prefix_to_your_route
+  def after_inactive_sign_up_path_for(resource, referrer_code)
+    Users::ReferralJob.perform_later(resource.id, referrer_code)
+    new_user_session_path
   end
 end
