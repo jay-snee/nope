@@ -3,12 +3,9 @@
     .col-sm-10.offset-sm-1
       %h1.mb-3 Terms and Conditions
 
-      %small.mb-3 Last updated: December 20, 2018
+      %small.text-muted.mb-3 Last updated: December 20, 2018
 
-      %br
-      %br
-
-      %p Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the faircustodian.com website (the "Service") operated by Fair Custodian Limited ("us", "we", or "our").
+      %p.mt-3 Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the faircustodian.com website (the "Service") operated by Fair Custodian Limited ("us", "we", or "our").
       %p Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
       %p By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
 
@@ -21,7 +18,9 @@
       %h2 Subscriptions
 
       %p Some parts of the Service are billed on a subscription basis ("Subscription(s)"). You will be billed in advance on a recurring and periodic basis ("Billing Cycle").
-      %p At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or Fair Custodian cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting us at subscriptions@faircustodian.com
+      %p 
+        At the end of each Billing Cycle, your Subscription will automatically renew under the exact same conditions unless you cancel it or Fair Custodian cancels it. You may cancel your Subscription renewal either through your online account management page or by contacting us at 
+        = mail_to 'subscriptions@faircustodian.com', 'subscriptions@faircustodian.com', subject: '[subscription query]'
       %p A valid payment method, including credit card, is required to process the payment for your Subscription. You shall provide Fair Custodian with accurate and complete billing information and a valid payment method information.
 
       %h2 Fee Changes
@@ -42,9 +41,9 @@
       %p Fair Custodian shall retain ownership of the copyright and all other intellectual property rights (including, but not limited to, any patent, trade mark, service mark, domain name, trade name or copyright and any application for registration or protection of any of the same anywhere in the world) in the product of the Services the Instance and the software upon which it is based (“the Software”).
       %p Without prejudice to the generality of the forgoing, you shall not:
       %ul
-      %li use, copy or transfer the Software (or any part of it) except as permitted by this Agreement; or
-      %li alter, adapt, merge, modify or translate the Software (or any part of it) in any way for any purpose; or
-      %li reverse-engineer, disassemble or decompile the Software (or any part of it).
+        %li use, copy or transfer the Software (or any part of it) except as permitted by this Agreement; or
+        %li alter, adapt, merge, modify or translate the Software (or any part of it) in any way for any purpose; or
+        %li reverse-engineer, disassemble or decompile the Software (or any part of it).
       %p Without prejudice, we shall own the copyright in the design and layout of the Instance. All goodwill arising in connection with the Instance shall belong to us.
 
       %p For the purposes of delivering services to you or other clients, we shall be entitled to use, develop and share knowledge, experience and skills of general application gained through performing the Services.
@@ -112,7 +111,7 @@
 
       %p
         If you have any questions about these Terms, please contact us at
-        = link_to 'hello@faircustodian.com', 'mailto:hello@faircustodian.com'
+        = mail_to 'hello@faircustodian.com', 'hello@faircustodian.com', subject: '[T&Cs Query]'
 
       %h2 Annex 1: Approved Sub-processors
 
@@ -133,4 +132,4 @@
 
       %p
         If you have any questions or comments regarding our sub-processor list, please contact us at
-        = link_to 'privacy@faircustodian.com', 'mailto:privacy@faircustodian.com'
+        = mail_to 'privacy@faircustodian.com', 'privacy@faircustodian.com', subject: '[Privacy Query]'

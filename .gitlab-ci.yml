@@ -9,3 +9,12 @@ deploy:
     - deploy
   script:
     - git-push ssh://git@deis-builder.fcctrl.com:2222/beta.git
+
+staging:
+  image: ilyasemenov/gitlab-ci-git-push
+  stage: deploy
+  environment: staging
+  only:
+    - master
+  script:
+    - git-push ssh://git@deis-builder.fcctrl.com:2222/staging.git
