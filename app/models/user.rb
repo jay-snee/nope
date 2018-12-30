@@ -30,6 +30,7 @@ class User < ApplicationRecord
   after_create :send_to_websand, :generate_default_profiles, :notify_registration
 
   validates :referral_code, uniqueness: true
+  validate :block_our_domain
 
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
@@ -103,6 +104,14 @@ class User < ApplicationRecord
 
   def referred
     User.where(referred_by_id: id).all
+  end
+
+  def block_our_domain
+    if !email.include? ENV['SEND_EMAIL_DOMAIN']
+      return false
+    else
+      errors.add(:email, "can't be a Fair Custodian address")
+    end
   end
 
 end

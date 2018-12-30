@@ -12,7 +12,7 @@ ready = ->
   new ClipboardJS('.copy-button');
 
   $('.copy-button').on 'click', ->
-  	$.growl.notice({ title: "", message: "Email address copied to your clipboard!" })
+  	$.growl.notice({ title: "", message: "Copied to your clipboard!" })
 
 
 
