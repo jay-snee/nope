@@ -29,7 +29,6 @@ class User < ApplicationRecord
 
   after_create :send_to_websand, :generate_default_profiles, :notify_registration
 
-
   validates :referral_code, uniqueness: true
 
   def tokens
@@ -92,6 +91,18 @@ class User < ApplicationRecord
   def generate_referral_code
     code = ('a'..'z').to_a.shuffle[0,8].join
     self.referral_code = code
+  end
+
+  def referred_by
+    begin
+      User.find referred_by_id
+    rescue ActiveRecord::RecordNotFound
+      return nil
+    end
+  end
+
+  def referred
+    User.where(referred_by_id: id).all
   end
 
 end

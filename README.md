@@ -35,3 +35,5 @@ Current environment variables are:
 - FOG_REGION=eu-west-1
 - ASSET_SYNC_GZIP_COMPRESSION=true
 - ASSET_SYNC_MANIFEST=true
+
+- REFERRER_REWARD=3
