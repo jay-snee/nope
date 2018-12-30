@@ -25,7 +25,11 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
+  before_validation :generate_referral_code
+
   after_create :send_to_websand, :generate_default_profiles, :notify_registration
+
+  validates :referral_code, uniqueness: true
 
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
@@ -43,7 +47,8 @@ class User < ApplicationRecord
             "subscribed_at": DateTime.now.iso8601
           } 
         }
-      })
+      }
+    )
   end
 
   def generate_default_profiles
@@ -81,6 +86,23 @@ class User < ApplicationRecord
 
   def after_database_authentication
     Processing::EventJob.perform_later("new login - #{email}", 'login', true)
+  end
+
+  def generate_referral_code
+    code = ('a'..'z').to_a.shuffle[0,8].join
+    self.referral_code = code
+  end
+
+  def referred_by
+    begin
+      User.find referred_by_id
+    rescue ActiveRecord::RecordNotFound
+      return nil
+    end
+  end
+
+  def referred
+    User.where(referred_by_id: id).all
   end
 
 end
