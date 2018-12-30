@@ -1,10 +1,13 @@
 ready = ->
-
+  console.log 'loaded messages'
   if $('#messages-list').length
+    console.log 'list present'
     App.cable.subscriptions.create { channel: "ApplicationCable::ProfilesChannel", id: $('#profile').data('id') },
       received: (data) ->
+        console.log 'message received'
         @prependLine(data)
         $.growl.notice({ title: "New Message!", message: "New message has arrived" })
+        console.log 'message processed'
      
       prependLine: (data) ->
         html = @createLine(data)
