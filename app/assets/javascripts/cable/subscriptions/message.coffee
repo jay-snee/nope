@@ -5,6 +5,7 @@ ready = ->
         @prependLine(data)
         if $('#welcome').length
           $('#welcome').hide()
+          $("#messages-header").removeClass('d-none')
         $.growl.notice({ title: "New Message!", message: "New message has arrived" })
      
       prependLine: (data) ->
