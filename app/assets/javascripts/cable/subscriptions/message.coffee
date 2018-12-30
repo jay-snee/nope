@@ -1,6 +1,6 @@
 ready = ->
 
-  if $('#profile').length
+  if $('#messages-list').length
     App.cable.subscriptions.create { channel: "ApplicationCable::ProfilesChannel", id: $('#profile').data('id') },
       received: (data) ->
         @prependLine(data)
