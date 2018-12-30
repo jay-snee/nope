@@ -47,7 +47,7 @@
         %h3#messages-header.mt-2.d-none All Messages
         %ul#messages-list.list-group{data: {id: current_user.id}}
       - else
-        %h33#messages-header.mt-2 All Messages
+        %h3#messages-header.mt-2 All Messages
         %ul#messages-list.list-group{data: {id: current_user.id}}
           - @messages.order(created_at: :desc).each do |m|
             = render m
