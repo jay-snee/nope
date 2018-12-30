@@ -4,7 +4,7 @@ ready = ->
       received: (data) ->
         @prependLine(data)
         if $('#welcome').length
-          $('#welcome').hide
+          $('#welcome').hide()
         $.growl.notice({ title: "New Message!", message: "New message has arrived" })
      
       prependLine: (data) ->
