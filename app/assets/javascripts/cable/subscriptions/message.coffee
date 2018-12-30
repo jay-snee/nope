@@ -4,6 +4,7 @@ ready = ->
     App.cable.subscriptions.create { channel: "ApplicationCable::ProfilesChannel", id: $('#profile').data('id') },
       received: (data) ->
         @prependLine(data)
+        $.growl.notice({ title: "New Message!", message: "New message has arrived" })
      
       prependLine: (data) ->
         html = @createLine(data)

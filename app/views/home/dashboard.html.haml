@@ -36,11 +36,7 @@
           Share your link
 
       %ul.list-group.mt-2
-        - if @profiles.empty?
-          %li.list-group-item
-            Nothing here yet!
-        - else
-          - @profiles.order(created_at: :desc).each do |p|
+        - @profiles.order(created_at: :desc).each do |p|
             = render p
 
 
@@ -49,6 +45,6 @@
         = render partial: 'home/welcome'
       - else
         %h3.mt-2 All Messages
-        %ul.list-group
+        %ul#messages-list.list-group
           - @messages.order(created_at: :desc).each do |m|
             = render m
