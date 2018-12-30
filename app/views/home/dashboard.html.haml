@@ -45,6 +45,6 @@
         = render partial: 'home/welcome'
       - else
         %h3.mt-2 All Messages
-        %ul#messages-list.list-group
+        %ul#messages-list.list-group{data: {id: current_user.id}}
           - @messages.order(created_at: :desc).each do |m|
             = render m

@@ -2,7 +2,7 @@ ready = ->
   console.log 'loaded messages'
   if $('#messages-list').length
     console.log 'list present'
-    App.cable.subscriptions.create { channel: "ApplicationCable::ProfilesChannel", id: $('#profile').data('id') },
+    App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", id: $('#message-list').data('id') },
       received: (data) ->
         console.log 'message received'
         @prependLine(data)
