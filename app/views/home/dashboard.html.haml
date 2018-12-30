@@ -42,7 +42,9 @@
 
     .col-sm-8
       - if @messages.empty?
-        = render partial: 'home/welcome'
+        #welcome
+          = render partial: 'home/welcome'
+        %ul#messages-list.list-group{data: {id: current_user.id}}
       - else
         %h3.mt-2 All Messages
         %ul#messages-list.list-group{data: {id: current_user.id}}

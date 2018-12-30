@@ -22,10 +22,10 @@
   .row
     .col-sm-12
       %h5 Recent Messages
-      - unless @profile.messages.empty?
-        %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}
+      %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}
+        - unless @profile.messages.empty?
           - @profile.messages.each do |m|
             = render m
-      - else
-        %li.list-group-item
-          %strong Inbox is empty
+        - else
+          %li#welcome.list-group-item
+            %strong Inbox is empty
