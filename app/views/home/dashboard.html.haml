@@ -6,12 +6,12 @@
         - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
           = "#{current_user.profiles.size}/#{current_user.max_profiles}"
 
-      - if current_user.max_profiles > ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i
+      - if current_user.max_profiles > current_user.profiles.count
         = form_for Profile.new, url: profiles_path, html: { class: 'mt-3' } do |f|
           .input-group
             = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new address'
             = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
-      - else
+      - if current_user.stripe_subscription_id.empty?
         .alert.alert-primary.mt-2
           = form_tag charges_path do
             %article

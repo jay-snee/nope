@@ -12,7 +12,7 @@ class Subscription::NotificationJob < ApplicationJob
     
     when "customer.subscription.deleted"
       customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
-      customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"], stripe_subscription_id: nil)
+      customer.update(max_profiles: ENV["SUBSCRIPTION_MIN_PROFILE_COUNT"], stripe_subscription_id: '')
     
     when "customer.created"
     

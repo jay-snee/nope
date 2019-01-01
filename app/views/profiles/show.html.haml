@@ -15,7 +15,7 @@
         .ml-auto
           %button.btn.btn.btn-outline-info.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: @profile.email_address}}}
             Copy Address
-        - if current_user.stripe_subscription_id
+        - if !current_user.stripe_subscription_id.empty? || current_user.admin
           .p-2
             = link_to 'Delete profile', profile_path(@profile), method: :delete, class: 'btn btn-outline-danger', data: {confirm: 'Are you sure you want to delete this profile and all associated messages? You will not be able to reclaim this address in the future.'}
   %hr
