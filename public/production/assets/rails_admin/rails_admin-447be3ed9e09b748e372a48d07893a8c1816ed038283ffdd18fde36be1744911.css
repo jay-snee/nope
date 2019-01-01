@@ -204,7 +204,7 @@
 
 /* line 65, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-widget-header {
-  background: #ededed url(/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 0 repeat-x;
+  background: #ededed url(/production/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 0 repeat-x;
   /* Old browsers */
   background: -moz-linear-gradient(top, #ededed 0%, #c4c4c4 100%);
   /* FF3.6+ */
@@ -236,7 +236,7 @@
 
 /* line 79, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  background: #ededed url(/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 0 repeat-x;
+  background: #ededed url(/production/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 0 repeat-x;
   /* Old browsers */
   background: -moz-linear-gradient(top, #ededed 0%, #c4c4c4 100%);
   /* FF3.6+ */
@@ -279,7 +279,7 @@
   outline: none;
   color: #1c4257;
   border: 1px solid #7096ab;
-  background: #ededed url(/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
+  background: #ededed url(/production/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
   /* Old browsers */
   background: -moz-linear-gradient(top, #b9e0f5 0%, #92bdd6 100%);
   /* FF3.6+ */
@@ -372,42 +372,42 @@
 .ui-icon {
   width: 16px;
   height: 16px;
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
 }
 
 /* line 127, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-widget-content .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
 }
 
 /* line 128, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-widget-header .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_222222_256x240-310ae73efc6774716f0a80ce2141565fddec51702330a8066fd5e220437ae321.png);
 }
 
 /* line 129, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-default .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
 }
 
 /* line 130, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
 }
 
 /* line 131, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-active .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
 }
 
 /* line 132, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-highlight .ui-icon {
-  background-image: url(/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
+  background-image: url(/production/assets/rails_admin/aristo/images/ui-icons_454545_256x240-d59c6da436d1a19aa35bcbf2d400ad160f2b2568fbbfa2f9ebfc192d14025474.png);
 }
 
 /* line 133, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {
-  background: url(/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) -16px 0 no-repeat !important;
+  background: url(/production/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) -16px 0 no-repeat !important;
 }
 
 /* line 134, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
@@ -1023,7 +1023,7 @@
 
 /* line 258, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-icon-info {
-  background: url(/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) 0 0 no-repeat !important;
+  background: url(/production/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) 0 0 no-repeat !important;
 }
 
 /* line 259, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
@@ -1733,7 +1733,7 @@ button.ui-button-icons-only {
   outline: none;
   color: #1c4257;
   border-color: #7096ab;
-  background: #ededed url(/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
+  background: #ededed url(/production/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
   /* Old browsers */
   background: -moz-linear-gradient(top, #b9e0f5 0%, #92bdd6 100%);
   /* FF3.6+ */
@@ -1862,7 +1862,7 @@ input.ui-button::-moz-focus-inner {
 
 /* line 523, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-buttonset .ui-button.ui-state-active {
-  background: #ededed url(/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
+  background: #ededed url(/production/assets/rails_admin/aristo/images/bg_fallback-bad53cee26694a42bdba717337e2de9f997ebf3ded300b8c3ff48ac5192c1903.png) 0 -50px repeat-x;
   /* Old browsers */
   background: -moz-linear-gradient(top, #b9e0f5 0%, #92bdd6 100%);
   /* FF3.6+ */
@@ -1946,7 +1946,7 @@ button.ui-button::-moz-focus-inner {
 .ui-dialog .ui-dialog-titlebar-close span {
   display: block;
   margin: 1px;
-  background: url(/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) 0 -16px no-repeat;
+  background: url(/production/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) 0 -16px no-repeat;
 }
 
 /* line 556, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
@@ -2029,7 +2029,7 @@ button.ui-button::-moz-focus-inner {
 
 /* line 575, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-slider .ui-slider-handle {
-  background: url(/assets/rails_admin/aristo/images/slider_handles-4b523f3d1bd18af5fec23ec7d58ed85e4c7e8f4685fe85a8407e2d9017bf6484.png) 0px -23px no-repeat;
+  background: url(/production/assets/rails_admin/aristo/images/slider_handles-4b523f3d1bd18af5fec23ec7d58ed85e4c7e8f4685fe85a8407e2d9017bf6484.png) 0px -23px no-repeat;
   position: absolute;
   z-index: 2;
   width: 23px;
@@ -2303,7 +2303,7 @@ button.ui-button::-moz-focus-inner {
   margin-left: -8px;
   top: 50%;
   margin-top: -8px;
-  background: url(/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) no-repeat;
+  background: url(/production/assets/rails_admin/aristo/images/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png) no-repeat;
 }
 
 /* line 644, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
@@ -2553,14 +2553,14 @@ button.ui-button::-moz-focus-inner {
 .ui-progressbar {
   height: 12px;
   text-align: left;
-  background: #FFF url(/assets/rails_admin/aristo/images/progress_bar-a2ed712d76dcffc7a06918cd389511bca2cf7bb91c12b1d865bf44c7b2c46289.gif) 0 -14px repeat-x;
+  background: #FFF url(/production/assets/rails_admin/aristo/images/progress_bar-a2ed712d76dcffc7a06918cd389511bca2cf7bb91c12b1d865bf44c7b2c46289.gif) 0 -14px repeat-x;
 }
 
 /* line 705, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/aristo/jquery-ui-1.8.7.custom.scss */
 .ui-progressbar .ui-progressbar-value {
   margin: -1px;
   height: 100%;
-  background: url(/assets/rails_admin/aristo/images/progress_bar-a2ed712d76dcffc7a06918cd389511bca2cf7bb91c12b1d865bf44c7b2c46289.gif) 0 0 repeat-x;
+  background: url(/production/assets/rails_admin/aristo/images/progress_bar-a2ed712d76dcffc7a06918cd389511bca2cf7bb91c12b1d865bf44c7b2c46289.gif) 0 0 repeat-x;
 }
 
 /* Extra Input Field Styling */
@@ -2972,46 +2972,46 @@ button.ui-button::-moz-focus-inner {
 /* line 50, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-e {
   background-position: -16px -32px !important;
-  background-image: url(/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
+  background-image: url(/production/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
 }
 /* line 54, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-e:hover {
   background-position: -16px -48px !important;
-  background-image: url(/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
+  background-image: url(/production/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
 }
 /* line 58, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-w {
   background-position: 0px -32px !important;
-  background-image: url(/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
+  background-image: url(/production/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
 }
 /* line 62, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-w:hover {
   background-position: 0px -48px !important;
-  background-image: url(/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
+  background-image: url(/production/assets/rails_admin/multiselect/icon_sprite-34a30806fcba43a2effc9739cb7a370a865199a7d38bfcbc7c2474ef3ff70ded.png);
 }
 /* line 66, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-n {
   background-position: 0px 0px !important;
   margin-left: 1px;
-  background-image: url(/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-light-e7daf3169259a9fd6b8177b8e89ff2b964cd3dababd580a46d7fb4eecc07763b.png);
+  background-image: url(/production/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-light-e7daf3169259a9fd6b8177b8e89ff2b964cd3dababd580a46d7fb4eecc07763b.png);
 }
 /* line 71, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-n:hover {
   background-position: 0px 0px !important;
   margin-left: 1px;
-  background-image: url(/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-dark-bb53269e44173a496d2620bad201ca838a57b67c40b3439b5ce89345ef9e888b.png);
+  background-image: url(/production/assets/rails_admin/multiselect/ui-icon-circle-triangle-n-dark-bb53269e44173a496d2620bad201ca838a57b67c40b3439b5ce89345ef9e888b.png);
 }
 /* line 76, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-s {
   background-position: 0px 0px !important;
   margin-left: 1px;
-  background-image: url(/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-light-e1698d37f37f7db85ce6736810a34b1a229306be8a3f3be156fbaa47dd6cd160.png);
+  background-image: url(/production/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-light-e1698d37f37f7db85ce6736810a34b1a229306be8a3f3be156fbaa47dd6cd160.png);
 }
 /* line 81, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.filtering-multiselect.scss */
 .ra-multiselect .ui-icon.ui-icon-circle-triangle-s:hover {
   background-position: 0px 0px !important;
   margin-left: 1px;
-  background-image: url(/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-dark-2bf097798e2b1db766a16ff4f335d3fe94bd51f92dc2ddf47c8a370ba31189c0.png);
+  background-image: url(/production/assets/rails_admin/multiselect/ui-icon-circle-triangle-s-dark-2bf097798e2b1db766a16ff4f335d3fe94bd51f92dc2ddf47c8a370ba31189c0.png);
 }
 
 /* line 1, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/ra.widgets.scss */
@@ -3037,7 +3037,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   position: relative;
   width: 36px;
   height: 36px;
-  background: url(/assets/rails_admin/colorpicker/select2-8ddf680d1a86d603653e43f694bbb6dc1010aa81f5c0c9c87181e10e064e503b.png);
+  background: url(/production/assets/rails_admin/colorpicker/select2-8ddf680d1a86d603653e43f694bbb6dc1010aa81f5c0c9c87181e10e064e503b.png);
 }
 
 /* line 9, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
@@ -3047,7 +3047,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   left: 3px;
   width: 30px;
   height: 30px;
-  background: url(/assets/rails_admin/colorpicker/select2-8ddf680d1a86d603653e43f694bbb6dc1010aa81f5c0c9c87181e10e064e503b.png) center;
+  background: url(/production/assets/rails_admin/colorpicker/select2-8ddf680d1a86d603653e43f694bbb6dc1010aa81f5c0c9c87181e10e064e503b.png) center;
 }
 
 /* line 18, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
@@ -3056,7 +3056,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   height: 176px;
   overflow: hidden;
   position: absolute;
-  background: url(/assets/rails_admin/colorpicker/custom_background-52967b595ae718ad95520b9cf2b22551fb8cb0d81a171db869b00d2b604b4976.png);
+  background: url(/production/assets/rails_admin/colorpicker/custom_background-52967b595ae718ad95520b9cf2b22551fb8cb0d81a171db869b00d2b604b4976.png);
   font-family: Arial, Helvetica, sans-serif;
   display: none;
   z-index: 11000;
@@ -3082,7 +3082,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   left: 0;
   width: 150px;
   height: 150px;
-  background: url(/assets/rails_admin/colorpicker/colorpicker_overlay-ba21ab85c59167b61af508e34a22ee344c97bb11454d287a47691fa2fb182856.png);
+  background: url(/production/assets/rails_admin/colorpicker/colorpicker_overlay-ba21ab85c59167b61af508e34a22ee344c97bb11454d287a47691fa2fb182856.png);
 }
 
 /* line 46, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
@@ -3093,7 +3093,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   width: 11px;
   height: 11px;
   overflow: hidden;
-  background: url(/assets/rails_admin/colorpicker/colorpicker_select-980ae86d6aab751f6f67a1191d78c0fa54b533583456b905ec43b34d5806ee2d.gif);
+  background: url(/production/assets/rails_admin/colorpicker/colorpicker_select-980ae86d6aab751f6f67a1191d78c0fa54b533583456b905ec43b34d5806ee2d.gif);
   margin: -5px 0 0 -5px;
 }
 
@@ -3113,7 +3113,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   width: 35px;
   height: 9px;
   overflow: hidden;
-  background: url(/assets/rails_admin/colorpicker/custom_indic-8ca62ee85015e67671f2312a2fead633740335f65e254d8f4c3ea29b99f62de7.gif) left top;
+  background: url(/production/assets/rails_admin/colorpicker/custom_indic-8ca62ee85015e67671f2312a2fead633740335f65e254d8f4c3ea29b99f62de7.gif) left top;
   margin: -4px 0 0 0;
   left: 0px;
 }
@@ -3161,7 +3161,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   position: absolute;
   width: 72px;
   height: 22px;
-  background: url(/assets/rails_admin/colorpicker/custom_hex-4b1a7b08312edc3732cf30c7d8d5291abea41c64311c3d05d67a586cbe3dcf37.png) top;
+  background: url(/production/assets/rails_admin/colorpicker/custom_hex-4b1a7b08312edc3732cf30c7d8d5291abea41c64311c3d05d67a586cbe3dcf37.png) top;
   left: 212px;
   top: 142px;
 }
@@ -3192,42 +3192,42 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
 
 /* line 131, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_rgb_r {
-  background-image: url(/assets/rails_admin/colorpicker/custom_rgb_r-54289ccad89df00514d84ba6d16d1a0abc0d61de95dcfc054bf2202e238a7cb6.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_rgb_r-54289ccad89df00514d84ba6d16d1a0abc0d61de95dcfc054bf2202e238a7cb6.png);
   top: 52px;
   left: 212px;
 }
 
 /* line 136, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_rgb_g {
-  background-image: url(/assets/rails_admin/colorpicker/custom_rgb_g-8ab4d41c46fc26080b75eecc6f8c25d8f6db5264cf56ecc4993f86d100ebd71f.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_rgb_g-8ab4d41c46fc26080b75eecc6f8c25d8f6db5264cf56ecc4993f86d100ebd71f.png);
   top: 82px;
   left: 212px;
 }
 
 /* line 141, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_rgb_b {
-  background-image: url(/assets/rails_admin/colorpicker/custom_rgb_b-22f2da1810cd9da18a1f93418b8f45bd3cb676aa9790ad5e1aba37779fb3ac31.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_rgb_b-22f2da1810cd9da18a1f93418b8f45bd3cb676aa9790ad5e1aba37779fb3ac31.png);
   top: 112px;
   left: 212px;
 }
 
 /* line 146, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_hsb_h {
-  background-image: url(/assets/rails_admin/colorpicker/custom_hsb_h-df01edb80a710cdd9d9057201eaa682a8c86cd80ad6c6929f1d4a9182ad6aed3.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_hsb_h-df01edb80a710cdd9d9057201eaa682a8c86cd80ad6c6929f1d4a9182ad6aed3.png);
   top: 52px;
   left: 282px;
 }
 
 /* line 151, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_hsb_s {
-  background-image: url(/assets/rails_admin/colorpicker/custom_hsb_s-9277f3fd9eb79baef2384f7b38968184fd40d631024149c7b41543b7796c0706.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_hsb_s-9277f3fd9eb79baef2384f7b38968184fd40d631024149c7b41543b7796c0706.png);
   top: 82px;
   left: 282px;
 }
 
 /* line 156, /Users/fc/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/rails_admin-1.4.2/app/assets/stylesheets/rails_admin/jquery.colorpicker.scss */
 .colorpicker_hsb_b {
-  background-image: url(/assets/rails_admin/colorpicker/custom_hsb_b-7160b5fd5c5779102cb91f771b80ef2621dabe10bf06e8359deaefece831b58b.png);
+  background-image: url(/production/assets/rails_admin/colorpicker/custom_hsb_b-7160b5fd5c5779102cb91f771b80ef2621dabe10bf06e8359deaefece831b58b.png);
   top: 112px;
   left: 282px;
 }
@@ -3238,7 +3238,7 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
   position: absolute;
   width: 22px;
   height: 22px;
-  background: url(/assets/rails_admin/colorpicker/custom_submit-3a57bad878f6d608b998e36acefe2325d786d4631abeecc5d400ca5c062f5ce5.png) top;
+  background: url(/production/assets/rails_admin/colorpicker/custom_submit-3a57bad878f6d608b998e36acefe2325d786d4631abeecc5d400ca5c062f5ce5.png) top;
   left: 322px;
   top: 142px;
   overflow: hidden;
@@ -3273,8 +3273,8 @@ iframe.wysihtml5-sandbox, .wysihtml5-editor {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot");
-  src: url("/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot?#iefix") format("embedded-opentype"), url("/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2") format("woff2"), url("/assets/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff") format("woff"), url("/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf") format("truetype"), url("/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg#fontawesomeregular") format("svg");
+  src: url("/production/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot");
+  src: url("/production/assets/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot?#iefix") format("embedded-opentype"), url("/production/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2") format("woff2"), url("/production/assets/fontawesome-webfont-ba0c59deb5450f5cb41b3f93609ee2d0d995415877ddfa223e8a8a7533474f07.woff") format("woff"), url("/production/assets/fontawesome-webfont-aa58f33f239a0fb02f5c7a6c45c043d7a9ac9a093335806694ecd6d4edc0d6a8.ttf") format("truetype"), url("/production/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
