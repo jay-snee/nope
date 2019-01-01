@@ -90,6 +90,7 @@ class User < ApplicationRecord
   end
 
   def generate_referral_code
+    return false unless referral_code.empty?
     code = ('a'..'z').to_a.shuffle[0,8].join
     self.referral_code = code
   end
