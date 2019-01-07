@@ -37,3 +37,12 @@ Current environment variables are:
 - ASSET_SYNC_MANIFEST=true
 
 - REFERRER_REWARD=3
+
+## Test Suite
+
+To run: `bundle exec rspec -f d`
+
+https://relishapp.com/rspec/
+https://github.com/rspec/rspec-rails
+https://github.com/thoughtbot/factory_bot_rails
+https://github.com/thoughtbot/climate_control
