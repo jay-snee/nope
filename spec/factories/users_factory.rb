@@ -10,7 +10,7 @@ FactoryBot.define do
   end
 
   factory :subscribed_user, class: User do
-    email 					{'admin@example.com'}
+    email 					{'subscribed_user@example.com'}
     password 				{'password'}
     password_confirmation 	{'password'}
     confirmed_at 			{Date.today}
