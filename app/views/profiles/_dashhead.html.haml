@@ -1,0 +1,10 @@
+.dashhead.mt-3.mb-5
+  .dashhead-titles
+    %h6.dashhead-subtitle Profiles
+    %h3.dashhead-title= @profile.display_email_address
+  .dashhead-toolbar
+    .btn-group.dashhead-toolbar-item.btn-group-halves
+      %button.btn.btn.btn-outline-primary.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: @profile.email_address}}}
+        Copy Address
+      - if !current_user.stripe_subscription_id.empty? || current_user.admin
+        = link_to 'Delete profile', profile_path(@profile), method: :delete, class: 'btn - #btn-outline-danger', data: {confirm: 'Are you sure you want to delete this profile and all - #associated messages? You will not be able to reclaim this address in the future.'}

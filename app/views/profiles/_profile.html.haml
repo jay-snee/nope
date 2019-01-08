@@ -1,12 +1,16 @@
 %li.list-group-item.profile{id: "profile-#{profile.id}"}
 	.d-flex.justify-content-center.align-items-center
 		= link_to profile do
-			.mr-auto.p-2
-				%strong= profile.name
-				.badge.badge-info= profile.messages.size
+			.mr-auto
+				%h6.text-primary= profile.name
+			.badge.badge-info.p-1
+				= profile.messages.size
+				messages
 		.p-2.ml-auto
-			= link_to edit_profile_path(profile), class: 'btn btn-outline-info', remote: true do
-				%i.fas.fa-cog
-			%button.btn.btn-outline-info.copy-button.ml-2{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
+			= link_to edit_profile_path(profile), class: 'btn btn-outline-primary ml-2', remote: true do
+				%i.fas.fa-edit
+			%button.btn.btn-outline-primary.copy-button.ml-2{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}
 				%i.fas.fa-copy
+			= link_to profile_path(profile), class: 'btn btn-outline-primary' do
+				%i.fas.fa-inbox
 
