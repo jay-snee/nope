@@ -24,6 +24,9 @@
     %title Fair Custodian
     = csrf_meta_tags
     = csp_meta_tag
+    %link{:rel => "shortcut icon", :href => "#{asset_url('favicon.ico')}", :type => "image/png"}
+    %link{:crossorigin => "anonymous", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css", :integrity => "sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm", :rel => "stylesheet"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag '//fonts.googleapis.com/css?family=Questrial', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag '//use.fontawesome.com/releases/v5.6.1/css/all.css', media: 'all', 'data-turbolinks-track': 'reload'
