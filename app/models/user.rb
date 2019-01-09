@@ -38,20 +38,23 @@ class User < ApplicationRecord
   end
 
   def send_to_websand
-    response = HTTParty.post(
-      'https://fair-custodian.websandhq.com/api/data/subscriber', 
-      {
-        'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
-        'body': {
-          "subscriber": {
-            "email": email,
-            "source": "beta-user",
-            "subscribed_at": DateTime.now.iso8601,
-            "last_seen": last_seen.iso8601
+    # TODO: Should this be a magic number? 🤔
+    if last_seen < DateTime.now - 1.hours
+      response = HTTParty.post(
+        'https://fair-custodian.websandhq.com/api/data/subscriber', 
+        {
+          'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
+          'body': {
+            "subscriber": {
+              "email": email,
+              "source": "beta-user",
+              "subscribed_at": DateTime.now.iso8601,
+              "last_seen": last_seen.iso8601
+            }
           }
         }
-      }
-    )
+      )
+    end
   end
 
   def generate_default_profiles
