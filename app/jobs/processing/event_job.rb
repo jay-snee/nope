@@ -12,7 +12,7 @@ class Processing::EventJob < ApplicationJob
       
     if Rails.env.production?
       index_response = elastic_client.index(
-        index: "beta-events-#{Date.current.to_s}",
+        index: "#{ENV['APP_DOMAIN'].gsub('.', '-')}-beta-events-#{Date.current.to_s}",
         body: data,
         type: 'event'
       )
