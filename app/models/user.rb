@@ -27,7 +27,8 @@ class User < ApplicationRecord
 
   before_validation :generate_referral_code
 
-  after_create :send_to_websand, :generate_default_profiles, :notify_registration
+  after_create :generate_default_profiles, :notify_registration
+  after_update :send_to_websand
 
   validates :referral_code, uniqueness: true
   validate :block_our_domain
@@ -42,11 +43,12 @@ class User < ApplicationRecord
       {
         'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
         'body': {
-          "subscriber": {   
-            "email": email,   
-            "source": "beta-user",   
-            "subscribed_at": DateTime.now.iso8601
-          } 
+          "subscriber": {
+            "email": email,
+            "source": "beta-user",
+            "subscribed_at": DateTime.now.iso8601,
+            "last_seen": last_seen.iso8601
+          }
         }
       }
     )
