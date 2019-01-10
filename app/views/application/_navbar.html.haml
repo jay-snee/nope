@@ -9,9 +9,9 @@
 
     %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
       - if !current_user
-        %li.nav-item.mx-3.navbar_pre_sign_in
+        %li.nav-item.mx-3.navbar_pre_sign_in.h4
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link my-3'
-        %li.nav-item.mx-3.navbar_pre_sign_in
+        %li.nav-item.mx-3.navbar_pre_sign_in.h4
           = link_to 'Sign in', new_user_session_path, class: 'nav-link my-3'
       - elsif current_user
         - if current_user.admin
