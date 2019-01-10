@@ -14,7 +14,7 @@
         %li.nav-item.mx-3.navbar_pre_sign_in
           = link_to 'Sign in', new_user_session_path, class: 'nav-link my-3'
       - elsif current_user
-         - if current_user.admin
+        - if current_user.admin
           %li.nav-item.dropdown.mx-3
             = link_to 'Backend', rails_admin_path, class: 'nav-link my-3'
           %li.nav-item.my-3.dropdown.mx-3

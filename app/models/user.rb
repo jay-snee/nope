@@ -39,21 +39,10 @@ class User < ApplicationRecord
 
   def send_to_websand
     # TODO: Should this be a magic number? 🤔
-    if last_seen < DateTime.now - 1.hours
-      response = HTTParty.post(
-        'https://fair-custodian.websandhq.com/api/data/subscriber', 
-        {
-          'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
-          'body': {
-            "subscriber": {
-              "email": email,
-              "source": "beta-user",
-              "subscribed_at": DateTime.now.iso8601,
-              "last_seen": last_seen.iso8601
-            }
-          }
-        }
-      )
+    if last_seen.nil?
+      call_websand(DateTime.now)
+    elsif last_seen < DateTime.now - 1.hours 
+      call_websand(last_seen)
     end
   end
 
@@ -118,6 +107,25 @@ class User < ApplicationRecord
     else
       errors.add(:email, "can't be a Fair Custodian address")
     end
+  end
+
+  private
+
+  def call_websand(last_seen_var)
+    response = HTTParty.post(
+      'https://fair-custodian.websandhq.com/api/data/subscriber', 
+      {
+        'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
+        'body': {
+          "subscriber": {
+            "email": email,
+            "source": "beta-user",
+            "subscribed_at": DateTime.now.iso8601,
+            "last_seen": last_seen_var
+          }
+        }
+      }
+    )
   end
 
 end
