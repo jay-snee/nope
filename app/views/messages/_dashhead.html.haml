@@ -3,4 +3,6 @@
     %h6.dashhead-subtitle= @message.from
     %h3.dashhead-title= @message.subject
   .dashhead-toolbar
-    = link_to 'Delete Message', message_path(@message), method: :delete, class: 'dashhead-toolbar-item btn btn-outline-danger'
+    = button_to message_path(@message), method: :delete, class: 'dashhead-toolbar-item btn btn-outline-danger' do
+      %i.fas.fa-trash-alt
+      Delete Message
