@@ -1,12 +1,14 @@
-%nav{aria: {label: 'breadcrumb'}}
-  %ol.breadcrumb
-    %li.breadcrumb-item
-      = link_to 'Dashboard', root_path, class: 'text-info'
-    %li.breadcrumb-item.active{aria: {current: 'page'}}
-      = @profile.name
+#header-panel.container-fluid
+  %nav.mt-3{aria: {label: 'breadcrumb'}}
+    %ol.breadcrumb
+      %li.breadcrumb-item
+        = link_to 'Dashboard', root_path, class: 'text-info'
+      %li.breadcrumb-item.active{aria: {current: 'page'}}
+        = @profile.name
 
-#page.mb-5{data: {id: @profile.id}}
   = render partial: 'dashhead'
+
+#page.container-fluid.grey-panel.p-5{style: "height: 100%", data: {id: @profile.id}}
   .row
     .col-sm-12
       %h5 Recent Messages
@@ -16,4 +18,4 @@
             = render m
         - else
           %li#welcome.list-group-item
-            %strong Inbox is empty
+            %strong Your inbox is empty

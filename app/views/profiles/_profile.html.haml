@@ -6,7 +6,7 @@
 			.badge.badge-info.p-1
 				= profile.messages.size
 				messages
-		.p-2.ml-auto
+		.ml-auto
 			= link_to edit_profile_path(profile), class: 'btn btn-outline-primary ml-2', remote: true do
 				%i.fas.fa-edit
 			%button.btn.btn-outline-primary.copy-button.ml-2{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: profile.email_address}}}

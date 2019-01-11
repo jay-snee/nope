@@ -1,1 +1,15 @@
-@import 'dashboard/toolkit-inverse.scss'
+@import 'dashboard/toolkit-inverse.scss';
+
+.grey-panel {
+  background-color: $gray-300;
+  color: $gray-900;
+}
+
+.grey-panel h1,
+.grey-panel h2,
+.grey-panel h3,
+.grey-panel h4,
+.grey-panel h5,
+.grey-panel h6 {
+  color: $gray-900;
+}

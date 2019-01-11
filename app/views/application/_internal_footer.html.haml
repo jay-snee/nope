@@ -1,0 +1,27 @@
+.container-fluid.p-5
+  .row
+    .col-md-2.offset-md-8
+      %h4.text-uppercase.text-muted.mb-5 Social
+      %ul.list-unstyled.list-inline.list-spaced
+        %li.list-inline-item
+          = link_to 'https://twitter.com/FairCustodianUK' do
+            %i.fab.fa-twitter.fa-2x.text-white
+        %li.list-inline-item
+          = link_to 'https://reddit.com/r/faircustodian' do
+            %i.fab.fa-reddit.fa-2x.text-white
+        %li.list-inline-item
+          = link_to 'https://www.facebook.com/faircustodian' do
+            %i.fab.fa-facebook.fa-2x.text-white
+        %li.list-inline-item
+          = link_to 'https://t.me/faircustodian' do
+            %i.fab.fa-telegram.fa-2x.text-white
+    .col-md-2
+      %h4.text-uppercase.text-muted.mb-5 Support
+      %ul.list-unstyled.list-spaced
+        %li
+          = link_to 'Terms and Conditions', terms_path
+        %li
+          = link_to 'Privacy Policy', privacy_path
+
+  .text-center.text-muted
+    &copy; Fair Custodian Ltd 2019

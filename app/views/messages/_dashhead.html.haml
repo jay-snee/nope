@@ -1,0 +1,6 @@
+.dashhead.mt-3.mb-5
+  .dashhead-titles
+    %h6.dashhead-subtitle= @message.from
+    %h3.dashhead-title= @message.subject
+  .dashhead-toolbar
+    = link_to 'Delete Message', message_path(@message), method: :delete, class: 'dashhead-toolbar-item btn btn-outline-danger'

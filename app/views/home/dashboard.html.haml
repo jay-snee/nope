@@ -1,6 +1,6 @@
-#dashboard.mx-5
-  .row.mb-5
-    .col-sm-4
+#dashboard.container-fluid
+  .row
+    .col-sm-4.py-5
       - if current_user.stripe_subscription_id.empty?
         .mt-2
           = form_tag charges_path do
@@ -22,6 +22,7 @@
               = "Share your referral link and when your friends sign up, you both get #{ENV['REFERRER_REWARD']} more free profiles"
 
         %button.btn.btn-outline-primary.btn-lg.copy-button.btn-block{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: "https://#{ENV['APP_DOMAIN']}/users/sign_up?referrer_code=#{current_user.referral_code}"}}}
+          %i.fas.fa-retweet
           Refer a friend
 
       %h3.mt-5
@@ -38,7 +39,7 @@
           = render p
 
 
-    .col-sm-8
+    .col-sm-8.py-3.grey-panel
       - if @messages.empty?
         #welcome
           = render partial: 'home/welcome'

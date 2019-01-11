@@ -1,29 +1,35 @@
 .row
-  .col-md-11.offset-md-1.text-center
-    %h2.mb-3
-      How To Use Your Profiles
-    %p.my-3
-      A Fair Custodian account entitles you to 3 free profiles.
-    %p.my-3
-      Each profile has a unique, randomly generated email address to help protect your identity online.
-    %h3.text-primary.mt-3.mb-5 Use Fair Custodian email addresses when you sign up for any online service, following the steps below:
+  .col-md-12.text-center
+    #welcome-panel.m-3
+      %h2.mb-3
+        How To Use Your Profiles
+      %p.my-3
+        A Fair Custodian account entitles you to 3 free profiles.
+      %p.my-3
+        Each profile has a unique, randomly generated email address to help protect your identity online.
+      %h3.mt-3.mb-5 Use Fair Custodian email addresses when you sign up for any online service, following the steps below:
 
-    .row.mt-5
-      .col-sm-12.col-md-4
-        .hr-divider
-          .hr-divider-content.hr.divider-heading
-            Set-up your profile
-        .i.fas.fa-edit.fa-7x.my-3.text-info
-        %p Select and rename a profile for the services you're going to sign up for by clicking the edit icon on the profile panel.
-      .col-sm-12.col-md-4
-        .hr-divider
-          .hr-divider-content.hr.divider-heading
-            Copy your address
-        .i.fas.fa-copy.fa-7x.my-3.text-info
-        %p Copy the email address for that profile by clicking the icon on the profile panel, or from the profile page itself.
-      .col-sm-12.col-md-4
-        .hr-divider
-          .hr-divider-content.hr.divider-heading
-            Access your messages
-        .i.fas.fa-inbox.fa-7x.my-3.text-info
-        %p Emails sent to this address will be stored within this profile. Click the profile name or inbox icon to access mails for individual inboxes. 
+      .row.mt-5
+        .col-sm-12.col-md-4
+          .card.card-default
+            .card-header
+              %h4 1. Set-up your profile
+            .card-body
+              .i.fas.fa-edit.fa-5x.my-3.text-primary
+              %p Select and rename a profile for the services you're going to sign up for by clicking the edit icon on the profile panel.
+          
+          
+        .col-sm-12.col-md-4
+          .card
+            .card-header
+              %h4 2. Copy your address
+            .card-body
+              .i.fas.fa-copy.fa-5x.my-3.text-primary
+              %p Copy the email address for that profile by clicking the icon on the profile panel, or from the profile page itself.
+        .col-sm-12.col-md-4
+          .card
+            .card-header
+              %h4 3. Access your messages
+            .card-body
+              .i.fas.fa-inbox.fa-5x.my-3.text-primary
+              %p Emails sent to this address will be stored within this profile. Click the profile name or inbox icon to access mails for individual inboxes. 
