@@ -46,7 +46,7 @@
       - if current_user
         #account{data: {account: current_user.id}}
       - if notice
-        .alert.alert-info.m-2= notice
+        .alert.alert-primary.m-2= notice
       - if alert
         .alert.alert-danger.m-2= alert
     = yield
