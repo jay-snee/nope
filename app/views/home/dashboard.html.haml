@@ -1,6 +1,6 @@
 #dashboard.container-fluid
   .row
-    .col-sm-4.py-5
+    .col-sm-4.pt-3.pb-5
       - if current_user.stripe_subscription_id.empty?
         .mt-2
           = form_tag charges_path do
@@ -51,7 +51,7 @@
       - else
         .card
           .card-header
-            %h3#messages-header.mt-2.d-none All Messages
+            %h3#messages-header.mt-2 All Messages
           .card-body
             %ul#messages-list.list-group{data: {id: current_user.id}}
               - @messages.order(created_at: :desc).each do |m|
