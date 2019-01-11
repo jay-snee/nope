@@ -9,16 +9,15 @@
   = render partial: 'dashhead'
 
 #page.container-fluid.grey-panel.py-3{data: {id: @profile.id}}
-  .row
-    .col-sm-12
-      .card
-        .card-header
-          %h3 Recent Messages
-        .card-body
-          %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}
-            - unless @profile.messages.empty?
+  - unless @profile.messages.empty?
+    .row
+      .col-sm-12
+        .card
+          .card-header
+            %h3 Recent Messages
+          .card-body
+            %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}              
               - @profile.messages.each do |m|
                 = render m
-            - else
-              %li#welcome.list-group-item
-                %strong Your inbox is empty
+  - else
+    = render partial: 'home/welcome'
