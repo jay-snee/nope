@@ -44,7 +44,7 @@ RSpec.describe HomeController, :type => :request do
 
       it 'shows the referral button' do
         get '/home/dashboard'
-        expect(response.body).to include('Share your link')
+        expect(response.body).to include('Refer a friend')
       end
     end
   end
