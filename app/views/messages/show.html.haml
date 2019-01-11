@@ -1,29 +1,22 @@
-%nav.mt-3{aria: {label: 'breadcrumb'}}
-  %ol.breadcrumb
-    %li.breadcrumb-item
-      = link_to 'Dashboard', root_path, class: 'text-info'
-    %li.breadcrumb-item
-      = link_to @message.profile.name, @message.profile, class: 'text-info'
-    %li.breadcrumb-item.active{aria: {current: 'page'}}
-      = @message.subject
+#header.container-fluid
+  %nav.mt-3{aria: {label: 'breadcrumb'}}
+    %ol.breadcrumb
+      %li.breadcrumb-item
+        = link_to 'Dashboard', root_path, class: 'text-info'
+      %li.breadcrumb-item
+        = link_to @message.profile.name, @message.profile, class: 'text-info'
+      %li.breadcrumb-item.active{aria: {current: 'page'}}
+        = @message.subject
+  = render partial: 'dashhead'
 
-#page.p-5
-  .row
-    .col-sm-12
-      .d-flex.justify-content-center.align-items-center
-        .mr-auto.p-2 
-          %h1= @message.subject
-          %h5= @message.from
-        .p-2
-          = link_to 'Delete Message', message_path(@message), method: :delete, class: 'btn btn-outline-danger'
-  %hr
 
+#page.container-fluid.grey-panel.p-5{data: {id: @message.id}}
   - unless @message.files.empty?
     .row.my-3
       .col-sm-14
         .p-5
           %h3
-            %span.fas.fa-clipboard
+            %i.fas.fa-clipboard
             Attachments
             = "(#{@message.files.size})"
           %ul.list-group
