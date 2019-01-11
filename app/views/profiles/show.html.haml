@@ -8,14 +8,17 @@
 
   = render partial: 'dashhead'
 
-#page.container-fluid.grey-panel.p-5{data: {id: @profile.id}}
+#page.container-fluid.grey-panel.py-3{data: {id: @profile.id}}
   .row
     .col-sm-12
-      %h5 Recent Messages
-      %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}
-        - unless @profile.messages.empty?
-          - @profile.messages.each do |m|
-            = render m
-        - else
-          %li#welcome.list-group-item
-            %strong Your inbox is empty
+      .card
+        .card-header
+          %h3 Recent Messages
+        .card-body
+          %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}
+            - unless @profile.messages.empty?
+              - @profile.messages.each do |m|
+                = render m
+            - else
+              %li#welcome.list-group-item
+                %strong Your inbox is empty

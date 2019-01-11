@@ -4,7 +4,7 @@ App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", i
     @prependLine(data)
     if $('#welcome').length
       $('#welcome').hide()
-      $("#messages-header").removeClass('d-none')
+      $("#messages-card").removeClass('d-none')
     $.growl.notice({ title: "New Message!", message: "New message has arrived" })
  
   prependLine: (data) ->
