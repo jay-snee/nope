@@ -27,7 +27,7 @@ class User < ApplicationRecord
 
   before_validation :generate_referral_code
 
-  after_create :generate_default_profiles, :notify_registration
+  after_create :send_to_websand, :generate_default_profiles, :notify_registration
   after_update :send_to_websand
 
   validates :referral_code, uniqueness: true
