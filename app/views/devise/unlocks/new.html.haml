@@ -1,14 +1,10 @@
 .row.my-5
-  .col-sm-2
-  .col-sm-10
-
+  .col-sm-10.offset-sm-2.col-md-6.offset-md-3
     %h1.my-5 Resend unlock instructions
     = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { class: 'form',method: :post }) do |f|
       = devise_error_messages!
       .field.my-5
-        .row
-          .col-md-12.col-sm-12
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg', placeholder: 'email address'
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg', placeholder: 'email address'
         
       .actions.my-5
         = f.submit "Resend unlock instructions", class: 'btn btn-lg btn-outline-primary'
