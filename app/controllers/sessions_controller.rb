@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
   
-  layout 'front-page'
+  layout 'devise'
 
 end

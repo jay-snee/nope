@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   
-  layout 'front-page'
+  layout 'devise'
 
   def new
     @referrer_code = params[:referrer_code]

@@ -1,0 +1,54 @@
+!!!
+%html
+  %head
+    %meta{:property => "og:url", :content => "https://beta.faircustodian.com"}
+    %meta{:property => "og:title", :content => "Fair Custodian"}
+    %meta{:property => "og:description", :content => "The simple way to take control of your data."}
+    %meta{:property => "og:image", :content => "#{asset_url('1-1.png')}"}
+
+    %script{async: true,  src: "https://www.googletagmanager.com/gtag/js?id=UA-128947480-1"}
+    %script
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-128947480-1');
+
+    %script
+      (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:1082357,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+
+    %link{:rel => "shortcut icon", :href => "#{asset_url('favicon.ico')}", :type => "image/png"}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, shrink-to-fit=no"}
+    %title Fair Custodian
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Questrial', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag '//use.fontawesome.com/releases/v5.6.1/css/all.css', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'jquery.growl', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application-front', media: 'all', 'data-turbolinks-track': 'reload'
+
+    %script{:crossorigin => "anonymous", :integrity => "sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN", :src => "https://code.jquery.com/jquery-3.2.1.slim.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", :src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", :src => "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"}
+    %script{:crossorigin => "anonymous", :src => "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"}
+    %script{:crossorigin => "anonymous", :src => "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"}
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render partial: 'application/navbar'
+    .stage
+      #home-block.block.block-inverse.block-fill-height{style: "background-image: url(#{asset_url('fc_signin-bg.png')})"}
+        - if notice
+          .alert.alert-primary.mt-2= notice
+        - if alert
+          .alert.alert-danger.mt-2= alert
+        = yield
+    = render partial: 'application/footer'
