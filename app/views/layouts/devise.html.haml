@@ -45,11 +45,10 @@
   %body
     #home-block.block.block-inverse.block-fill-height.pt-0{style: "background-image: url(#{asset_url('fc_signin-bg.png')})"}
       %nav#fc-navbar.navbar.navbar-expand-md.navbar-transparent.navbar.navbar-static-top.mb-5
-        .navbar-header
-          %a.navbar-brand{href: '/'}
-            = image_tag('FC_Logo_Wht.svg', height: '30')
-          %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbar-content'}}
-            %span.navbar-toggler-icon
+        %a.navbar-brand{href: '/'}
+          = image_tag('FC_Logo_Wht.svg', height: '30')
+        %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbar-content'}}
+          %span.navbar-toggler-icon
 
         #navbar-content.collapse.navbar-collapse
           %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
