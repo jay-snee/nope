@@ -43,12 +43,43 @@
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = render partial: 'application/navbar'
-    .stage
-      #home-block.block.block-inverse.block-fill-height{style: "background-image: url(#{asset_url('fc_signin-bg.png')})"}
-        - if notice
-          .alert.alert-primary.mt-2= notice
-        - if alert
-          .alert.alert-danger.mt-2= alert
+    #home-block.block.block-inverse.block-fill-height.pt-0{style: "background-image: url(#{asset_url('fc_signin-bg.png')})"}
+      %nav#fc-navbar.navbar.navbar-expand-md.navbar-transparent.navbar.navbar-static-top.mb-5
+        .navbar-header
+          %a.navbar-brand{href: '/'}
+            = image_tag('FC_Logo_Wht.svg', height: '30')
+          %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbar-content'}}
+            %span.navbar-toggler-icon
+
+        #navbar-content.collapse.navbar-collapse
+          %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+            - if !current_user
+              %li.nav-item.mx-3.navbar_pre_sign_in.h4
+                = link_to 'Sign up', new_user_registration_path, class: 'nav-link my-3'
+              %li.nav-item.mx-3.navbar_pre_sign_in.h4
+                = link_to 'Sign in', new_user_session_path, class: 'nav-link my-3'
+            - elsif current_user
+              - if current_user.admin
+                %li.nav-item.dropdown.mx-3
+                  = link_to 'Backend', rails_admin_path, class: 'nav-link my-3'
+                %li.nav-item.my-3.dropdown.mx-3
+                  %a.nav-link.dropdown-toggle#navbarDropdown{href: '#', data: {toggle: 'dropdown'}}
+                    Admin
+                  .dropdown-menu
+                    %a.dropdown-item{href: oauth_applications_path} OAuth Applications
+                    %a.dropdown-item{href: oauth_authorized_applications_path} Authorised Applications
+                    %a.dropdown-item{href: sidekiq_web_path} Sidekiq
+              - unless current_user.stripe_subscription_id.empty?
+                = link_to 'Cancel Subscription', charge_path(current_user.stripe_subscription_id), method: :delete, class: 'nav-link my-3', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
+              %li.nav-item.dropdown.mx-3
+                = button_to destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-3' do
+                  %i.fas.fa-sign-out-alt
+                  Log Out
+
+      - if notice
+        .alert.alert-primary.mt-2= notice
+      - if alert
+        .alert.alert-danger.mt-2= alert
+      .mt-5
         = yield
     = render partial: 'application/footer'
