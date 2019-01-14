@@ -71,7 +71,7 @@ class User < ApplicationRecord
 
   def cancel_stripe_subscription
     stripe_subscription.delete
-    update(stripe_subscription_id: nil)
+    update(stripe_subscription_id: '')
     Processing::EventJob.perform_later("subscripton cancelled - #{email}", 'subscription', true)
   end
 
