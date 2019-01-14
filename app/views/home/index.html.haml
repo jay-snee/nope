@@ -1,79 +1,77 @@
-.stage
-  #home-block.block.block-inverse.block-fill-height.text-center{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
-    #text-block.block-xs-middle.pb-5
-      .container-fluid
-        .row
-          .col-sm-12.col-lg-6
-        %h1.block-title.text-info Making Login Fair
-        %h2.text-muted.my-3 The simple way to take control of your data
-        = link_to 'Get started', new_user_registration_path, class: 'btn btn-outline-primary btn-lg px-4 my-5'
 
-  #page.block
-    .container.text-center
-      .row
-        .col-sm-2
-        .col-sm-8
-          %h2
-            It’s your email address.
-            %br
-            You choose how it’s being used.
+#home-block.block.block-inverse.block-fill-height.text-center.pt-0{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
+  .mb-5.pb-5
+    = render partial: 'application/transparent_nav'
+  %h1.block-title.text-info.mt-5.pt-5 Making Login Fair
+  %h2.text-muted.my-3 The simple way to take control of your data
+  = link_to 'Get started', new_user_registration_path, class: 'btn btn-outline-primary btn-lg px-4 my-5'
+
+#page.block
+  .container.text-center
+    .row
+      .col-sm-2
+      .col-sm-8
+        %h2
+          It’s your email address.
+          %br
+          You choose how it’s being used.
 
 
-      .row.my-5
-        .col-sm-4.px-3.mb-3
-          = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
-          %h3 Easy control of your online data
-          %p There can be an uncomfortable feeling when you sign in to a website: How will my email address be used? Should I have read all of the terms? Is this website secure? Fair Custodian helps you take back control.
-        .col-sm-4.px-3.mb-3
-          = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
-          %h3 Relax about data security, privacy and shared information
-          %p
-            Because sharing your email address online shouldn’t feel like a gamble, Fair Custodian lets you
-            %strong create email addresses
-            for one off use or specific service types - if you stop using the service, simply
-            %strong delete your email address
-            and relax.
-        .col-sm-4.px-3.mb-3
-          = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
-          %h3 How login should be done
-          %p
-            We believe this is the right and fair way to login. Use Fair Custodian to create up to
-            %strong three free email addresses.
-            Use them for a clear, simple and secure way to access online services and keep control.
+    .row.my-5
+      .col-sm-4.px-3.mb-3
+        = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
+        %h3 Easy control of your online data
+        %p There can be an uncomfortable feeling when you sign in to a website: How will my email address be used? Should I have read all of the terms? Is this website secure? Fair Custodian helps you take back control.
+      .col-sm-4.px-3.mb-3
+        = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
+        %h3 Relax about data security, privacy and shared information
+        %p
+          Because sharing your email address online shouldn’t feel like a gamble, Fair Custodian lets you
+          %strong create email addresses
+          for one off use or specific service types - if you stop using the service, simply
+          %strong delete your email address
+          and relax.
+      .col-sm-4.px-3.mb-3
+        = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
+        %h3 How login should be done
+        %p
+          We believe this is the right and fair way to login. Use Fair Custodian to create up to
+          %strong three free email addresses.
+          Use them for a clear, simple and secure way to access online services and keep control.
 
-  .block.app-price-plans.block-bordered
-    .container.text-center
-      .row.mb-5.justify-content-center
-        .col-10.col-md-8.col-lg-6
-          %h2.text-uppercase.mb-2 Pricing
-      .row
-        .col-md-6.px-4.pb-2.mb-5
-          .px-2.mb-2
-            %h3.text-uppercase.mb-4 Standard
-            %h4 Free
-          %ul.list-unstyled.list-bordered.text-xs-left.my-4
-            %li.py-4
-              %strong 3
-              profiles
-            %li.py-4
-              %strong Rename
-              profiles to match your use
-            %li.py-4
-              %strong Unlimited
-              incoming emails
-            = link_to 'Start a free account', free_path, class: 'button btn btn-lg btn-primary btn-block'
-        .col-md-6.px-4.pb-1.mb-5
-          .px-2
-            %h3.text-uppercase.mb-4 Premium
-            %h4 £3 / month
-          %ul.list-unstyled.list-bordered.text-xs-left.my-4
-            %li.py-4
-              %strong 30
-              profiles
-            %li.py-4
-              %strong Delete and create
-              profiles
-            %li.py-4
-              %strong Everything
-              in the free tier
-            = link_to 'Start a premium account', premium_path, class: 'button btn btn-lg btn-primary btn-block'
+.block.app-price-plans.block-bordered
+  .container.text-center
+    .row.mb-5.justify-content-center
+      .col-10.col-md-8.col-lg-6
+        %h2.text-uppercase.mb-2 Pricing
+    .row
+      .col-md-6.px-4.pb-2.mb-5
+        .px-2.mb-2
+          %h3.text-uppercase.mb-4 Standard
+          %h4 Free
+        %ul.list-unstyled.list-bordered.text-xs-left.my-4
+          %li.py-4
+            %strong 3
+            profiles
+          %li.py-4
+            %strong Rename
+            profiles to match your use
+          %li.py-4
+            %strong Unlimited
+            incoming emails
+          = link_to 'Start a free account', free_path, class: 'button btn btn-lg btn-primary btn-block'
+      .col-md-6.px-4.pb-1.mb-5
+        .px-2
+          %h3.text-uppercase.mb-4 Premium
+          %h4 £3 / month
+        %ul.list-unstyled.list-bordered.text-xs-left.my-4
+          %li.py-4
+            %strong 30
+            profiles
+          %li.py-4
+            %strong Delete and create
+            profiles
+          %li.py-4
+            %strong Everything
+            in the free tier
+          = link_to 'Start a premium account', premium_path, class: 'button btn btn-lg btn-primary btn-block'
