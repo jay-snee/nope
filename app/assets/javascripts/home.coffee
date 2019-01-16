@@ -4,9 +4,7 @@
 
 
 ready = ->
-  console.log 'loaded'
   $('.stripe-button-el').on 'click', ->
-    console.log 'clicked'
     $('#upgrade-modal').modal('hide')
 
 $(document).on 'turbolinks:load', ready
