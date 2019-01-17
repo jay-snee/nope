@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_202529) do
+ActiveRecord::Schema.define(version: 2019_01_17_121313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_202529) do
     t.integer "profile_id"
     t.text "text"
     t.text "raw_payload"
+    t.integer "open_count", default: 0
   end
 
   create_table "notifications", force: :cascade do |t|
