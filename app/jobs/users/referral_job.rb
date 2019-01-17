@@ -11,7 +11,7 @@ class Users::ReferralJob < ApplicationJob
 
   	referrer.update(max_profiles: (referrer.max_profiles + ENV["REFERRER_REWARD"].to_i))
 
-  	Processing::EventJob.perform_later("referral_processed", "referral", true)
+  	Processing::EventJob.perform_later("Referral Processed! Code: #{referrer_code} From: #{referrer.email}", "referral", true)
   end
 
 end
