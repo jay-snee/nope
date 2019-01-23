@@ -26,11 +26,4 @@
 
   .row.mt-3
     .col-sm-12
-      - unless @message.html.nil?
-        .card
-          .card-body.p-5
-            = @message.html.html_safe
-      - else
-        .card
-          .card-body.p-5
-            = @message.text
+      %iframe{src: message_html_message_path(@message.id), width: "100%"}

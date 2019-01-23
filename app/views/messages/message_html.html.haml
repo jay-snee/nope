@@ -1,0 +1,8 @@
+- unless @message.html.nil?
+  .card
+    .card-body.p-5
+      = @message.html.html_safe
+- else
+  .card
+    .card-body.p-5
+      = @message.text

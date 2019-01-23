@@ -6,6 +6,11 @@ class MessagesController < ApplicationController
     @message = current_user.messages.find params[:id]
   end
 
+  def message_html
+    @message = current_user.messages.find params[:id]
+    render layout: false
+  end
+
   def destroy
     @message =current_user.messages.find params[:id]
     if @message.destroy

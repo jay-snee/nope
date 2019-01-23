@@ -20,7 +20,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :messages
+  resources :messages do
+    member do
+      get :message_html
+    end
+  end
 
   resources :accounts
   resources :users
