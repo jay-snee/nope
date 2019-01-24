@@ -1,5 +1,5 @@
 .block.block-inverse.block-bordered
-  .container-fluid
+  .container
     .row
       .col-md-3
         %address
@@ -14,7 +14,7 @@
             %li Gateshead
             %li NE8 3DF
             %li#company-number Company Number: 11609558
-      .col-md-2
+      .col-md-3
         %h4.text-uppercase.text-muted.mb-5 Social
         %ul.list-unstyled.list-inline.list-spaced
           %li.list-inline-item
@@ -29,7 +29,7 @@
           %li.list-inline-item
             = link_to 'https://t.me/faircustodian' do
               %i.fab.fa-telegram.fa-2x.text-white
-      .col-md-2
+      .col-md-3
         %h4.text-uppercase.text-muted.mb-5 Support
         %ul.list-unstyled.list-spaced
           %li
@@ -38,8 +38,8 @@
             = link_to 'Terms and Conditions', 'https://beta.faircustodian.com/terms'
           %li
             = link_to 'Privacy Policy', 'https://beta.faircustodian.com/privacy'
-      .col-md-2
-        .mr-3.mb-3
+      .col-md-3
+        .mr-3.my-3
           = image_tag('ERDF_project_logo.png', height: '120')
         .mr-3.my-3
           = image_tag('GX_project_logo.png', height: '80')
