@@ -40,9 +40,9 @@ class User < ApplicationRecord
   def send_to_websand
     # TODO: Should this be a magic number? 🤔
     if last_seen.nil?
-      call_websand(DateTime.now)
+      call_websand(DateTime.now.iso8601)
     elsif last_seen < DateTime.now - 1.hours 
-      call_websand(last_seen)
+      call_websand(last_seen.iso8601)
     end
   end
 
@@ -121,7 +121,7 @@ class User < ApplicationRecord
             "email": email,
             "source": "beta-user",
             "subscribed_at": DateTime.now.iso8601,
-            "last_seen": last_seen_var
+            "last_seen_date": last_seen_var
           }
         }
       }
