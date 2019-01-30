@@ -91,3 +91,4 @@ gem 'rails_admin', '~> 1.3'
 
 # gem "asset_sync"
 # gem "fog-aws"
+gem 'devise-authy'
