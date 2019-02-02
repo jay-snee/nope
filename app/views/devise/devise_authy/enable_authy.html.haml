@@ -5,6 +5,6 @@
       .field.my-4
         = text_field_tag :country_code, '', :autocomplete => :off, :placeholder => I18n.t('devise.country'), :id => "authy-countries", class: 'form-control form-control-lg'
       .field.my-4
-        = text_field_tag :cellphone, '', :autocomplete => :off, :placeholder => I18n.t('devise.cellphone'), :id => "authy-cellphone", class: 'form-control form-control-lg'
+        = text_field_tag :cellphone, '', :autocomplete => :off, :placeholder => 'Enter your phone number', :id => "authy-cellphone", class: 'form-control form-control-lg'
       .actions.mt-3.my-3
-        %p= submit_tag I18n.t('enable_authy', {:scope => 'devise'})
+        %p= submit_tag I18n.t('enable_authy', {:scope => 'devise'}), :class => 'btn btn-outline-primary mx-3'
