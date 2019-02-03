@@ -1,9 +1,10 @@
 %li.list-group-item.message
-	= link_to message do
-		.row.text-info
-			.col-sm-12.col-md-6.p-2
-				= message.subject
-			.col-md-3.d-none.d-md-block
-				= message.from
-			.col-md-3.d-none.d-md-block
-				= message.created_at.strftime('%H:%M %d/%m/%Y')
+  = link_to message do
+    .row.text-info
+      .col-sm-12.col-md-6.p-2
+        = message.subject
+      .col-md-3.d-none.d-md-block
+        = message.from
+      .col-md-3.d-none.d-md-block
+        = message.created_at.strftime('%H:%M %d/%m/%Y')
+  .mask.flex-center.rgba-blue-light

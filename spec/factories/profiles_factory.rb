@@ -2,7 +2,17 @@
 
 FactoryBot.define do
   factory :profile do
-    email_address { "onetwothree@example.com" }
-    email_display { "OneTwoThree@example.com" }
+    sequence :email_address do |n|
+      "address_#{n}@example.com"
+    end
+    sequence :email_display do |n|
+      "display_#{n}@example.com"
+    end
+
+    factory :profile_with_message do
+      before(:create) do |profile, eval|
+        create(:message, profile: profile, user: profile.user)
+      end
+    end
   end
 end

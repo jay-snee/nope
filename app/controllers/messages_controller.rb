@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
 
   def show
     @message = current_user.messages.find params[:id]
-    @message.update(read_status: true) unless @message.read_status == true
+    @message.update_read_count
   end
 
   def message_html

@@ -9,4 +9,9 @@ class Message < ApplicationRecord
     Nokogiri::HTML(html)
   end
 
+  def update_read_count
+    self.read_status = true
+    self.open_count += 1
+    save
+  end
 end

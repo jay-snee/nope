@@ -2,16 +2,20 @@
 
 FactoryBot.define do
 
-  factory :user do
-    email 				  {'user@example.com'}
+  factory :user do |user|
+    sequence :email do |n|
+      "user_#{n}@example.com"
+    end
     password 			  {'password'}
     password_confirmation {'password'}
     confirmed_at 		  {Date.today}
     max_profiles {3}
   end
 
-  factory :unsubscribed_user, class: User do
-    email 					{'unsubscribed_user@example.com'}
+  factory :unsubscribed_user, class: User do |user|
+    sequence :email do |n|
+      "unsubscribed_user_#{n}@example.com"
+    end
     password 				{'password'}
     password_confirmation 	{'password'}
     confirmed_at 			{Date.today}
@@ -20,8 +24,10 @@ FactoryBot.define do
     max_profiles {3}
   end
 
-  factory :subscribed_user, class: User do
-    email           {'subscribed_user@example.com'}
+  factory :subscribed_user, class: User do |user|
+    sequence :email do |n|
+      "subscribed_user_#{n}@example.com"
+    end
     password        {'password'}
     password_confirmation   {'password'}
     confirmed_at      {Date.today}
@@ -30,8 +36,10 @@ FactoryBot.define do
     max_profiles {33}
   end
 
-  factory :admin_user, class: User do
-    email 				  {'admin@example.com'}
+  factory :admin_user, class: User do |user|
+    sequence :email do |n|
+      "admin_user_#{n}@example.com"
+    end
     password 			  {'password'}
     password_confirmation {'password'}
     confirmed_at 		  {Date.today}

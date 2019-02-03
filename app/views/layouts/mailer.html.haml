@@ -1,8 +1,134 @@
 !!!
-%html
+%html{".org" => "", "chemas-microsoft-com:office:office" => "", :xmlns => "3D\"http://www.w3=", "xmlns:o" => "3D\"urn:s=", "xmlns:v" => "3D\"urn:schemas-microsoft-com:vml\""}
   %head
-    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
-    :css
-      /* Email styles need to be inline */
-  %body
-    = yield
+    /[if gte mso 9]
+      <xml><o:Office=
+      DocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:Offi=
+      ceDocumentSettings></xml>
+    %meta{:charset => "3Dutf-8\"", :cont => "ent=3D\"text/html;", "http-equiv" => "3D\"Content-Type\""}/
+    %meta{:content => "3D\"width=", :name => "3D\"viewport\""}/
+    / [if !mso]><!
+    %meta{:co => "ntent=3D\"IE=3Dedge\"", "http-equiv" => "3D\"X-UA-Compatible\""}/
+    / <![endif]
+    %title
+    / [if !mso]><!
+    /
+      <=
+      \![endif]
+    %style{:type => "3D\"text/css\""}
+      :cdata
+        body {margin: 0;padding: 0;}table,td,tr=
+        {vertical-align: top;border-collapse: collapse;}* {line-height: inherit;}a=
+        [x-apple-data-detectors=3Dtrue] {color: inherit !important;text-decoration:=
+        none !important;}.ie-browser table {table-layout: fixed;}[owa] .img-contai=
+        ner div,[owa] .img-container button {display: block !important;}[owa] .full=
+        width button {width: 100% !important;}[owa] .block-grid .col {display: tabl=
+        e-cell;float: none !important;vertical-align: top;}.ie-browser .block-grid,=
+        \.ie-browser .num12,[owa] .num12,[owa] .block-grid {width: 600px !important;=
+        }.ie-browser .mixed-two-up .num4,[owa] .mixed-two-up .num4 {width: 200px !i=
+        mportant;}.ie-browser .mixed-two-up .num8,[owa] .mixed-two-up .num8 {width:=
+        400px !important;}.ie-browser .block-grid.two-up .col,[owa] .block-grid.tw=
+        o-up .col {width: 300px !important;}.ie-browser .block-grid.three-up .col,[=
+        owa] .block-grid.three-up .col {width: 200px !important;}.ie-browser .block=
+        \-grid.four-up .col [owa] .block-grid.four-up .col {width: 150px !important;=
+        }.ie-browser .block-grid.five-up .col [owa] .block-grid.five-up .col {width=
+        \: 120px !important;}.ie-browser .block-grid.six-up .col,[owa] .block-grid.s=
+        ix-up .col {width: 100px !important;}.ie-browser .block-grid.seven-up .col,=
+        [owa] .block-grid.seven-up .col {width: 85px !important;}.ie-browser .block=
+        \-grid.eight-up .col,[owa] .block-grid.eight-up .col {width: 75px !important=
+        ;}.ie-browser .block-grid.nine-up .col,[owa] .block-grid.nine-up .col {widt=
+        h: 66px !important;}.ie-browser .block-grid.ten-up .col,[owa] .block-grid.t=
+        en-up .col {width: 60px !important;}.ie-browser .block-grid.eleven-up .col,=
+        [owa] .block-grid.eleven-up .col {width: 54px !important;}.ie-browser .bloc=
+        k-grid.twelve-up .col,[owa] .block-grid.twelve-up .col {width: 50px !import=
+        ant;}
+    %style{:id => "3D\"media-query\"", :type => "3D\"text/css\""}
+      :cdata
+        @media only screen=
+        and (min-width: 580px) {.block-grid {width: 560px !important;}.block-grid =
+        \.col {vertical-align: top;}.block-grid .col.num12 {width: 560px !important;=
+        }.block-grid.mixed-two-up .col.num4 {width: 184px !important;}.block-grid.m=
+        ixed-two-up .col.num8 {width: 368px !important;}.block-grid.two-up .col {wi=
+        dth: 280px !important;}.block-grid.three-up .col {width: 186px !important;}=
+        \.block-grid.four-up .col {width: 140px !important;}.block-grid.five-up .col=
+        {width: 112px !important;}.block-grid.six-up .col {width: 93px !important;=
+        }.block-grid.seven-up .col {width: 80px !important;}.block-grid.eight-up .c=
+        ol {width: 70px !important;}.block-grid.nine-up .col {width: 62px !importan=
+        t;}.block-grid.ten-up .col {width: 56px !important;}.block-grid.eleven-up .=
+        col {width: 50px !important;}.block-grid.twelve-up .col {width: 46px !impor=
+        tant;}}@media (max-width: 580px) {.block-grid,.col {min-width: 320px !impor=
+        tant;max-width: 100% !important;display: block !important;}.block-grid {wid=
+        th: 100% !important;}.col {width: 100% !important;}.col>div {margin: 0 auto=
+        ;}img.fullwidth,img.fullwidthOnMobile {max-width: 100% !important;}.no-stac=
+        k .col {min-width: 0 !important;display: table-cell !important;}.no-stack.t=
+        wo-up .col {width: 50% !important;}.no-stack.mixed-two-up .col.num4 {width:=
+        33% !important;}.no-stack.mixed-two-up .col.num8 {width: 66% !important;}.=
+        no-stack.three-up .col.num4 {width: 33% !important;}.no-stack.four-up .col.=
+        num3 {width: 25% !important;}.mobile_hide {min-height: 0px;max-height: 0px;=
+        max-width: 0px;display: none;overflow: hidden;font-size: 0px;}}
+  %body{"background-color:" => "", :class => "3D\"clean-body\"", "padding:" => "", "size-adjust:" => "", :style => "3D\"margin:"}
+    %style{:id => "=3D\"media-query-bodytag\"", :type => "3D\"text/css\""}>
+      :cdata
+        @media (max-width: 580px) {  .block-grid {    min-=
+        width: 320px!important;    max-width: 100%!important;    width: 100%!import=
+        ant;    display: block!important;  }  .col {    min-width: 320px!important;=
+        max-width: 100%!important;    width: 100%!important;    display: block!=
+        important;  }  .col > div {    margin: 0 auto;  }  img.fullwidth {    max-w=
+        idth: 100%!important;    height: auto!important;  }  img.fullwidthOnMobile =
+        {    max-width: 100%!important;    height: auto!important;  }  .no-stack .c=
+        ol {    min-width: 0!important;    display: table-cell!important;  }  .no-s=
+        tack.two-up .col {    width: 50%!important;  }  .no-stack.mixed-two-up .col=
+        \.num4 {    width: 33%!important;  }  .no-stack.mixed-two-up .col.num8 {    =
+        width: 66%!important;  }  .no-stack.three-up .col.num4 {    width: 33%!impo=
+        rtant  }  .no-stack.four-up .col.num3 {    width: 25%!important  }}
+    \=
+    /[if IE] <div class=3D"ie-browser">
+    %table{:auto => "", "background-color:" => "", :bgcolor => "3D\"#000000\"", "border-collapse:" => "", "border-spacing:" => "", :ce => "llpadding=3D\"0\"", :cellspacing => "3D\"0\"", :class => "3D\"nl-contai=", :collapse => "", :fixed => "", :m => "argin:", "min-width:" => "", "mso-table-lspa" => "ce:", "mso-table-rspace:" => "", :ner => "", :style => "3D\"table-layout:", :top => "", :valign => "=3D\"top\"", "vertical-align:" => "", :width => "3D\"100%\"", "width:" => ""}
+      %tbody
+        %tr{:style => "3D\"vertical-align:", :top => "", :valign => "3D\"top\""}
+          %td{"border-collapse:" => "", "break-word" => "", :collapse => "", :style => "=3D\"word-break:", :top => "", :valign => "3D\"top\"", "vertical-align:" => ""}
+            /[if (mso)|(IE)]
+              <table width=3D"100%" cellpadding=3D"0=
+              " cellspacing=3D"0" border=3D"0"><tr><td align=3D"center" style=3D"backgrou=
+              nd-color:#000000">
+            %div{:style => "3D\"background-color:transparent;\""}
+              \=
+              %div{:auto => "", "background-color:" => "", "break-word" => "", :class => "3D\"block-grid", "max-w" => "idth:", "min-width:" => "", "overflow-wrap:" => "", :style => "3D\"Margin:", "word-break:" => "break-word;", "word-wrap:" => ""}
+                %div{:col => "lapse;display:", :style => "3D\"border-collapse:", :table => ""}
+                  /[if (mso)|(=
+IE)]
+                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+                    style=3D"background-color:transparent;"><tr><td align=3D"center"><table ce=
+                    llpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"width:560px"><tr cl=
+                    ass=3D"layout-full-width" style=3D"background-color:#FFFFFF">
+                  %td{:align => "3D\"center\"", :bord => "er-bottom:", "border-left:" => "", "border-right:" => "", "border-top:" => "", :solid => "", :style => "3D\"width:560px;", :transparent => "", :val => "ign=3D\"top\"", :width => "3D\"560\""}
+                    %table{:borde => "r=3D\"0\"", :cellpadding => "3D\"0\"", :cellspacing => "3D\"0\"", :width => "3D\"100%\""}
+                      %tr
+                        %td{"padding-bottom:20px" => "", "padding-left:" => "", "padding-top" => ":20px;", :style => "3D\"padding-right:"}
+                          %div{:class => "3D\"col", "display:" => "", "max-width:" => "", "min-width:" => "", :num12 => "", :style => "3D\"=", "table-cell" => "", :to => "p;;\"", "vertical-align:" => ""}
+                            %div{:style => "3D\"width:100%"}
+                              / [if (!mso)&(!IE)]><!
+                              %div{"border-bottom:0px" => "", "border-left:0px" => "", "border-right:0px" => "", "padding-bottom:20px" => "", "padding-left:" => "", "padding-right:" => "", "padding-top:20px" => "", :px => "", :solid => "", :style => "3D\"border-top:0px", :transparen => "t;", :transparent => ""}
+                                / <![endif]
+                                %div{:align => "=3D\"center\"", :center => "", :class => "3D\"img-container", :fixedwidth => "", :style => "3D\"padding-right:"}
+                                  /[if mso]
+                                    \=
+                                    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr =
+                                    style=3D"line-height:0px"><td style=3D"padding-right: 30px;padding-left: 30=
+                                    px;" align=3D"center">
+                                  %div{:style => "3D\"font-size:1px;line-height:3="} =C2=A0
+                                  %a{"av3ora0ah4hd1bwc6x66evuonmgxkpdbdsfa9-2b08pszs-2fs9-2bqzzufixmc4m1fkovxnle1" => "4q570XZlHRfoweH08LCkOa3CJ3ZxQ2BbN0Ayk-2BmsbC067umWrDwJnJJ-2Fj0pXG4eyhfFwnE5=", :href => "3D\"https://u8673238.ct.sendgrid.net/wf/click?upn=", "r7cvb4byl-2fcyya5tz65a7pfpwiseg0ym5bm0lbtyekb9nucxpvq8y92k-2f9jgmmf36cvlfpo" => "BFzUaz9WrMPQTW2ou99Sd5YTOKP76f8IQ4pTU7AZQJOeydXXsJtLJREwdMkWarMbHXLok-3D\"", :t => "arget=3D\"_blank\"", :ys3bc9kpt2u844sfmqxf6sn8rx2rcbu11q0ah3touryklpta9ge2zye0fcngo8d62go1tojcrtu => "JMS3-2B2CXzuFG0aQIPJXJcLZJyutsftfjlbWVaugFWUCE9r673Bj8-2F4KfCkNsCn-2Bv2juxy="}
+                                    %img{:align => "3D\"center\"", :alt => "3D\"Image\"", :auto => "", :bicubic => "", :block => "", :border => "=3D\"0\"", "border:" => "", :both => "", :class => "3D\"center", "clear:" => "", "display:" => "", :fixedwidth => "", "float:" => "", "height:" => "", "max-width:" => "", :no => "ne;", :none => "", :s => "", :src => "3D\"https://d15k2d11r6t6rl.cloudfront.net/public/users/Integrator=", :style => "3D\"outline:", "text-decoration:" => "", :title => "3D\"Image\"", :width => "3D\"42=", "width:" => ""}/
+                                  %div{:style => "3D\"font-size:1px;line-height:30px\""} =C2=A0
+                                  /[if ms=
+o] </td></tr></table>
+                                /[if mso]
+                                  <table width=3D"100%" c=
+                                  ellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tr><td style=3D"padding-ri=
+                                  ght: 20px; padding-left: 20px; padding-top: 20px; padding-bottom: 20px; fon=
+                                  t-family: Arial, sans-serif">
+                                %div{"amily:" => "", :arial => "", :helvetica => "", :neue => "", "ng-top:20px" => "", "sans-serif" => "", :style => "3D\"color:#555555;font-f="}
+                                  %div{:arial => "", "color:" => "", "font-family:" => "Helvetica Neue", "font-size:" => "", :helvetica => "", "sans-serif" => "", :style => "3D\"line-height:"}
+                                    = yield
+                                    
+                    %img{:alt => "3D\"\"", :border => "3D\"0\"", "bwc6x66evuonmgxkpdbdsfa9-2b08pszs-2fs9-2bqzzufixmc4m1fkovxnle14q570xzlhrfow" => "eH08LCkOa3CJ3ZxQ2BbN0Ayk-2BmsbC067umWrDwJnJJ-2Fj0pXG4eyhfFwnE5YS3bC9KPt2u84=", "g0aqipjxjclzjyutsftfjlbwvaugfwuce9r673bj8-2f4kfcknnndwkhikexvqztriq7jl4krbo" => "oMSND76lorXQOE-2BAy0TyAHjgpzzid8PaUYg07p1QP5Hc8Eh7ky8F0vYBDsG9bryLO3SgdmnDt=", :height => "3D\"1\"", :nt => "", :ortant => "", :rtant => "", "s-2bifc4rduxwiocuhtn7jtgizglrntisb4k7teec8wrpm1kpaw-2fh0zzhvb4rbv9ikx89raf7" => "SI\"", :src => "3D\"https://u8673238.ct.sendgrid.net/wf/open?upn=3DCmwAv3oRa0AH4Hd1=", :style => "3D\"height:1px", :width => "3D\"1\""}/
