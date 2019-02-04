@@ -2,7 +2,9 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/backend', as: 'rails_admin'
+  
   use_doorkeeper
+  
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" },
                      :path_names => {:verify_authy => "/verify-token",
                                      :enable_authy => "/enable-two-factor",
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
       resources :users
     end
   end
+
+  resources :account_digests
 
   resources :profiles do
     member do

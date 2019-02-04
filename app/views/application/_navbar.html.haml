@@ -18,9 +18,6 @@
           %a.nav-link.dropdown-toggle#navbarDropdown{href: '#', data: {toggle: 'dropdown'}}
             My Account
           .dropdown-menu
-            = link_to edit_user_registration_path, class: 'dropdown-item' do
-              %i.fas.fa-edit
-              Update account details
             - if !current_user.authy_enabled
               = link_to user_enable_authy_path, method: :post, class: 'dropdown-item' do
                 %i.fas.fa-lock
@@ -31,6 +28,13 @@
                 &nbsp; Disable 2FA
             - unless current_user.stripe_subscription_id.empty?
               = link_to 'Cancel Subscription', charge_path(current_user.stripe_subscription_id), method: :delete, class: 'dropdown-item', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
+            %button.dropdown-item{type: 'button', data: {toggle: 'modal', target: '#digest-modal'}}
+              %i.fas.fa-envelope
+              Inbox digest settings
+            = link_to edit_user_registration_path, class: 'dropdown-item' do
+              %i.fas.fa-edit
+              Update my details
+            
         - if current_user.admin
           %li.nav-item.my-3.dropdown
             %a.nav-link.dropdown-toggle#adminDropdown{href: '#', data: {toggle: 'dropdown'}}
@@ -44,3 +48,4 @@
           = button_to destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-3' do
             %i.fas.fa-sign-out-alt
             Log Out
+= render partial: 'application/digest_modal'

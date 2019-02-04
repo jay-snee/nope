@@ -25,6 +25,8 @@ class User < ApplicationRecord
                            foreign_key: :resource_owner_id,
                            dependent: :delete_all # or :destroy if you need callbacks
 
+  has_one :account_digest, dependent: :destroy
+
   before_validation :generate_referral_code
 
   after_create :send_to_websand, :generate_default_profiles, :notify_registration

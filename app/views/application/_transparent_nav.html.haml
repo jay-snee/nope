@@ -13,16 +13,6 @@
           %li.nav-item.mx-3.navbar_pre_sign_in.h4
             = link_to 'Sign in', 'https://beta.faircustodian.com/users/sign_in', class: 'nav-link my-3'
         - elsif current_user
-          - if current_user.admin
-            %li.nav-item.dropdown.mx-3
-              = link_to 'Backend', rails_admin_url, class: 'nav-link my-3'
-            %li.nav-item.my-3.dropdown.mx-3
-              %a.nav-link.dropdown-toggle#navbarDropdown{href: '#', data: {toggle: 'dropdown'}}
-                Admin
-              .dropdown-menu
-                %a.dropdown-item{href: oauth_applications_url} OAuth Applications
-                %a.dropdown-item{href: oauth_authorized_applications_url} Authorised Applications
-                %a.dropdown-item{href: sidekiq_web_url} Sidekiq
           - unless current_user.stripe_subscription_id.empty?
             = link_to 'Cancel Subscription', charge_url(current_user.stripe_subscription_id), method: :delete, class: 'nav-link my-3', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
           %li.nav-item.dropdown.mx-3

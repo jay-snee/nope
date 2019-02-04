@@ -1,0 +1,28 @@
+- digest = current_user.account_digest.nil? ? AccountDigest.new(user: current_user) : current_user.account_digest
+
+#digest-modal.modal{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    = form_for digest, remote: true do |f|
+      .modal-content
+        .modal-header
+          %h5.modal-title Account digest notification settings
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+        .modal-body
+          - if digest.active
+            .alert.alert-success Your digest notifications are active
+          - else
+            .alert.alert-danger Your digest notifications are inactive
+          .field.my-3
+            %h4 Delivery time
+            = f.time_select :requested_delivery_time, {minute_step: 10}, html: { class: 'form-control' }
+            %p.mt-2 We send out notifications once a week on a Friday. If you'd like yours to be processed at a specific time please select one above, otherwise we'll send it out as soon as it's processed. 
+  
+          .field.my-3
+            %h4 Status
+            = f.check_box :active
+            = f.label :active
+            %p Check this box and click save to activate your notifications. Deselect and save to cancel your notifications. 
+        .modal-footer
+          %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Cancel
+          = f.submit "Save", class: 'btn btn-primary'
