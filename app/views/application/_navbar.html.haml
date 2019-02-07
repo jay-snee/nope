@@ -28,9 +28,10 @@
                 &nbsp; Disable 2FA
             - unless current_user.stripe_subscription_id.empty?
               = link_to 'Cancel Subscription', charge_path(current_user.stripe_subscription_id), method: :delete, class: 'dropdown-item', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
-            %button.dropdown-item{type: 'button', data: {toggle: 'modal', target: '#digest-modal'}}
-              %i.fas.fa-envelope
-              Inbox digest settings
+            - if current_user.admin?
+              %button.dropdown-item{type: 'button', data: {toggle: 'modal', target: '#digest-modal'}}
+                %i.fas.fa-envelope
+                Inbox digest settings
             = link_to edit_user_registration_path, class: 'dropdown-item' do
               %i.fas.fa-edit
               Update my details
