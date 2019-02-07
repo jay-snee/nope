@@ -1,5 +1,5 @@
 class Api::DataController < ApiController
-  
+
   skip_before_action :verify_authenticity_token, only: ['inbound']
 
   def inbound
@@ -8,9 +8,9 @@ class Api::DataController < ApiController
 
     profile = Profile.where(email_address: envelope['to'][0].downcase).first
 
-    # hard ignore for shit where we don't have an associated address 
+    # hard ignore for shit where we don't have an associated address
     unless profile.nil?
-      
+
       message_params = inbound_params
 
       if inbound_params[:attachments].to_i > 0
@@ -40,7 +40,7 @@ class Api::DataController < ApiController
         logger.info 'Message'
       end
     end
-
+    Mail::CleanHTML.perform_later(message)
     Processing::EventJob.perform_later("inbound message", 'data', false)
 
     render json: { status: "ok" }, status: 200

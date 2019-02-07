@@ -91,4 +91,9 @@ gem 'rails_admin', '~> 1.3'
 
 # gem "asset_sync"
 # gem "fog-aws"
+
+# For 2FA with authy
 gem 'devise-authy'
+
+# For modifying email HTML
+gem 'nokogiri'
