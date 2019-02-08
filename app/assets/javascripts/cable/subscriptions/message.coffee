@@ -8,9 +8,9 @@ App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", i
     $.growl.notice({ title: "New Message!", message: "New message has arrived" })
  
   prependLine: (data) ->
-    console.log 'Element attr: ' + $('#message-list').data('profile_id')
+    console.log 'Element attr: ' + $('#message-list').data('profile')
     console.log 'Data attr: ' + data.profile_id
-    if $('#message-list').data('profile_id') == data.profile_id or $('#message-list').data('profile_id') == '*'
+    if $('#message-list').data('profile') == data.profile_id or $('#message-list').data('profile') == '*'
       html = @createLine(data)
       div_id = "#message-#{data.id}"
       if !($(div_id).length)
