@@ -36,11 +36,11 @@ class Api::DataController < ApiController
       if message.save
         logger.info 'Message saved'
         ApplicationCable::MessagesChannel.broadcast_to(profile.user, message)
+        Mail::CleanHTML.perform_later(message)
       else
         logger.info 'Message'
       end
     end
-    Mail::CleanHTML.perform_later(message)
     Processing::EventJob.perform_later("inbound message", 'data', false)
 
     render json: { status: "ok" }, status: 200
