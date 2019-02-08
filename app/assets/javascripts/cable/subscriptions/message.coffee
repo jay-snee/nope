@@ -1,5 +1,5 @@
 
-App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", id: $('#message-list').data('id') },
+App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", id: $('#message-list').data('id')},
   received: (data) ->
     @prependLine(data)
     if $('#welcome').length
@@ -8,10 +8,11 @@ App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", i
     $.growl.notice({ title: "New Message!", message: "New message has arrived" })
  
   prependLine: (data) ->
-    html = @createLine(data)
-    div_id = "#message-#{data.id}"
-    if !($(div_id).length)
-      $("#messages-list").prepend(html)
+    if $('#message-list').data('profile_id') == data.profile_id or $('#message-list').data('profile_id') == '*'
+      html = @createLine(data)
+      div_id = "#message-#{data.id}"
+      if !($(div_id).length)
+        $("#messages-list").prepend(html)
  
   createLine: (data) ->        
     # parse ISO8601 date and format for display

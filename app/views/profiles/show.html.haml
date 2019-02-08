@@ -16,7 +16,7 @@
           .card-header
             %h3 Recent Messages
           .card-body
-            %ul#messages-list.list-group.mb-5{data: {id: current_user.id}}              
+            %ul#messages-list.list-group.mb-5{data: {id: current_user.id, profile_id: @profile.id}}              
               - @profile.messages.each do |m|
                 = render m
   - else

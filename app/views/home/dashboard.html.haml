@@ -41,13 +41,13 @@
           .card-header
             %h3#messages-header.mt-2 All Messages
           .card-body
-            %ul#messages-list.list-group{data: {id: current_user.id}}
+            %ul#messages-list.list-group{data: {id: current_user.id, profile_id: '*'}}
       - else
         .card
           .card-header
             %h3#messages-header.mt-2 All Messages
           .card-body
-            %ul#messages-list.list-group{data: {id: current_user.id}}
+            %ul#messages-list.list-group{data: {id: current_user.id, profile_id: '*'}}
               - @messages.order(created_at: :desc).each do |m|
                 = render m
 
