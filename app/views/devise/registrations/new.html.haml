@@ -1,7 +1,7 @@
 #login-block.pt-5
   .row
-    .col-sm-5.offset-sm-1
-      %h2.my-4 Sign up
+    .col-sm-10.offset-sm-1.col-md-6.offset-md-3
+      %h2 Sign up
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field.my-4
@@ -60,22 +60,3 @@
             = f.submit "Sign up", disabled: true, class: 'btn btn-primary btn-lg my-4 disabled'
       .mb-5
         = render "devise/shared/links"
-    .col-sm-5.offset-sm-1.pr-5
-      %h3.mt-5
-        Transparency is important to us so we’d like to make it clear from the outset how we handle your data.
-      %p.mt-3
-        Email messages that are intercepted by the beta platform are not processed outside of initial capture, storage, and display on your dashboard.
-      %p
-        We do have plans to add automatic processing of these messages in the future for a variety of purposes, but that will only ever be opt-in and we’ll let you know about those features in advance. We will not use your data in any other way without your explicit consent.
-      %p
-        We can view the content of any emails but have no reason to do so, nor would we without being compelled to by law. We understand this may be a concern to some and we are actively investigating ways we can remove this ability in a manner which still allows us to operate effectively.
-      %p
-        You are required to use a valid address to confirm account upon signup - this is a measure to prevent abuse.
-      %p
-        We use Google Analytics for tracking engagement and user experience. You are able to block this service from running (not just on our site, but across the entire web) by installing the Privacy Badger browser extension.
-      %p
-        You can find our privacy policy
-        = link_to 'here', privacy_path
-      %p.mb-5
-        If you should have any concerns or queries please contact us
-        = mail_to 'privacy@faircustodian.com', 'privacy@faircustodian.com'
