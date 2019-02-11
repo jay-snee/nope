@@ -2,6 +2,11 @@
   .col-sm-10.offset-sm-1.col-md-6.offset-md-3
     %h2= I18n.t('authy_register_title', {:scope => 'devise'})
     = enable_authy_form do
+      .pt-3
+        %p
+          2-factor authentication (2FA) is powered by
+          = link_to 'Authy.', '//authy.com', target: '_blank'
+          Enabling 2FA will share your phone number with Authy. Fair Custodian does not store your phone number.
       .field.my-4
         = text_field_tag :country_code, '', :autocomplete => :off, :placeholder => I18n.t('devise.country'), :id => "authy-countries", class: 'form-control form-control-lg'
       .field.my-4
