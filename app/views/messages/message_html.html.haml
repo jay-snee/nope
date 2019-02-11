@@ -1,4 +1,4 @@
-- unless @message.html.nil?
+- unless @message.html.blank?
   .card
     .card-body.p-5
       = @message.html.html_safe
