@@ -3,8 +3,14 @@ class MessagesController < ApplicationController
   end
 
   def show
+    
     @message = current_user.messages.find params[:id]
     @message.update_read_count
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @message }
+    end
   end
 
   def message_html
