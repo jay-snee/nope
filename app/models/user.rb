@@ -35,6 +35,8 @@ class User < ApplicationRecord
   validates :referral_code, uniqueness: true
   validate :block_our_domain
 
+  has_many :referral_codes
+
   def tokens
     Doorkeeper::AccessToken.where(resource_owner_id: id).all
   end

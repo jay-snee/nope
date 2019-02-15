@@ -7,14 +7,20 @@ class Users::ReferralJob < ApplicationJob
     begin
       processed_code = referrer_code.downcase.delete(' ')
       user = User.find user_id
-  	  referrer = User.where(referral_code: processed_code).first
-
-  	  user.update(referred_by_id: referrer.id, max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i))
-
-  	  referrer.update(max_profiles: (referrer.max_profiles + ENV["REFERRER_REWARD"].to_i))
-
-  	  Processing::EventJob.perform_later("Referral Processed! Code: #{processed_code} From: #{referrer.email}", "referral", true)
+  	  # check for old user model ref codes
+      referrer = User.where(referral_code: processed_code).first
+      
+      if referrer.nil?
+        # no referrer still so check the mail ref codes table
+        ref_code = ReferralCode.where(code: processed_code).first
+        ReferralCode.increment_count(:uses, ref_code.id, touch: true)
+        referrer = ref_code.user
+      end
+      user.update(referred_by_id: referrer.id, max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i))
+      referrer.update(max_profiles: (referrer.max_profiles + ENV["REFERRER_REWARD"].to_i))
+      Processing::EventJob.perform_later("Referral Processed! Code: #{processed_code} From: #{referrer.email}", "referral", true)
     rescue
+      # we didn't find a referrer and bailed.
       user = User.find user_id
       Processing::EventJob.perform_later("Referral processing failed: \n#{user.email}\n#{processed_code}", "referral", true)
     end
