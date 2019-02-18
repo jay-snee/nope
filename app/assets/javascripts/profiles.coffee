@@ -14,8 +14,4 @@ ready = ->
   $('.copy-button').on 'click', ->
   	$.growl.notice({ title: "", message: "Copied to your clipboard!" })
 
-
-
-
-
 $(document).on 'turbolinks:load', ready
