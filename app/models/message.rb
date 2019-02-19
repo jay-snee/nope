@@ -1,4 +1,12 @@
 class Message < ApplicationRecord
+  if Rails.env.production?
+    # Elasticsearch-model setup
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
+
+    index_name 'data-messages'
+  end
+
 
   belongs_to :profile
   belongs_to :user
