@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  if Rails.env.production?
+  if ENV['SEND_MESSAGES_TO_ELASTIC']
     # Elasticsearch-model setup
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
