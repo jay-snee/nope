@@ -224,10 +224,11 @@ class Profile < ApplicationRecord
   def top_senders
     senders = {}
     messages.each do |m|
-      if senders[m.from].nil?
-        senders[m.from] = 1
+      domain = m.from.split('@')[1]
+      if senders[domain].nil?
+        senders[domain] = 1
       else
-        senders[m.from] += 1
+        senders[domain] += 1
       end
     end
     return senders.sort_by {|k,v| -v}[0..2]
@@ -236,10 +237,11 @@ class Profile < ApplicationRecord
   def top_senders_this_week
     senders = {}
     messages.where('created_at > ?', (DateTime.now.beginning_of_day - 7.days)).each do |m|
-      if senders[m.from].nil?
-        senders[m.from] = 1
+      domain = m.from.split('@')[1]
+      if senders[domain].nil?
+        senders[domain] = 1
       else
-        senders[m.from] += 1
+        senders[domain] += 1
       end
     end
     return senders.sort_by {|k,v| -v}[0..2]
