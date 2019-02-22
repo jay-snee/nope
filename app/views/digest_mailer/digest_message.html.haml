@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+  %body
+    %center
+      %h1 Fair Custodian Weekly Digest
+    - @user.profiles.each do |profile|
+      %h2= link_to profile.name, profile
+      %ol
+        - profile.top_senders_this_week.each do |sender|
+          %li
+            %strong= sender[0]
+            = "Messages: #{sender[1]}" 

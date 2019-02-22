@@ -221,4 +221,28 @@ class Profile < ApplicationRecord
     "#{email_display}@#{email_address.split('@')[1]}"
   end
 
+  def top_senders
+    senders = {}
+    messages.each do |m|
+      if senders[m.from].nil?
+        senders[m.from] = 1
+      else
+        senders[m.from] += 1
+      end
+    end
+    return senders.sort_by {|k,v| -v}[0..2]
+  end
+
+  def top_senders_this_week
+    senders = {}
+    messages.where('created_at > ?', (DateTime.now.beginning_of_day - 7.days)).each do |m|
+      if senders[m.from].nil?
+        senders[m.from] = 1
+      else
+        senders[m.from] += 1
+      end
+    end
+    return senders.sort_by {|k,v| -v}[0..2]
+  end
+
 end
