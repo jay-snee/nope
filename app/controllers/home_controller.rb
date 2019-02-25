@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :privacy, :premium_acct, :free_acct, :terms]
+  before_action :authenticate_user!, except: [:index, :privacy, :premium_acct, :free_acct, :terms, :get_started]
 
   def index
     if current_user
