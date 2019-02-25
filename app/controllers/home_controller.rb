@@ -14,12 +14,17 @@ class HomeController < ApplicationController
   end
 
   def free_acct
-    Processing::EventJob.perform_later 'Signup free', 'signup_pref', true
+    Processing::EventJob.perform_later 'Signup free', 'signup_pref', false
     redirect_to new_user_registration_path
   end
 
   def premium_acct
-    Processing::EventJob.perform_later 'Signup premium', 'signup_pref', true
+    Processing::EventJob.perform_later 'Signup premium', 'signup_pref', false
+    redirect_to new_user_registration_path
+  end
+
+  def get_started
+    Processing::EventJob.perform_later 'Get Started', 'signup_pref', false
     redirect_to new_user_registration_path
   end
 
