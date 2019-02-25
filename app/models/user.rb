@@ -125,7 +125,8 @@ class User < ApplicationRecord
             "email": email,
             "source": "beta-user",
             "subscribed_at": DateTime.now.iso8601,
-            "last_seen_date": last_seen_var
+            "last_seen_date": last_seen_var,
+            "marketing_consent": "marketing_consent_#{marketing_consent.to_s}"
           }
         }
       }
