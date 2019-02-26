@@ -7,7 +7,7 @@
         .field.my-4
           .row
             .col-md-4.col-sm-12
-              %h3= f.label :email
+              %h5= f.label :email
             .col-md-8.col-sm-12
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
 
@@ -15,25 +15,25 @@
         .field.my-4
           .row
             .col-md-4.col-sm-12
-              %h3= f.label :password
+              %h5= f.label :password
             .col-md-8.col-sm-12
-              = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control'
               - if @minimum_password_length
-                %em
-                  (#{@minimum_password_length} characters minimum)
+                = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control', placeholder: "#{@minimum_password_length} characters minimum"
+              - else
+                = f.password_field :password, autocomplete: "off", class: 'form-control-lg form-control'
 
         .field.my-4
           .row
             .col-md-4.col-sm-12
-              %h3= f.label :password_confirmation
+              %h5= f.label :password_confirmation
             .col-md-8.col-sm-12
               = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
 
         - if @referrer_code.nil?
-          .field.my-5
+          .field.my-4
             .row
               .col-md-4.col-sm-12
-                %h2= label_tag "Referral Code"
+                %h5= label_tag "Referral Code (optional)"
               .col-md-8.col-sm-12
                 = text_field_tag :referrer_code, '', autocomplete: "off", class: 'form-control form-control-lg'
         - else
