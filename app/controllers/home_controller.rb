@@ -1,6 +1,14 @@
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!, except: [:index, :privacy, :premium_acct, :free_acct, :terms, :get_started]
+  before_action :authenticate_user!, except: [
+    :index, 
+    :privacy, 
+    :premium_acct, 
+    :free_acct, 
+    :terms, 
+    :get_started,
+    :black_hole
+  ]
 
   def index
     if current_user
@@ -29,6 +37,10 @@ class HomeController < ApplicationController
   end
 
   def terms
+  end
+
+  def black_hole
+    render layout: false
   end
 
   def dashboard
