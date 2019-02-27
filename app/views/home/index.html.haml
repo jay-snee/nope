@@ -1,10 +1,17 @@
 
 #home-block.block.block-inverse.block-fill-height.text-center.pt-0{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
-  .mb-5.pb-5
-    = render partial: 'application/transparent_nav'
-  %h1.block-title.text-info.mt-5.pt-5 Concerned about sharing your email address?
-  %h2.text-muted.my-3 Create anonymised email addresses to keep your personal email private.
-  = link_to 'Get started', 'https://beta.faircustodian.com/get_started', class: 'btn btn-outline-primary btn-lg px-5 my-5'
+  = render partial: 'application/transparent_nav'
+  .row
+    .col-sm-3
+    .col-sm-6
+      %h1.block-title.text-info.mt-3.pt-3 Concerned about sharing your email address?
+      %h2.text-muted.my-3 Create anonymised email addresses to keep your personal email private.
+    .col-sm-3
+  .row
+    .col-sm-5
+    .col-sm-2
+      = link_to 'Sign up', 'https://beta.faircustodian.com/get_started', class: 'btn btn-outline-primary btn-block btn-lg px-5 my-5'
+    .col-sm-5
 
 #page.block
   .container.text-center
