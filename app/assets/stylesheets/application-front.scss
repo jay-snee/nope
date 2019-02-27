@@ -1,5 +1,10 @@
 @import 'marketing/toolkit-minimal.scss';
 
 #home-block {
-  background-position: right;
+  background-position: center;
+  bakground-color: rgba(0,0,0,0.9);
+}
+
+#home-content-row {
+  background-color: rgba(0, 0, 0, 0.5); 
 }
