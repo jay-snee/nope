@@ -56,7 +56,11 @@
             = link_to 'Privacy Policy', privacy_path
 
         .actions.my-3
-          %center
-            = f.submit "Sign up", disabled: true, class: 'btn btn-primary btn-lg my-4 disabled'
+          .row
+            .col-sm-4
+            .col-sm-4
+              %center
+                = f.submit "Sign up", disabled: true, class: 'btn btn-primary btn-block btn-lg my-4 disabled'
+            .col-sm-4
       .mb-5
         = render "devise/shared/links"
