@@ -45,7 +45,6 @@ Rails.application.routes.draw do
   get '/premium', to: 'home#premium_acct'
   get '/get_started', to: 'home#get_started'
   get '/terms', to: 'home#terms'
-  get '/black_hole', to: 'home#black_hole'
 
   resources :charges
 

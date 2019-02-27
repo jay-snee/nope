@@ -39,10 +39,6 @@ class HomeController < ApplicationController
   def terms
   end
 
-  def black_hole
-    render layout: false
-  end
-
   def dashboard
     @messages = current_user.messages
     @profiles = current_user.profiles
