@@ -1,0 +1,32 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Automated GDPR Requests
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width,initial-scale=1,user-scalable=no", :name => "viewport"}/
+    %meta{:content => "Automated GDPR Requests", :name => "description"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Questrial:400,400italic%7CRoboto:100,100italic", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "http://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_main.css", :rel => "stylesheet"}/
+    = csrf_meta_tags
+    %noscript
+      %link{:href => "http://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_noscript.css", :rel => "stylesheet"}/
+  %body.is-loading
+    #wrapper
+      #main
+        .inner
+          %h1#text02 Automated GDPR Requests for Gmail
+          %hr#divider02/
+          %p#text01 Connect to your existing Gmail account, discover who holds your data and then automatically ask for it to be deleted.
+          %form#form01{:action => "/submit", :enctype => "multipart/form-data", :method => "post"}
+            = hidden_field_tag :authenticity_token, form_authenticity_token
+            .inner
+              .field
+                %input#form01-email-address{:maxlength => "128", :name => "email-address", :placeholder => "Email Address", :required => "", :type => "text"}/
+              .actions
+                %button{:type => "submit"} Submit
+            %input{:name => "id", :type => "hidden", :value => "form01"}/
+            %input{:name => "page", :type => "hidden", :value => "gdpr-interest"}/
+          #image01.image
+            %img{:alt => "", :src => "http://fc-carrd-assets.s3-eu-west-2.amazonaws.com/images/gdpr_image01.svg"}/
+    %script{:src => "http://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_main.js"}
