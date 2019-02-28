@@ -66,6 +66,7 @@ class HomeController < ApplicationController
 
   # Thank you page
   def thank_you
+    render layout: false
   end
 
   def gdpr
