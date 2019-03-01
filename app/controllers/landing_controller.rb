@@ -3,7 +3,7 @@ class LandingController < ApplicationController
   before_action :authenticate_user!, except: [
     :gdpr,
     :thank_you,
-    :submit,
+    :submit
   ]
   
   layout 'landing-page'
