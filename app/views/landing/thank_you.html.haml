@@ -8,7 +8,10 @@
         .inner
           %h1#text02 Thank You!
           %hr#divider02/
-          %p#text01 You've caught us a bit early, we'll be in touch when we have more news. In the meantime, if you'd like to talk to us sooner then feel free to email us at hello@faircustodian.com.
+          %p
+            #text01
+              You've caught us a bit early, we'll be in touch when we have more news. In the meantime, if you'd like to talk to us sooner then feel free to email us at
+              =mail_to 'hello@faircustodian.com', 'hello@faircustodian.com'
           #image01
             %a.image{href: '/'}
               %img{:alt => "", :src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/images/gdpr_image01.svg"}/
