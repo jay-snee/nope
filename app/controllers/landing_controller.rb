@@ -5,7 +5,7 @@ class LandingController < ApplicationController
     :thank_you,
     :submit
   ]
-  
+
   layout 'landing-page'
 
   ######### Carrd Pages ################
@@ -14,7 +14,7 @@ class LandingController < ApplicationController
   # Send form email & id to Websand
   def submit
     response = HTTParty.post(
-      'https://fair-custodian.websandhq.com/api/data/subscriber', 
+      'https://fair-custodian.websandhq.com/api/data/subscriber',
       {
         'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
         'body': {
