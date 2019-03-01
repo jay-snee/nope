@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     :premium_acct, 
     :free_acct, 
     :terms, 
-    :get_started,
+    :get_started
   ]
 
   def index
