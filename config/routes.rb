@@ -45,9 +45,9 @@ Rails.application.routes.draw do
   get '/premium', to: 'home#premium_acct'
   get '/get_started', to: 'home#get_started'
   get '/terms', to: 'home#terms'
-  get '/gdpr', to: 'home#gdpr'
-  post '/submit', to: 'home#submit'
-  get '/thank_you', to: 'home#thank_you'
+  get '/gdpr', to: 'landing#gdpr'
+  post '/submit', to: 'landing#submit'
+  get '/thank_you', to: 'landing#thank_you'
 
   resources :charges
 

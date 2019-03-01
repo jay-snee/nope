@@ -1,0 +1,15 @@
+= content_for :head do
+  %title Thank You!
+  %meta{:content => "Thank You!", :name => "description"}/
+= content_for :body do
+  %body.is-loading
+    #wrapper
+      #main
+        .inner
+          %h1#text02 Thank You!
+          %hr#divider02/
+          %p#text01 We'll be in touch when we have any more information. If you'd like to talk to us sooner then feel free to email us at hello@faircustodian.com.
+          #image01
+            %a.image{href: '/'}
+              %img{:alt => "", :src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/images/gdpr_image01.svg"}/
+    %script{:src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_main.js"}

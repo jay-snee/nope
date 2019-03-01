@@ -1,16 +1,7 @@
-!!!
-%html{:lang => "en"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Automated GDPR Requests
-    %meta{:charset => "utf-8"}/
-    %meta{:content => "width=device-width,initial-scale=1,user-scalable=no", :name => "viewport"}/
-    %meta{:content => "Automated GDPR Requests", :name => "description"}/
-    %link{:href => "https://fonts.googleapis.com/css?family=Questrial:400,400italic%7CRoboto:100,100italic", :rel => "stylesheet", :type => "text/css"}/
-    %link{:href => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_main.css", :rel => "stylesheet"}/
-    = csrf_meta_tags
-    %noscript
-      %link{:href => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_noscript.css", :rel => "stylesheet"}/
+= content_for :head do
+  %title Automated GDPR Requests
+  %meta{:content => "Automated GDPR Requests", :name => "description"}/
+= content_for :body do
   %body.is-loading
     #wrapper
       #main
@@ -27,6 +18,7 @@
                 %button{:type => "submit"} Submit
             %input{:name => "id", :type => "hidden", :value => "form01"}/
             %input{:name => "page", :type => "hidden", :value => "gdpr-interest"}/
-          #image01.image
-            %img{:alt => "", :src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/images/gdpr_image01.svg"}/
+          #image01
+            %a.image{href: '/'}
+              %img{:alt => "", :src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/images/gdpr_image01.svg"}/
     %script{:src => "https://fc-carrd-assets.s3-eu-west-2.amazonaws.com/gdpr_main.js"}
