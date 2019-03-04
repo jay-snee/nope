@@ -2,6 +2,7 @@ class LandingController < ApplicationController
 
   before_action :authenticate_user!, except: [
     :gdpr,
+    :gmail,
     :thank_you,
     :submit
   ]
@@ -36,5 +37,8 @@ class LandingController < ApplicationController
   end
 
   def gdpr
+  end
+
+  def gmail
   end
 end
