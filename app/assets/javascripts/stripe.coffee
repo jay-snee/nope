@@ -14,6 +14,7 @@ ready = ->
     
 
     cardButton.addEventListener 'click', (ev) ->
+      ev.preventDefault()
       stripe.handleCardPayment(clientSecret, cardElement, source_data: owner: name: cardholderName.value).then (result) ->
         if result.error
           # Display error.message in your UI.
