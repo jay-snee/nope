@@ -11,7 +11,7 @@ ready = ->
     
     cardButton.addEventListener 'click', (ev) ->
       ev.preventDefault()
-      stripe.createToken(cardElement, tokenData: owner: name: cardholderName.value).then (result) ->
+      stripe.createToken(clientSecret, cardElement, tokenData: owner: name: cardholderName.value).then (result) ->
         if result.error
           console.log result
         else
