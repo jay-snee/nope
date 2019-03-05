@@ -1,9 +1,7 @@
 ready = ->
-  console.log 'Loaded'
 
   if document.getElementById('card-button')
-    console.log 'element found'
-    stripe = Stripe('pk_test_vynAQTjfqy1fhkovFDvRP5pX', betas: [ 'payment_intent_beta_3' ])
+    stripe = Stripe($('#stripe-field').data('key'), betas: [ 'payment_intent_beta_3' ])
     elements = stripe.elements()
     cardElement = elements.create('card')
     cardElement.mount '#card-element'
@@ -14,18 +12,24 @@ ready = ->
     cardButton.addEventListener 'click', (ev) ->
       ev.preventDefault()
       stripe.createToken(cardElement, tokenData: owner: name: cardholderName.value).then (result) ->
-    
-
-    cardButton.addEventListener 'click', (ev) ->
-      ev.preventDefault()
-      stripe.handleCardPayment(clientSecret, cardElement, source_data: owner: name: cardholderName.value).then (result) ->
         if result.error
           console.log result
         else
           console.log result
           console.log result.token
         return
-      return
+      return    
+
+    # cardButton.addEventListener 'click', (ev) ->
+    #   ev.preventDefault()
+    #   stripe.handleCardPayment(clientSecret, cardElement, source_data: owner: name: cardholderName.value).then (result) ->
+    #     if result.error
+    #       console.log result
+    #     else
+    #       console.log result
+    #       console.log result.token
+    #     return
+    #   return
 
   # Legacy
   #button = $('.stripe-button-el').first()
