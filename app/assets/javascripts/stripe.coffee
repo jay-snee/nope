@@ -17,9 +17,9 @@ ready = ->
       ev.preventDefault()
       stripe.handleCardPayment(clientSecret, cardElement, source_data: owner: name: cardholderName.value).then (result) ->
         if result.error
-          # Display error.message in your UI.
+          console.log result
         else
-          # The payment has succeeded. Display a success message.
+          console.log result
         return
       return
 
