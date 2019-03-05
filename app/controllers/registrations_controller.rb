@@ -4,6 +4,14 @@ class RegistrationsController < Devise::RegistrationsController
 
   def new
     @referrer_code = params[:referrer_code]
+    Stripe.api_key = ENV['STRIPE_SECRET_KEY']
+    @publishable_key = ENV['STRIPE_PUBLISHABLE_KEY']
+
+    @intent = Stripe::PaymentIntent.create({
+      amount: 3099,
+      currency: 'gbp',
+      payment_method_types: ['card']
+    })
     super
   end
 
