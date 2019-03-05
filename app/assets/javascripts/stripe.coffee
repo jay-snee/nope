@@ -11,6 +11,9 @@ ready = ->
     cardButton = document.getElementById('card-button')
     clientSecret = cardButton.dataset.secret
     
+    cardButton.addEventListener 'click', (ev) ->
+      ev.preventDefault()
+      stripe.createToken(cardElement, tokenData: owner: name: cardholderName.value).then (result) ->
     
 
     cardButton.addEventListener 'click', (ev) ->
@@ -20,6 +23,7 @@ ready = ->
           console.log result
         else
           console.log result
+          console.log result.token
         return
       return
 
