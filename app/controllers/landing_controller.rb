@@ -30,7 +30,7 @@ class LandingController < ApplicationController
         }
       }
     )
-    Processing::EventJob.perform_later("New expression of interest in: #{params['page']}", "landing-page", true)
+    Processing::EventJob.perform_later("New expression of interest in: #{params['page']} From: #{params['email-address']}", "landing-page", true)
 
     redirect_to thank_you_path
   end
