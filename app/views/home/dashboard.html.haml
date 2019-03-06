@@ -1,7 +1,7 @@
 #dashboard.container-fluid
   .row
     .col-sm-4.pt-3.pb-5
-      - if current_user.stripe_subscription_id.empty?
+      - if current_user.stripe_subscription_id.empty? && !current_user.trial
         .mt-2
             
           %button.btn.btn-outline-primary.btn-lg.btn-block{type: 'button', data: {toggle: 'modal', target: '#upgrade-modal'}}
