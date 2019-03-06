@@ -32,7 +32,7 @@ class Processing::EventJob < ApplicationJob
         ENV['SLACK_WEBHOOK_URL'],
         body: {
           payload: {
-            text: "#{event_type}: #{message}"
+            text: "#{event_type}: #{message}".gsub(/\S*@/, ' xxxxx@')
           }.to_json
         }
       )
