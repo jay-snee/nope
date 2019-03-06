@@ -7,15 +7,11 @@ class Users::ReferralJob < ApplicationJob
     begin
       processed_code = referrer_code.downcase.delete(' ')
       user = User.find user_id
-  	  # check for old user model ref codes
-      referrer = User.where(referral_code: processed_code).first
-      
-      if referrer.nil?
-        # no referrer still so check the mail ref codes table
-        ref_code = ReferralCode.where(code: processed_code).first
-        ReferralCode.increment_count(:uses, ref_code.id, touch: true)
-        referrer = ref_code.user
-      end
+
+      ref_code = ReferralCode.where(code: processed_code).first
+      ReferralCode.increment_count(:uses, ref_code.id, touch: true)
+      referrer = ref_code.user
+
       user.update(
         referred_by_id: referrer.id, 
         max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i + ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"].to_i),
