@@ -13,7 +13,7 @@
           %li.nav-item.mx-3.navbar_pre_sign_in.h4
             = link_to 'Sign in', 'https://beta.faircustodian.com/users/sign_in', class: 'nav-link my-3'
         - elsif current_user
-          - unless current_user.stripe_subscription_id.empty?
+          - unless current_user.stripe_subscription_id.empty? && !current_user.trial
             = link_to 'Cancel Subscription', charge_url(current_user.stripe_subscription_id), method: :delete, class: 'nav-link my-3', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
           %li.nav-item.dropdown.mx-3
             = button_to destroy_user_session_url, method: :delete, class: 'btn btn-outline-danger my-3' do

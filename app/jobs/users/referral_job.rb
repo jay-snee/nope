@@ -16,7 +16,12 @@ class Users::ReferralJob < ApplicationJob
         ReferralCode.increment_count(:uses, ref_code.id, touch: true)
         referrer = ref_code.user
       end
-      user.update(referred_by_id: referrer.id, max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i))
+      user.update(
+        referred_by_id: referrer.id, 
+        max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i),
+        trial: true,
+        trial_stared: DateTime.now
+      )
       referrer.update(max_profiles: (referrer.max_profiles + ENV["REFERRER_REWARD"].to_i))
       Processing::EventJob.perform_later("Referral Processed! Code: #{processed_code} From: #{referrer.email}", "referral", true)
     rescue
