@@ -26,7 +26,7 @@
               = link_to user_disable_authy_path, method: :post, class: 'dropdown-item' do
                 %i.fas.fa-unlock
                 &nbsp; Disable 2FA
-            - unless current_user.stripe_subscription_id.empty? && !current_user.trial
+            - unless current_user.stripe_subscription_id.empty?
               = link_to 'Cancel Subscription', charge_path(current_user.stripe_subscription_id), method: :delete, class: 'dropdown-item', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
             - if current_user.admin?
               %button.dropdown-item{type: 'button', data: {toggle: 'modal', target: '#digest-modal'}}
