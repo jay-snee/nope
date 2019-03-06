@@ -19,11 +19,11 @@ class Users::ReferralJob < ApplicationJob
         trial_started: DateTime.now
       )
       referrer.update(max_profiles: (referrer.max_profiles + ENV["REFERRER_REWARD"].to_i))
-      Processing::EventJob.perform_later("Referral Processed! Code: #{processed_code} From: #{referrer.email}", "referral", true)
+      Processing::EventJob.perform_later("Referral Processed! Code: #{processed_code}", "referral", true)
     rescue
       # we didn't find a referrer and bailed.
       user = User.find user_id
-      Processing::EventJob.perform_later("Referral processing failed: \n#{user.email}\n#{processed_code}", "referral", true)
+      Processing::EventJob.perform_later("Referral processing failed: \n#{processed_code}", "referral", true)
     end
   end
 

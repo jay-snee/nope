@@ -60,7 +60,7 @@ class User < ApplicationRecord
   end
 
   def after_confirmation
-    Processing::EventJob.perform_later("new user confirmed - #{email}", 'sign up', true)
+    Processing::EventJob.perform_later("new user confirmed", 'sign up', true)
   end
 
   def can_create_profile?
@@ -76,15 +76,15 @@ class User < ApplicationRecord
   def cancel_stripe_subscription
     stripe_subscription.delete
     update(stripe_subscription_id: '')
-    Processing::EventJob.perform_later("subscripton cancelled - #{email}", 'subscription', true)
+    Processing::EventJob.perform_later("subscripton cancelled", 'subscription', true)
   end
 
   def notify_registration
-    Processing::EventJob.perform_later("new user registration - #{email}", 'sign up', true)
+    Processing::EventJob.perform_later("new user registration", 'sign up', true)
   end
 
   def after_database_authentication
-    Processing::EventJob.perform_later("new login - #{email}", 'login', true)
+    Processing::EventJob.perform_later("new login", 'login', true)
   end
 
   def generate_referral_code
