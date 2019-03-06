@@ -1,7 +1,10 @@
-#login-block.pt-5
+#login-block.pt-5.mb-3
   .row
     .col-sm-10.offset-sm-1.col-md-6.offset-md-3
-      %h2 Sign up
+      %h1 Sign up
+  .row.mb-y
+    .col-sm-10.offset-sm-1.col-md-6.offset-md-3
+      %h2 Account info
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = devise_error_messages!
         .field.my-4
@@ -10,8 +13,6 @@
               %h5= f.label :email
             .col-md-8.col-sm-12
               = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg'
-
-
         .field.my-4
           .row
             .col-md-4.col-sm-12
@@ -29,38 +30,86 @@
             .col-md-8.col-sm-12
               = f.password_field :password_confirmation, autocomplete: "off", class: 'form-control form-control-lg'
 
+  = form_tag do
+    .row.mt-5
+      .col-sm-10.offset-sm-1.col-md-6.offset-md-3
+        %h2 Billing info        
         - if @referrer_code.nil?
           .field.my-4
             .row
               .col-md-4.col-sm-12
-                %h5= label_tag "Referral Code (optional)"
+                %h5= label_tag "Referrer/discount code (optional)"
               .col-md-8.col-sm-12
                 = text_field_tag :referrer_code, '', autocomplete: "off", class: 'form-control form-control-lg'
         - else
           = hidden_field_tag :referrer_code, @referrer_code.to_s
-
-        .form-check
-          = f.check_box :marketing_consent, class: 'form-check-input'
-          %label.form-check-label.pl-3{for: 'user_marketing_consent'}
-            If you
-            %strong want to join our mailing list
-            to hear about service updates and receive other marketing material, please opt-in here.
-        %br
-
-        .form-check
-          = f.check_box :terms_consent, class: 'form-check-input'
-          %label.form-check-label.pl-3#terms_consent{for: 'user_terms_consent'}
-            I agree to the
-            = link_to 'Terms and Conditions', terms_path
-            and have read the
-            = link_to 'Privacy Policy', privacy_path
-
-        .actions.my-3
+        .field.my-4
           .row
-            .col-sm-4
-            .col-sm-4
-              %center
-                = f.submit "Sign up", disabled: true, class: 'btn btn-primary btn-block btn-lg my-4 disabled'
-            .col-sm-4
+            .col-md-4.col-sm-12
+              %h5= label_tag 'cardholder-name'
+            .col-md-8.col-sm-12
+              = text_field_tag 'cardholder-name', '', autofocus: true, class: 'form-control form-control-lg'
+        .field.my-4#stripe-field{data: {key: ENV['STRIPE_PUBLISHABLE_KEY']}}
+          .row
+            .col-md-4.col-sm-12
+              %h5
+                %label{for: 'card-element'} Credit or Debit card
+            .col-md-8.col-sm-12
+              #card-element
+              #card-errors
+        .field.my-4
+          .row
+            .col-md-4.col-sm-12
+            .col-md-8.col-sm-12
+              %button#card-button.btn.btn-lg.btn-primary{data: { secret: @intent.client_secret }} Click me
+    - #.row.mt-5
+    - #  .col-sm-10.offset-sm-1.col-md-6.offset-md-3
+    - #    .field.my-4
+    - #      .row
+    - #        .col-md-4.col-sm-12
+    - #          %h5= f.label :address_1
+    - #        .col-md-8.col-sm-12
+    - #          = f.email_field :address_1, autofocus: true, class: 'form-control form-control-lg'
+    - #    .field.my-4
+    - #      .row
+    - #        .col-md-4.col-sm-12
+    - #          %h5= f.label :address_2
+    - #        .col-md-8.col-sm-12
+    - #          = f.email_field :address_2, autofocus: true, class: 'form-control form-control-lg'
+    - #    .field.my-4
+    - #      .row
+    - #        .col-md-4.col-sm-12
+    - #          %h5= f.label :city
+    - #        .col-md-8.col-sm-12
+    - #          = f.email_field :city, autofocus: true, class: 'form-control form-control-lg'
+    - #    .field.my-4
+    - #      .row
+    - #        .col-md-4.col-sm-12
+    - #          %h5= f.label :postcode
+    - #        .col-md-8.col-sm-12
+    - #          = f.email_field :postcode, autofocus: true, class: 'form-control form-control-lg'
+    - #    .form-check
+    - #      = f.check_box :marketing_consent, class: 'form-check-input'
+    - #      %label.form-check-label.pl-3{for: 'user_marketing_consent'}
+    - #        If you
+    - #        %strong want to join our mailing list
+    - #        to hear about service updates and receive other marketing material, please opt-in here.
+    - #    %br
+    - #    .form-check
+    - #      = f.check_box :terms_consent, class: 'form-check-input'
+    - #      %label.form-check-label.pl-3#terms_consent{for: 'user_terms_consent'}
+    - #        I agree to the
+    - #        = link_to 'Terms and Conditions', terms_path
+    - #        and have read the
+    - #        = link_to 'Privacy Policy', privacy_path
+    - #    .actions.my-3
+    - #      .row
+    - #        .col-sm-4
+    - #        .col-sm-4
+    - #          %center
+    - #            = f.submit "Sign up", disabled: true, class: 'btn btn-primary btn-block btn-lg my-4 disabled- #'
+    - #        .col-sm-4
+  .row
+    .col-sm-10.offset-sm-1.col-md-6.offset-md-3
       .mb-5
         = render "devise/shared/links"
