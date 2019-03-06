@@ -18,7 +18,7 @@ class Users::ReferralJob < ApplicationJob
       end
       user.update(
         referred_by_id: referrer.id, 
-        max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i),
+        max_profiles: (user.max_profiles + ENV["REFERRER_REWARD"].to_i + ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"].to_i),
         trial: true,
         trial_stared: DateTime.now
       )
