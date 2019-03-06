@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get '/gdpr', to: 'landing#gdpr'
   get '/gmail', to: 'landing#gmail'
   get '/data_audit', to: 'landing#data'
+  get '/shared', to: 'landing#shared'
   post '/submit', to: 'landing#submit'
   get '/thank_you', to: 'landing#thank_you'
 

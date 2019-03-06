@@ -4,6 +4,7 @@ class LandingController < ApplicationController
     :gdpr,
     :gmail,
     :data,
+    :shared,
     :thank_you,
     :submit
   ]
@@ -45,5 +46,8 @@ class LandingController < ApplicationController
   end
 
   def data
+  end
+
+  def shared
   end
 end
