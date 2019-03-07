@@ -13,6 +13,8 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-128947480-1');
+    - if ENV['USE_FB_ID'] == 'true'
+      %meta{:property => "fb:app_id", :content => "318263448828184"}
 
     %link{:rel => "shortcut icon", :href => "#{asset_url('favicon.ico')}", :type => "image/png"}
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
