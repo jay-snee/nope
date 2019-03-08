@@ -4,19 +4,19 @@ class ErrorsController < ApplicationController
 
   def not_found
     header_strings = [
-    	"Authorization", 
-    	"SCRIPT_NAME", 
-    	"QUERY_STRING", 
-    	"REQUEST_METHOD", 
-    	"REQUEST_PATH", 
-    	"REQUEST_URI", 
-    	"HTTP_VERSION", 
-    	"HTTP_HOST", 
-    	"HTTP_USER_AGENT", 
-    	"HTTP_ACCEPT_LANGUAGE", 
-    	"SERVER_NAME", 
-    	"SERVER_PORT", 
-    	"PATH_INFO", 
+    	"Authorization",
+    	"SCRIPT_NAME",
+    	"QUERY_STRING",
+    	"REQUEST_METHOD",
+    	"REQUEST_PATH",
+    	"REQUEST_URI",
+    	"HTTP_VERSION",
+    	"HTTP_HOST",
+    	"HTTP_USER_AGENT",
+    	"HTTP_ACCEPT_LANGUAGE",
+    	"SERVER_NAME",
+    	"SERVER_PORT",
+    	"PATH_INFO",
     	"REMOTE_ADDR"
     ]
     headers = {}
@@ -40,26 +40,26 @@ class ErrorsController < ApplicationController
 
   def internal_server_error
   	header_strings = [
-    	"Authorization", 
-    	"SCRIPT_NAME", 
-    	"QUERY_STRING", 
-    	"REQUEST_METHOD", 
-    	"REQUEST_PATH", 
-    	"REQUEST_URI", 
-    	"HTTP_VERSION", 
-    	"HTTP_HOST", 
-    	"HTTP_USER_AGENT", 
-    	"HTTP_ACCEPT_LANGUAGE", 
-    	"SERVER_NAME", 
-    	"SERVER_PORT", 
-    	"PATH_INFO", 
+    	"Authorization",
+    	"SCRIPT_NAME",
+    	"QUERY_STRING",
+    	"REQUEST_METHOD",
+    	"REQUEST_PATH",
+    	"REQUEST_URI",
+    	"HTTP_VERSION",
+    	"HTTP_HOST",
+    	"HTTP_USER_AGENT",
+    	"HTTP_ACCEPT_LANGUAGE",
+    	"SERVER_NAME",
+    	"SERVER_PORT",
+    	"PATH_INFO",
     	"REMOTE_ADDR"
     ]
     headers = {}
     header_strings.each do |header_string|
       headers[header_string] = request.headers[header_string]
     end
-    
+
     request_params = unfiltered_params
     BANNED_PARAMS.each do |param|
       request_params.except!(param)
