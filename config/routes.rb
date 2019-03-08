@@ -2,9 +2,9 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/backend', as: 'rails_admin'
-  
+
   use_doorkeeper
-  
+
   devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" },
                      :path_names => {:verify_authy => "/verify-token",
                                      :enable_authy => "/enable-two-factor",
@@ -48,6 +48,7 @@ Rails.application.routes.draw do
   get '/gdpr', to: 'landing#gdpr'
   get '/gmail', to: 'landing#gmail'
   get '/data_audit', to: 'landing#data'
+  get '/unsubscriber', to: 'landing#unsubscriber'
   get '/shared', to: 'landing#shared'
   post '/submit', to: 'landing#submit'
   get '/thank_you', to: 'landing#thank_you'

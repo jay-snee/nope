@@ -6,7 +6,8 @@ class LandingController < ApplicationController
     :data,
     :shared,
     :thank_you,
-    :submit
+    :submit,
+    :unsubscriber,
   ]
 
   layout 'landing-page'
