@@ -17,20 +17,21 @@ class LandingController < ApplicationController
   ### Endpoint for forms to be posted to
   # Send form email & id to Websand
   def submit
-    response = HTTParty.post(
-      'https://fair-custodian.websandhq.com/api/data/subscriber',
-      {
-        'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
-        'body': {
-          "subscriber": {
-            "email": params['email-address'],
-            "source": params['page'],
-            "subscribed_at": DateTime.now.iso8601,
-            "marketing_consent": "marketing_consent_true"
+    if ENV['WEBSAND_API_KEY']
+      response = HTTParty.post(
+        'https://fair-custodian.websandhq.com/api/data/subscriber',
+        {
+          'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
+          'body': {
+            "subscriber": {
+              "email": params['email-address'],
+              "source": params['page'],
+              "subscribed_at": DateTime.now.iso8601,
+              "marketing_consent": "marketing_consent_true"
+            }
           }
         }
-      }
-    )
+      )
     Processing::EventJob.perform_later("New expression of interest in: #{params['page']} From: #{params['email-address']}", "landing-page", true)
 
     redirect_to thank_you_path
