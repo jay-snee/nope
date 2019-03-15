@@ -19,7 +19,7 @@ RSpec.describe User, :type => :model do
         FactoryBot.create(:user)
       }.to have_enqueued_job(
         Processing::EventJob
-      ).with(/new user registration - user_\d@example.com/, 'sign up', true)
+      ).with(/new user registration - \d{2}/, 'sign up', true)
     end
 
     it 'has a generated referral_code' do
