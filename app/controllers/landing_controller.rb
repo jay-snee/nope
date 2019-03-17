@@ -10,6 +10,8 @@ class LandingController < ApplicationController
     :unsubscriber,
   ]
 
+  skip_before_action :verify_authenticity_token
+
   layout 'landing-page'
 
   ######### Carrd Pages ################
