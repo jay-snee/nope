@@ -43,4 +43,6 @@ class Processing::EventJob < ApplicationJob
     Elasticsearch::Client.new url: ENV['ELASTICSEARCH_CLUSTER_URL'], log: true
   end
 
+  # TODO: Delete this. Pointless edit to generate a commit.
+
 end
