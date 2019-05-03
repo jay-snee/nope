@@ -1,4 +1,4 @@
-- unless @message.parsed_html.text.length = 0
+- unless @message.parsed_html.text.length == 0
   .card
     .card-body.p-5
       = @message.html.html_safe
