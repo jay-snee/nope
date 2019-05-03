@@ -5,4 +5,4 @@
 - else
   .card
     .card-body.p-5
-      = @message.text
+      %pre= simple_format(@message.text)
