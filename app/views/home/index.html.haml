@@ -48,7 +48,7 @@
       .col-10.col-md-8.col-lg-6
         %h2.text-uppercase.mb-2 Pricing
     .row
-      .col-md-6.px-4.pb-2.mb-5
+      .col-md-4.px-4.pb-2.mb-5
         .px-2.mb-2
           %h3.text-uppercase.mb-4 Standard
           %h4 Free
@@ -63,7 +63,7 @@
             %strong Unlimited
             incoming emails
           = link_to 'Start a free account', 'https://beta.faircustodian.com/free', class: 'button btn btn-lg btn-primary btn-block'
-      .col-md-6.px-4.pb-1.mb-5
+      .col-md-4.px-4.pb-1.mb-5
         .px-2
           %h3.text-uppercase.mb-4 Premium
           %h4 £3 / month
@@ -78,3 +78,18 @@
             %strong Everything
             in the free tier
           = link_to 'Start a premium account', 'https://beta.faircustodian.com/premium', class: 'button btn btn-lg btn-primary btn-block'
+      .col-md-4.px-4.pb-1.mb-5
+        .px-2
+          %h3.text-uppercase.mb-4 Enterprise
+          %h4 Contact us
+        %ul.list-unstyled.list-bordered.text-xs-left.my-4
+          %li.py-4
+            %strong Customisable
+            profiles
+          %li.py-4
+            %strong 24hr
+            SLA
+          %li.py-4
+            %strong Everything
+            in the premium tier
+          = mail_to 'hello@faircustodian.com', 'Contact us', class: 'button btn btn-lg btn-primary btn-block'
