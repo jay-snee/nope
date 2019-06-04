@@ -6,9 +6,11 @@
     #wrapper
       #main
         .inner
-          %h1#text02 An easy way to manage and deal with GDPR requests.
+          %h1#text02 An easy way to manage GDPR requests.
           %hr#divider02/
-          %p#text01 Build your systems register, connect your systems and prove you’ve met your GDPR obligations.
+          %p#text01 Build your systems register.
+          #text01 Connect your systems.
+          #text01 Prove you’ve met your GDPR obligations.
           %form#form01{:action => "/submit", :enctype => "multipart/form-data", :method => "post"}
             = hidden_field_tag :authenticity_token, form_authenticity_token
             .inner
