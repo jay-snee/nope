@@ -55,4 +55,7 @@ class LandingController < ApplicationController
 
   def shared
   end
+
+  def fcid
+  end
 end

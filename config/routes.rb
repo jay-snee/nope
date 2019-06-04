@@ -47,6 +47,7 @@ Rails.application.routes.draw do
   get '/terms', to: 'home#terms'
   get '/gdpr', to: 'landing#gdpr'
   get '/gmail', to: 'landing#gmail'
+  get '/fc-id', to: 'landing#fc-id'
   get '/data_audit', to: 'landing#data'
   get '/unsubscriber', to: 'landing#unsubscriber'
   get '/shared', to: 'landing#shared'

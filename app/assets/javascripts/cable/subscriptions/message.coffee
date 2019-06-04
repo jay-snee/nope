@@ -1,4 +1,3 @@
-
 App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", id: $('#message-list').data('id')},
   received: (data) ->
     @prependLine(data)
@@ -6,7 +5,7 @@ App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", i
       $('#welcome').hide()
       $("#messages-card").removeClass('d-none')
     $.growl.notice({ title: "New Message!", message: "New message has arrived" })
- 
+
   prependLine: (data) ->
     console.log 'Element attr: ' + $('#messages-list').data('profile')
     console.log 'Data attr: ' + data.profile_id
@@ -15,10 +14,10 @@ App.cable.subscriptions.create { channel: "ApplicationCable::MessagesChannel", i
       div_id = "#message-#{data.id}"
       if !($(div_id).length)
         $("#messages-list").prepend(html)
- 
-  createLine: (data) ->        
+
+  createLine: (data) ->
     # parse ISO8601 date and format for display
-    dtstr = data.created_at 
+    dtstr = data.created_at
     dtstr = dtstr.replace(/\D/g," ")
     dtcomps = dtstr.split(" ")
     # JS months are zero indexed, IS08601 aren't...
