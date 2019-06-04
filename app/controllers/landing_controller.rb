@@ -8,6 +8,7 @@ class LandingController < ApplicationController
     :thank_you,
     :submit,
     :unsubscriber,
+    :'fc-id'
   ]
 
   skip_before_action :verify_authenticity_token
