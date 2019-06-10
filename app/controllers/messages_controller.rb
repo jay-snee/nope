@@ -1,9 +1,16 @@
 class MessagesController < ApplicationController
+
   def index
+    respond_to do |format|
+      format.html
+      format.json do
+        params[:user_id] = current_user.id
+        render json: MessageDatatable.new(params, view_context: view_context)
+      end
+    end
   end
 
   def show
-    
     @message = current_user.messages.find params[:id]
     @message.update_read_count
     respond_to do |format|
