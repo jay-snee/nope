@@ -64,15 +64,18 @@ class ApplicationController < ActionController::Base
   end
 
   def log_response
-    return false unless Rails.env.production?
-    response_data = {
-      status: response.code,
-      message: response.message
-    }
+    begin
+      return false unless Rails.env.production?
+      response_data = {
+        status: response.code,
+        message: response.message
+      }
 
-    response_data[:user] = current_user.email unless current_user.nil?
+      response_data[:user] = current_user.email unless current_user.nil?
 
-    log_data(response_data, 'response')
+      log_data(response_data, 'response')
+    rescue
+    end
   end
 
   private
