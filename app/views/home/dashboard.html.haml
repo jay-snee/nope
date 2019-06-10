@@ -3,13 +3,13 @@
     .col-sm-4.pt-3.pb-5
       - if current_user.stripe_subscription_id.empty? && !current_user.trial
         .mt-2
-            
+
           %button.btn.btn-outline-primary.btn-lg.btn-block{type: 'button', data: {toggle: 'modal', target: '#upgrade-modal'}}
             %i.fas.fa-hand-point-up
             Upgrade FairCustodian
           %label.amount.mt-2
             %span.text-muted
-              = "Upgrade your account with up to #{(ENV['SUBSCRIPTION_MAX_PROFILE_COUNT'].to_i - ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i)} more custom addresses for £3.00/month" 
+              = "Upgrade your account with up to #{(ENV['SUBSCRIPTION_MAX_PROFILE_COUNT'].to_i - ENV['SUBSCRIPTION_MIN_PROFILE_COUNT'].to_i)} more custom addresses for £3.00/month"
 
       .mt-3
         %button.btn.btn-outline-primary.btn-lg.copy-button.btn-block{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: "https://#{ENV['APP_DOMAIN']}/users/sign_up?referrer_code=#{current_user.referral_code}"}}}
@@ -48,7 +48,7 @@
             %h3#messages-header.mt-2 All Messages
           .card-body
             %ul#messages-list.list-group{data: {id: current_user.id, profile: '*'}}
-              - @messages.order(created_at: :desc).each do |m|
+              - @messages.each do |m|
                 = render m
 
 = render partial: 'upgrade_modal'

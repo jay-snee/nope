@@ -39,7 +39,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @messages = current_user.messages.last(50)
+    @messages = current_user.messages.order(created_at: :desc).last(50)
     @profiles = current_user.profiles
   end
 
