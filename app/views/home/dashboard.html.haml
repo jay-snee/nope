@@ -32,23 +32,20 @@
         - @profiles.order(created_at: :desc).each do |p|
           = render p
 
-
     .col-sm-8.py-3.grey-panel
-      - if @messages.empty?
-        #welcome
-          = render partial: 'home/welcome'
-        #messages-card.card.d-none
-          .card-header
-            %h3#messages-header.mt-2 All Messages
-          .card-body
-            %ul#messages-list.list-group{data: {id: current_user.id, profile: '*'}}
-      - else
-        .card
-          .card-header
-            %h3#messages-header.mt-2 All Messages
-          .card-body
-            %ul#messages-list.list-group{data: {id: current_user.id, profile: '*'}}
+      .card.card-default
+        .card-header
+          %h3 All Messages
+        .card-body
+          %table.table.table-striped#dashboard-table{data: {source: messages_path(format: :json)}}
+            %thead
+              %tr
+                %th Subject
+                %th From
+                %th Recieved
+                %th Profile
+            %tbody
               - @messages.each do |m|
-                = render m
+                = render partial: 'messages/table_row', locals: {message: m}
 
 = render partial: 'upgrade_modal'
