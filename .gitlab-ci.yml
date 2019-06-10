@@ -11,7 +11,7 @@ deploy:
     - git-push ssh://git@deis-builder.fcctrl.com:2222/beta.git deploy
 
 staging:
-  image: faircustodian/gitlab-ci-git-push
+  image: faircustodian/beta
   stage: deploy
   environment: staging
   only:
