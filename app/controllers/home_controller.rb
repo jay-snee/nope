@@ -1,11 +1,11 @@
 class HomeController < ApplicationController
 
   before_action :authenticate_user!, except: [
-    :index, 
-    :privacy, 
-    :premium_acct, 
-    :free_acct, 
-    :terms, 
+    :index,
+    :privacy,
+    :premium_acct,
+    :free_acct,
+    :terms,
     :get_started
   ]
 
@@ -39,7 +39,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @messages = current_user.messages
+    @messages = current_user.messages.last(50)
     @profiles = current_user.profiles
   end
 
