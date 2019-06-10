@@ -2,7 +2,7 @@ stages:
   - deploy
 
 deploy:
-  image: ilyasemenov/gitlab-ci-git-push
+  image: faircustodian/gitlab-ci-git-push
   stage: deploy
   environment: production
   only:
@@ -11,7 +11,7 @@ deploy:
     - git-push ssh://git@deis-builder.fcctrl.com:2222/beta.git deploy
 
 staging:
-  image: ilyasemenov/gitlab-ci-git-push
+  image: faircustodian/gitlab-ci-git-push
   stage: deploy
   environment: staging
   only:
