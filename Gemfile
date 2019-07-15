@@ -102,3 +102,6 @@ gem 'nokogiri'
 gem 'jquery-rails'
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
+
+gem 'logstash-event'
+gem 'lograge'
