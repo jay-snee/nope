@@ -1,4 +1,5 @@
 @import 'dashboard/toolkit-inverse.scss';
+@import 'datatables';
 
 .grey-panel {
   background-color: $gray-300;
@@ -12,4 +13,12 @@
 .grey-panel h5,
 .grey-panel h6 {
   color: $gray-900;
+}
+
+.page-link {
+	background-color: #fff;
+}
+
+.custom-select {
+	background-color: #fff;
 }
