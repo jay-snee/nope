@@ -1,13 +1,4 @@
 class Message < ApplicationRecord
-  if ENV['SEND_MESSAGES_TO_ELASTIC']
-    # Elasticsearch-model setup
-    include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
-
-    index_name 'data-messages'
-  end
-
-
   belongs_to :profile
   belongs_to :user
 

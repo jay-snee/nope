@@ -12,10 +12,10 @@ class MessageDatatable < AjaxDatatablesRails::ActiveRecord
     # Declare strings in this format: ModelName.column_name
     # or in aliased_join_table.column_name format
     @view_columns ||= {
-      subject: { source: "Message.subject", cond: :like },
-      from: { source: "Message.from", cond: :like },
-      created_at: { source: "Message.created_at"},
-      profile_id: { source: "Message.profile_id"}
+      subject: { source: "Message.subject", cond: :like, orderable: false },
+      from: { source: "Message.from", cond: :like, orderable: false },
+      created_at: { source: "Message.created_at", orderable: false },
+      profile_id: { source: "Message.profile_id", orderable: false }
     }
   end
 

@@ -310,6 +310,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scout_apm (2.5.2)
     sexp_processor (4.12.1)
     sidekiq (5.2.7)
       connection_pool (~> 2.2, >= 2.2.2)
@@ -395,6 +396,7 @@ DEPENDENCIES
   redis (~> 4.0)
   rspec-rails (~> 3.8)
   sassc-rails
+  scout_apm
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)

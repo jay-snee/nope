@@ -1,12 +1,4 @@
 class User < ApplicationRecord
-  if Rails.env.production?
-    # Elasticsearch-model setup
-    include Elasticsearch::Model
-    include Elasticsearch::Model::Callbacks
-
-    index_name 'data-users'
-  end
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
     # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -45,7 +37,7 @@ class User < ApplicationRecord
     # TODO: Should this be a magic number? 🤔
     if last_seen.nil?
       call_websand(DateTime.now.iso8601)
-    elsif last_seen < DateTime.now - 1.hours 
+    elsif last_seen < DateTime.now - 1.hours
       call_websand(last_seen.iso8601)
     end
   end
@@ -117,7 +109,7 @@ class User < ApplicationRecord
 
   def call_websand(last_seen_var)
     response = HTTParty.post(
-      'https://fair-custodian.websandhq.com/api/data/subscriber', 
+      'https://fair-custodian.websandhq.com/api/data/subscriber',
       {
         'headers': {"Authorization": "Token #{ENV['WEBSAND_API_KEY']}"},
         'body': {
