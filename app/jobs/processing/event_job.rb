@@ -9,14 +9,6 @@ class Processing::EventJob < ApplicationJob
     data[:request_time] = DateTime.now.iso8601
     data[:message] = message
     data[:event_type] = event_type
-      
-    if Rails.env.production?
-      index_response = elastic_client.index(
-        index: "#{ENV['APP_DOMAIN'].gsub('.', '-')}-beta-events-#{Date.current.to_s}",
-        body: data,
-        type: 'event'
-      )
-    end
 
     if notify_slack
       send_slack_message(message, event_type)
