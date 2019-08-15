@@ -311,6 +311,8 @@ GEM
       sprockets-rails
       tilt
     scout_apm (2.5.2)
+    sentry-raven (2.11.0)
+      faraday (>= 0.7.6, < 1.0)
     sexp_processor (4.12.1)
     sidekiq (5.2.7)
       connection_pool (~> 2.2, >= 2.2.2)
@@ -397,6 +399,7 @@ DEPENDENCIES
   rspec-rails (~> 3.8)
   sassc-rails
   scout_apm
+  sentry-raven
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)

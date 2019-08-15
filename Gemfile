@@ -107,3 +107,4 @@ gem 'logstash-event'
 gem 'lograge'
 
 gem 'scout_apm'
+gem 'sentry-raven'
