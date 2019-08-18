@@ -23,8 +23,8 @@ class Api::DataController < ApiController
       end
 
       message = profile.user.messages.new(message_params.except(:html, :text, :spam_score, :attachments, :'attachment-info'))
-      message.html = message_params[:html].encode(message_params[:charsets][:html], 'UTF-8', invalid: :replace, undef: :replace, replace: "")
-      message.text = message_params[:text].encode(message_params[:charsets][:text], 'UTF-8', invalid: :replace, undef: :replace, replace: "")
+      message.html = message_params[:html].encode( JSON.parse(message.charsets)['html'], 'UTF-8', invalid: :replace, undef: :replace, replace: "")
+      message.text = message_params[:text].encode( JSON.parse(message.charsets)['text'], 'UTF-8', invalid: :replace, undef: :replace, replace: "")
       message.profile = profile
 
       if inbound_params[:attachments].to_i > 0
