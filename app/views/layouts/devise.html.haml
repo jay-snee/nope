@@ -33,6 +33,7 @@
     %script{:crossorigin => "anonymous", :src => "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"}
     %script{:crossorigin => "anonymous", :src => "//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"}
     %script{:crossorigin => "anonymous", :src => "https://www.authy.com/form.authy.min.js"}
+    = render partial: 'application/matomo'
 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
