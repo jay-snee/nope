@@ -5,11 +5,16 @@ Rails.application.routes.draw do
 
   use_doorkeeper
 
-  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" },
-                     :path_names => {:verify_authy => "/verify-token",
-                                     :enable_authy => "/enable-two-factor",
-                                     :verify_authy_installation => "/verify-installation",
-                                     :authy_onetouch_status => "/onetouch-status"}
+  devise_for :users,
+             controllers: {
+               registrations: 'registrations', sessions: 'sessions'
+             },
+             path_names: {
+               verify_authy: '/verify-token',
+               enable_authy: '/enable-two-factor',
+               verify_authy_installation: '/verify-installation',
+               authy_onetouch_status: '/onetouch-status'
+             }
 
   namespace :api do
     post 'stripe/notifications'
@@ -45,21 +50,12 @@ Rails.application.routes.draw do
   get '/premium', to: 'home#premium_acct'
   get '/get_started', to: 'home#get_started'
   get '/terms', to: 'home#terms'
-  get '/gdpr', to: 'landing#gdpr'
-  get '/gmail', to: 'landing#gmail'
-  get '/fc-id', to: 'landing#fcid'
-  get '/data_audit', to: 'landing#data'
-  get '/unsubscriber', to: 'landing#unsubscriber'
-  get '/shared', to: 'landing#shared'
-  post '/submit', to: 'landing#submit'
-  get '/thank_you', to: 'landing#thank_you'
 
   resources :charges
 
-  authenticate :user, lambda { |u| u.admin? } do
+  authenticate :user, ->(u) { u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  root to: "home#index"
-
+  root to: 'home#index'
 end

@@ -10,9 +10,9 @@ class Profile < ApplicationRecord
   WORD_LIST = %w[delightful expand increase wide scarce fair custodian].freeze
 
   def generate_email
-    address_string = "#{WORD_LIST.sample.capitalize}#{WORD_LIST.sample.capitalize}#{WORD_LIST.sample.capitalize}".gsub(" ", '')
-    self.email_address = "#{address_string}@#{ENV['SEND_EMAIL_DOMAIN']}".downcase
-    self.email_display = address_string
+    address = Profile::WORD_LIST.map(&:capitalize).sample(3).join
+    self.email_address = "#{address}@#{ENV['SEND_EMAIL_DOMAIN']}".downcase
+    self.email_display = address
   end
 
   def display_email_address
@@ -29,12 +29,13 @@ class Profile < ApplicationRecord
         senders[domain] += 1
       end
     end
-    return senders.sort_by {|_k,v| -v }[0..2]
+    senders.sort_by { |_k, v| -v }[0..2]
   end
 
   def top_senders_this_week
     senders = {}
-    messages.where('created_at > ?', (DateTime.now.beginning_of_day - 7.days)).each do |m|
+    last_week = (DateTime.now.beginning_of_day - 7.days)
+    messages.where('created_at > ?', last_week).each do |m|
       domain = m.from.split('@')[1]
       if senders[domain].nil?
         senders[domain] = 1
@@ -42,7 +43,6 @@ class Profile < ApplicationRecord
         senders[domain] += 1
       end
     end
-    return senders.sort_by {|_k,v| -v}[0..2]
+    senders.sort_by { |_k, v| -v }[0..2]
   end
-
 end

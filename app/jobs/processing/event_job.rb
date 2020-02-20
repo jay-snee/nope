@@ -1,26 +1,23 @@
-class Processing::EventJob < ApplicationJob
+module Processing
+  class EventJob < ApplicationJob
+    queue_as :default
 
-  queue_as :default
+    def perform(message, event_type, notify_slack = false)
+      data = {}
 
-  def perform(message, event_type, notify_slack = false)
+      data[:request_time] = DateTime.now.iso8601
+      data[:message] = message
+      data[:event_type] = event_type
 
-    data = {}
-
-    data[:request_time] = DateTime.now.iso8601
-    data[:message] = message
-    data[:event_type] = event_type
-
-    if notify_slack
-      send_slack_message(message, event_type)
+      send_slack_message(message, event_type) if notify_slack
     end
 
-  end
+    private
 
-  private
+    def send_slack_message(message, event_type)
+      return true unless Rails.env.production?
 
-  def send_slack_message(message, event_type)
-    if Rails.env.production?
-      response = HTTParty.post(
+      HTTParty.post(
         ENV['SLACK_WEBHOOK_URL'],
         body: {
           payload: {
@@ -29,12 +26,9 @@ class Processing::EventJob < ApplicationJob
         }
       )
     end
+
+    def elastic_client
+      Elasticsearch::Client.new url: ENV['ELASTICSEARCH_CLUSTER_URL'], log: true
+    end
   end
-
-  def elastic_client
-    Elasticsearch::Client.new url: ENV['ELASTICSEARCH_CLUSTER_URL'], log: true
-  end
-
-  # TODO: Delete this. Pointless edit to generate a commit.
-
 end

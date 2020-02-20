@@ -17,11 +17,11 @@ class Message < ApplicationRecord
   def clean
     parsed_data = Nokogiri::HTML.parse(html)
 
-    tags = parsed_data.xpath("//a")
+    tags = parsed_data.xpath('//a')
     tags.each do |tag|
-        tag.set_attribute('target', '_blank')
-      end
+      tag.set_attribute('target', '_blank')
+    end
 
-    update(html:parsed_data.to_html)
+    update(html: parsed_data.to_html)
   end
 end

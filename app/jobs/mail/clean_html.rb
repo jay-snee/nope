@@ -1,10 +1,11 @@
 require 'nokogiri'
 
-class Mail::CleanHTML < ApplicationJob
+module Mail
+  class CleanHTML < ApplicationJob
+    queue_as :default
 
-  queue_as :default
-
-  def perform(message)
-	message.clean
+    def perform(message)
+      message.clean
+    end
   end
 end

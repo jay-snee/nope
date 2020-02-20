@@ -1,5 +1,4 @@
 class AccountsController < ApplicationController
-  
   before_action :verify_admin
   before_action :set_account, except: [:index]
 
@@ -7,17 +6,13 @@ class AccountsController < ApplicationController
     @accounts = Account.all
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
-  def update
-  end
+  def update; end
 
-  def create
-  end
+  def create; end
 
   def destroy
     @account.destroy
@@ -29,5 +24,4 @@ class AccountsController < ApplicationController
   def set_account
     @account = Account.find params[:id]
   end
-
 end

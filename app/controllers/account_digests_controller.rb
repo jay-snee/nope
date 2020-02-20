@@ -1,5 +1,4 @@
 class AccountDigestsController < ApplicationController
-
   def create
     AccountDigest.create(
       user: current_user,
@@ -20,5 +19,4 @@ class AccountDigestsController < ApplicationController
   def digest_params
     params.require(:account_digest).permit(:requested_delivery_time, :active)
   end
-
 end

@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
       @profile = current_user.profiles.create(name: profile_params[:name])
 
       if @profile.save
-        Processing::EventJob.perform_later("profile created", 'lifecycle', false)
+        Processing::EventJob.perform_later('profile created', 'lifecycle', false)
         redirect_to @profile, notice: "new profile created - '#{@profile.name}'"
       else
         redirect_to root_path, alert: "Nope, that didn't work"
@@ -26,26 +26,26 @@ class ProfilesController < ApplicationController
     @profile = current_user.profiles.find params[:id]
     @profile.update(name: profile_params['name'])
     @profile.save
-    Processing::EventJob.perform_later("profile updated", 'lifecycle', false)
+    Processing::EventJob.perform_later('profile updated', 'lifecycle', false)
   end
 
   def destroy
     @profile = current_user.profiles.find params[:id]
     @profile.destroy
-    Processing::EventJob.perform_later("profile destroyed", 'lifecycle', false)
+    Processing::EventJob.perform_later('profile destroyed', 'lifecycle', false)
     redirect_to root_path, notice: 'Profile destroyed'
   end
 
   def toggle_forwarding
     @profile = current_user.profiles.find params[:id]
     @profile.toggle!(:email_forward)
-    redirect_to @profile, notice: "Forwarding preference updated"
+    redirect_to @profile, notice: 'Forwarding preference updated'
   end
 
   def toggle_processing
     @profile = current_user.profiles.find params[:id]
     @profile.toggle!(:email_process)
-    redirect_to @profile, notice: "Processing preference updated"
+    redirect_to @profile, notice: 'Processing preference updated'
   end
 
   private

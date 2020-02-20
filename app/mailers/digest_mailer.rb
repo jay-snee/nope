@@ -1,12 +1,9 @@
 class DigestMailer < ApplicationMailer
-
-  default from: "digest@faircustodian.com"
+  default from: 'digest@example.com'
   layout 'mailer'
 
   def digest_email
     @user = params[:user]
-    mail(to: @user.email, subject: 'Fair Custodian Weekly Digest')
+    mail(to: @user.email, subject: 'Nope Weekly Digest')
   end
-
-
 end

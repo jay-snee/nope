@@ -1,5 +1,4 @@
 class RegistrationsController < Devise::RegistrationsController
-  
   layout 'devise'
 
   def new

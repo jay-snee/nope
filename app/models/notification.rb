@@ -1,16 +1,21 @@
 class Notification < ApplicationRecord
-
   after_create :schedule_processing_job
 
   def process_payload
     data = JSON.parse payload
+    customer_id = data['stripe']['data']['object']['customer']
+    max_profile_count = ENV['SUBSCRIPTION_MAX_PROFILE_COUNT'].to_i
+    customer = User.where(stripe_customer_id: customer_id).first
     case data['type']
-    when "customer.subscription.created"
-      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
-      customer.update(max_profiles: (customer.max_profiles + ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"].to_i)) unless customer.nil?
-    when "customer.subscription.deleted"
-      customer = User.where(stripe_customer_id: data['stripe']['data']['object']['customer']).first
-      customer.update(max_profiles: (customer.max_profiles - ENV["SUBSCRIPTION_MAX_PROFILE_COUNT"].to_i), stripe_subscription_id: '')
+    when 'customer.subscription.created'
+      customer&.update(
+        max_profiles: (max_profile_count + customer.max_profiles)
+      )
+    when 'customer.subscription.deleted'
+      customer.update(
+        max_profiles: (max_profile_count - customer.max_profiles),
+        stripe_subscription_id: ''
+      )
     end
   end
 
