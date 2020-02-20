@@ -29,3 +29,6 @@
 
 # Ignore the environment variable file for dotenv
 .env
+
+# VSCode Workspace
+nope.code-workspace

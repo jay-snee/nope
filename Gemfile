@@ -45,6 +45,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'webmock'
   gem 'climate_control'
+  gem 'rubocop'
 end
 
 group :development do
@@ -55,6 +56,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'erb2haml'
+  gem 'solargraph'
 end
 
 
