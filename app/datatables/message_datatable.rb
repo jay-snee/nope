@@ -29,4 +29,9 @@ class MessageDatatable < AjaxDatatablesRails::ActiveRecord
       }
     end
   end
+
+  def get_raw_records
+    user = User.find params['user_id']
+    user.messages.order(created_at: :desc)
+  end
 end
