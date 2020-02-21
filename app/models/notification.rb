@@ -13,7 +13,7 @@ class Notification < ApplicationRecord
       )
     when 'customer.subscription.deleted'
       customer.update(
-        max_profiles: (max_profile_count - customer.max_profiles),
+        max_profiles: (customer.max_profiles - max_profile_count),
         stripe_subscription_id: ''
       )
     end

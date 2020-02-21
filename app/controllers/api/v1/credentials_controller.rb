@@ -1,16 +1,20 @@
-class Api::V1::CredentialsController < ApplicationController
-  before_action :doorkeeper_authorize!
-  respond_to    :json
+module Api
+  module V1
+    class CredentialsController < ApplicationController
+      before_action :doorkeeper_authorize!
+      respond_to    :json
 
-  # GET /me.json
-  def me
-    respond_with current_resource_owner
-  end
+      # GET /me.json
+      def me
+        respond_with current_resource_owner
+      end
 
-  private
+      private
 
-  # Find the user that owns the access token
-  def current_resource_owner
-    User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+      # Find the user that owns the access token
+      def current_resource_owner
+        User.find(doorkeeper_token.resource_owner_id) if doorkeeper_token
+      end
+    end
   end
 end

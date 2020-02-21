@@ -7,13 +7,6 @@ RSpec.describe User, :type => :model do
       expect(user.profiles.size).to eq(3)
     end
 
-    it 'makes an api request to Websand' do
-      user = FactoryBot.create(:user)
-      expect(WebMock).to have_requested(
-        :post, 'https://fair-custodian.websandhq.com/api/data/subscriber'
-      ).once
-    end
-
     it 'queues an event notification job' do
       expect {
         FactoryBot.create(:user)

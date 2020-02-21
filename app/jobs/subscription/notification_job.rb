@@ -1,4 +1,4 @@
-module Subsciption
+module Subscription
   class NotificationJob < ApplicationJob
     queue_as :default
 

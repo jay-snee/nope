@@ -32,11 +32,6 @@ RSpec.describe HomeController, :type => :request do
         expect(response).to have_http_status(200)
       end
 
-      it 'shows the welcome screen' do
-        get '/home/dashboard'
-        expect(response.body).to include('How To Use Your Profiles')
-      end
-
       it 'shows the upgrade button' do
         get '/home/dashboard'
         expect(response.body).to include('Upgrade to a paid subscription')

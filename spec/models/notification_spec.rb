@@ -31,7 +31,8 @@ RSpec.describe Notification, :type => :model do
         expect {
          notification.process_payload
         }.to change{
-         User.last.max_profiles
+          puts User.last.max_profiles
+          User.last.max_profiles
         }.from(33).to(3)
       end
     end
