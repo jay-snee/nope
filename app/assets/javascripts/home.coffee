@@ -4,8 +4,7 @@
 
 
 ready = ->
-  $('.stripe-button-el').on 'click', ->
-    $('#upgrade-modal').modal('hide')
+  $(".dropdown-toggle").dropdown()
 
   $("#dashboard-table").dataTable
     processing: true

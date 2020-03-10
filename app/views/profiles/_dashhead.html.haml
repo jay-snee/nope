@@ -1,13 +1,14 @@
 .dashhead.mt-3.mb-5
   .dashhead-titles
     %h6.dashhead-subtitle Profiles
-    %h3.dashhead-title= @profile.display_email_address
-  .dashhead-toolbar
-    .dashhead-toolbar-item
-      %button.btn.btn.btn-outline-primary.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: @profile.email_address}}}
-        %i.fas.fa-copy
-        Copy Address
-    .dashhead-toolbar-item.ml-3  
-      = button_to profile_path(@profile), method: :delete, class: 'btn btn-outline-danger', data: {confirm: 'Are you sure you want to delete this profile and all associated messages? You will not be able to reclaim this address in the future.'} do
-        %i.fas.fa-trash-alt
-        Delete profile
+    %h3.dashhead-title
+      .d-flex
+        .mr-auto= @profile.display_email_address
+        .item.mr-3
+          %button.btn.btn.btn-outline-primary.copy-button{data: {toggle: 'tooltip', placement: 'top', clipboard: { text: @profile.email_address}}}
+            %i.fas.fa-copy
+            Copy Address
+        .item 
+          = button_to profile_path(@profile), method: :delete, class: 'btn btn-outline-danger', data: {confirm: 'Are you sure you want to delete this profile and all associated messages? You will not be able to reclaim this address in the future.'} do
+            %i.fas.fa-trash-alt
+            Delete profile

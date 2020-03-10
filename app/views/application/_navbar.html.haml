@@ -1,21 +1,18 @@
-%nav#fc-navbar.navbar.navbar-expand-md.navbar-light.bg-light
-  %a.navbar-brand{href: '/'}
-    = image_tag('FC_Logo_Grad_Blk.png', height: '30')
-
+%nav.navbar.navbar-expand-md.navbar-dark.bg-dark.mb-3
   %button.navbar-toggler{type: 'button', data: {toggle: 'collapse', target: '#navbar-content'}}
     %span.navbar-toggler-icon
-
-  #navbar-content.collapse.navbar-collapse
-
-    %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
+  %a.navbar-brand{href: '/'}
+    Nope
+  .collapse.navbar-collapse
+    %ul.navbar-nav.ml-auto
       - if !current_user
-        %li.nav-item.mx-3.navbar_pre_sign_in.h4
+        %li.nav-item.mx-3
           = link_to 'Sign up', new_user_registration_path, class: 'nav-link my-3'
-        %li.nav-item.mx-3.navbar_pre_sign_in.h4
+        %li.nav-item.mx-3
           = link_to 'Sign in', new_user_session_path, class: 'nav-link my-3'
       - elsif current_user
-        %li.nav-item.my-3.dropdown.mx-3
-          %a.nav-link.dropdown-toggle#navbarDropdown{href: '#', data: {toggle: 'dropdown'}}
+        %li.nav-item.my-3.dropdown
+          %a.nav-link.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
             My Account
           .dropdown-menu
             - if !current_user.authy_enabled
@@ -34,7 +31,7 @@
             
         - if current_user.admin
           %li.nav-item.my-3.dropdown
-            %a.nav-link.dropdown-toggle#adminDropdown{href: '#', data: {toggle: 'dropdown'}}
+            %a.nav-link.dropdown-toggle#adminDropdown#account-dropdown{href: '#', data: {toggle: 'dropdown'}}
               Admin
             .dropdown-menu
               = link_to 'Backend', rails_admin_path, class: 'dropdown-item'

@@ -6,11 +6,6 @@ RSpec.describe HomeController, type: :request do
       get '/'
       expect(response).to have_http_status(200)
     end
-
-    it 'displays the company number' do
-      get '/'
-      assert_select '#company-number', text: 'Company Number: 11609558'
-    end
   end
 
   context '#dash', type: :request do

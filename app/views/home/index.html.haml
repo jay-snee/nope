@@ -1,43 +1,8 @@
 
-#home-block.block.block-inverse.block-fill-height.text-center.pt-0{style: "background-image: url(#{asset_url('FC-Image-1.jpg')})"}
-  = render partial: 'application/transparent_nav'
-  #home-content-row.row.pt-md-5
-    .col-sm-6.offset-sm-3.col-md-8.offset-md-2
-      %h1.block-title.text-info.mt-3.pt-3 Concerned about sharing your email address?
-      %h2.text-secondary.my-3 Create anonymised email addresses to keep your personal email private.
-      .row
-        .col-sm-4.offset-sm-4.col-md-4.offset-md-4
-          = link_to 'Sign up', 'https://beta.faircustodian.com/get_started', class: 'btn btn-outline-primary btn-block btn-lg px-5 my-5'
 
-#page.block
-  .container.text-center
-    .row
-      .col-sm-2
-      .col-sm-8
-        %h2
-          It’s your email address.
-          %br
-          You choose how it’s being used.
+= render partial: 'application/transparent_nav'
 
-
-    .row.my-5
-      .col-sm-4.px-3.mb-3
-        = image_tag(asset_url('iconic/basket.svg'), width: '25%', class: 'my-5')
-        %h3 Easy control of your online data
-        %p There can be an uncomfortable feeling when you sign in to a website: How will my email address be used? Should I have read all of the terms? Is this website secure? Fair Custodian helps you take back control.
-      .col-sm-4.px-3.mb-3
-        = image_tag(asset_url('iconic/envelope-open.svg'), width: '25%', class: 'my-5')
-        %h3 Relax about data security, privacy and shared information
-        %p
-          Because sharing your email address online shouldn’t feel like a gamble, Fair Custodian lets you
-          %strong create email addresses
-          for one off use or specific service types - if you stop using the service, simply
-          %strong delete your email address
-          and relax.
-      .col-sm-4.px-3.mb-3
-        = image_tag(asset_url('iconic/lock-locked.svg'), width: '25%', class: 'my-5')
-        %h3 How login should be done
-        %p
-          We believe this is the right and fair way to login. Use Fair Custodian to create up to
-          %strong three free email addresses.
-          Use them for a clear, simple and secure way to access online services and keep control.
+.container
+  .jumbotron
+    %h1.display-3.my-3 Nope.
+    %h2.text-secondary.my-3 Create anonymised email addresses to keep your personal email private.
