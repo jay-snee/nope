@@ -93,4 +93,8 @@ Rails.application.configure do
 
   config.session_store :cookie_store, key: '_faircustodian_session', domain: "#{ENV['HOSTNAME']}", tld_length: 3
 
+  # Action Mailbox ingress adapter
+  config.action_mailbox.ingress = :sendgrid
+
+
 end

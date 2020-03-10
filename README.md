@@ -34,6 +34,13 @@ Current environment variables are:
 
 - REFERRER_REWARD=3
 
+- RAILS_INBOUND_EMAIL_PASSWORD
+Action Mailbox ingress adapter.
+
+Format: `https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails`
+
+https://guides.rubyonrails.org/action_mailbox_basics.html
+
 ## Test Suite
 
 To run: `bundle exec rspec -f d`
