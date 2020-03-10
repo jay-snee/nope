@@ -23,7 +23,7 @@ jobs:
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rails db:setup:test
+        bundle exec rails db:setup RAILS_ENV=test
     - name: Run specs
       run: |
-        bundle exec rake
+        bundle exec rspec
