@@ -42,7 +42,7 @@ module FairCustodian
       :enable_starttls_auto => true
     }
 
-    config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    # config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
 
     config.exceptions_app = self.routes
   end
