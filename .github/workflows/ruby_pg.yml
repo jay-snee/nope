@@ -8,22 +8,22 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Setup PostgreSQL
+    - name: Set up PostgreSQL
       uses: Harmon758/postgresql-action@v1.0.0
-      with:
-        postgresql db: profiler_test
-
-    - name: Build and test with Rake
+    - name: Set up Redis
+      uses: zhulik/redis-action@1.1.0
+    - name: Build app
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
+        bundle exec rails db:setup
+    - name: Run specs
+      run: |
         bundle exec rake
