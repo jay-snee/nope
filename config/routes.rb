@@ -44,14 +44,11 @@ Rails.application.routes.draw do
 
   get '/me', to: 'api/v1/credentials#me'
   get 'home/index'
-  get 'home/dashboard'
+  get 'home/dash'
   get '/privacy', to: 'home#privacy'
-  get '/free', to: 'home#free_acct'
-  get '/premium', to: 'home#premium_acct'
   get '/get_started', to: 'home#get_started'
   get '/terms', to: 'home#terms'
 
-  resources :charges
 
   authenticate :user, ->(u) { u.admin? } do
     mount Sidekiq::Web => '/sidekiq'

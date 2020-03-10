@@ -1,0 +1,29 @@
+#dashboard.container-fluid
+  .row
+    .col-sm-4.pt-3.pb-5
+      %h3.mt-3
+        Profiles
+        = "#{current_user.profiles.size}/#{current_user.max_profiles}"
+        = form_for Profile.new, url: profiles_path, html: { class: 'my-3' } do |f|
+          .input-group
+            = f.text_field :name, class: 'form-control ml-1', value: '', placeholder: 'Create new profile'
+            = f.submit 'Create', class: 'btn btn-outline-primary ml-1'
+      %ul.list-group.mt-2
+        - @profiles.order(created_at: :desc).each do |p|
+          = render p
+
+    .col-sm-8.py-3.grey-panel
+      .card.card-default
+        .card-header
+          %h3 All Messages
+        .card-body
+          %table.table.table-striped#dashboard-table{data: {source: messages_path(format: :json)}}
+            %thead
+              %tr
+                %th Subject
+                %th From
+                %th Recieved
+                %th Profile
+            %tbody
+              - @messages.each do |m|
+                = render partial: 'messages/table_row', locals: {message: m}

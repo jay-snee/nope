@@ -25,7 +25,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/dump.rdb
+dump.rdb
 
 # Ignore the environment variable file for dotenv
 .env

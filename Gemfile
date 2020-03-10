@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.5'
+ruby '2.6.5'
 
 # Use dotenv for environment vars in development
 gem 'dotenv-rails', groups: [:development, :test]
@@ -46,6 +48,7 @@ group :development, :test do
   gem 'webmock'
   gem 'climate_control'
   gem 'rubocop'
+  gem 'faker' # for generating the address strings
 end
 
 group :development do
@@ -76,23 +79,9 @@ gem 'doorkeeper'
 gem 'httparty'
 gem 'typhoeus'
 
-# ElasticSearch
-gem 'elasticsearch'
-gem 'elasticsearch-model'
-
-
-gem 'stripe'
-
-gem 'faker' # for generating the address strings
-
 gem "aws-sdk-s3", require: false
 
-gem 'prometheus-client'
-
 gem 'rails_admin', '~> 1.3'
-
-# gem "asset_sync"
-# gem "fog-aws"
 
 # For 2FA with authy
 gem 'devise-authy'
@@ -104,8 +93,3 @@ gem 'nokogiri'
 gem 'jquery-rails'
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
-
-gem 'logstash-event'
-gem 'lograge'
-
-gem 'sentry-raven'

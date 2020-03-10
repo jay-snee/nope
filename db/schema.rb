@@ -167,7 +167,7 @@ ActiveRecord::Schema.define(version: 2019_03_06_073250) do
     t.datetime "locked_at"
     t.string "stripe_customer_id", default: ""
     t.string "stripe_subscription_id", default: ""
-    t.integer "max_profiles", default: 3
+    t.integer "max_profiles", default: 100
     t.boolean "marketing_consent", default: false
     t.boolean "terms_consent", default: false
     t.datetime "last_seen"

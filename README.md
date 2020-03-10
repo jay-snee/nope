@@ -1,9 +1,5 @@
 # README
 
-[![pipeline status](https://gitlab.com/FairCustodian/beta/badges/deploy/pipeline.svg)](https://gitlab.com/FairCustodian/beta/commits/deploy)
-
-[![coverage report](https://gitlab.com/FairCustodian/beta/badges/deploy/coverage.svg)](https://gitlab.com/FairCustodian/beta/commits/deploy)
-
 ## Environment Variables
 
 In order to set environment variables on a locally running instance (assuming you have all the required gems installed) add the environment variables to the `.env` file and place it in the root folder.

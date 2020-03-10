@@ -51,22 +51,6 @@ class User < ApplicationRecord
     true
   end
 
-  def stripe_subscription
-    return false if stripe_subscription_id.nil?
-
-    Stripe::Subscription.retrieve(stripe_subscription_id)
-  end
-
-  def cancel_stripe_subscription
-    stripe_subscription.delete
-    update(stripe_subscription_id: '')
-    Processing::EventJob.perform_later(
-      "subscripton cancelled - #{id}",
-      'subscription',
-      true
-    )
-  end
-
   def notify_registration
     Processing::EventJob.perform_later(
       "new user registration - #{id}",

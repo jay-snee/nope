@@ -9,9 +9,9 @@
       %ul.navbar-nav.ml-auto.mt-2.mt-lg-0
         - if !current_user
           %li.nav-item.mx-3.navbar_pre_sign_in.h4
-            = link_to 'Sign up', 'https://beta.faircustodian.com/users/sign_up', class: 'nav-link my-3'
+            = link_to 'Sign up', new_user_registration_path, class: 'nav-link my-3'
           %li.nav-item.mx-3.navbar_pre_sign_in.h4
-            = link_to 'Sign in', 'https://beta.faircustodian.com/users/sign_in', class: 'nav-link my-3'
+            = link_to 'Sign in', new_user_session_path, class: 'nav-link my-3'
         - elsif current_user
           - unless current_user.stripe_subscription_id.empty?
             = link_to 'Cancel Subscription', charge_url(current_user.stripe_subscription_id), method: :delete, class: 'nav-link my-3', data: {confirm: 'Are you sure you want to cancel your subsciption? There\'s a fair chance we\'ll delete a bunch of stuff?' }
