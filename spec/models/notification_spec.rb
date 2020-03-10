@@ -23,15 +23,14 @@ RSpec.describe Notification, :type => :model do
       end
     end
 
-    context "with a customer.subscription.deleted event" do
-      it "decreases the user's max profile count" do
-        user = FactoryBot.create(:subscribed_user)
+    context 'with a customer.subscription.deleted event' do
+      it 'decreases the user\'s max profile count' do
+        FactoryBot.create(:subscribed_user)
         notification = FactoryBot.create(:subscription_deleted_notification)
 
         expect {
          notification.process_payload
-        }.to change{
-          puts User.last.max_profiles
+        }.to change {
           User.last.max_profiles
         }.from(33).to(3)
       end
