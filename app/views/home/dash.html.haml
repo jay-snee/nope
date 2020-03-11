@@ -1,6 +1,6 @@
 #dashboard.container-fluid
   .row
-    .col-sm-4.pt-3.pb-5
+    .col-sm-3
       .card
         .card-body
           %h3.mt-3
@@ -14,7 +14,7 @@
         - @profiles.order(created_at: :desc).each do |p|
           = render p
 
-    .col-sm-8.py-3.grey-panel
+    .col-sm-9
       .card.card-default
         .card-header
           %h3 All Messages
