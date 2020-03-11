@@ -1,0 +1,790 @@
+/* line 6, app/assets/stylesheets/accounts.scss */
+a {
+  text-decoration: none;
+}
+/* line 3, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+/* line 11, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 16, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+  text-align: center;
+}
+
+/* line 24, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+  white-space: nowrap;
+}
+
+/* line 35, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_length label {
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* line 41, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_length select {
+  width: auto;
+  display: inline-block;
+}
+
+/* line 47, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: right;
+}
+
+/* line 50, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* line 56, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+}
+
+/* line 63, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.85em;
+  white-space: nowrap;
+}
+
+/* line 68, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* line 73, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 2px 0;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+/* line 80, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  margin-top: -26px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* line 97, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding-right: 30px;
+}
+
+/* line 103, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead > tr > th:active,
+table.dataTable thead > tr > td:active {
+  outline: none;
+}
+
+/* line 108, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 116, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 0.9em;
+  display: block;
+  opacity: 0.3;
+}
+
+/* line 124, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+  right: 1em;
+  content: "\2191";
+}
+
+/* line 129, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  right: 0.5em;
+  content: "\2193";
+}
+
+/* line 135, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:after {
+  opacity: 1;
+}
+
+/* line 140, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  opacity: 0;
+}
+
+/* line 148, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollHead table.dataTable {
+  margin-bottom: 0 !important;
+}
+
+/* line 153, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table {
+  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 159, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table thead .sorting:before,
+div.dataTables_scrollBody table thead .sorting_asc:before,
+div.dataTables_scrollBody table thead .sorting_desc:before,
+div.dataTables_scrollBody table thead .sorting:after,
+div.dataTables_scrollBody table thead .sorting_asc:after,
+div.dataTables_scrollBody table thead .sorting_desc:after {
+  display: none;
+}
+
+/* line 169, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+  border-top: none;
+}
+
+/* line 177, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner {
+  box-sizing: content-box;
+}
+
+/* line 180, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
+  margin-top: 0 !important;
+  border-top: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 191, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+  div.dataTables_wrapper div.dataTables_length,
+  div.dataTables_wrapper div.dataTables_filter,
+  div.dataTables_wrapper div.dataTables_info,
+  div.dataTables_wrapper div.dataTables_paginate {
+    text-align: center;
+  }
+}
+
+/* line 208, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm > thead > tr > th {
+  padding-right: 20px;
+}
+
+/* line 215, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm .sorting:before,
+table.dataTable.table-sm .sorting_asc:before,
+table.dataTable.table-sm .sorting_desc:before {
+  top: 5px;
+  right: 0.85em;
+}
+
+/* line 220, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm .sorting:after,
+table.dataTable.table-sm .sorting_asc:after,
+table.dataTable.table-sm .sorting_desc:after {
+  top: 5px;
+}
+
+/* line 231, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+  border-left-width: 0;
+}
+
+/* line 235, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+  border-right-width: 0;
+}
+
+/* line 241, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+  border-bottom-width: 0;
+}
+
+/* line 248, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollHead table.table-bordered {
+  border-bottom-width: 0;
+}
+
+/* line 254, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row {
+  margin: 0;
+}
+
+/* line 258, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+  padding-left: 0;
+}
+
+/* line 261, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+  padding-right: 0;
+}
+
+/* line 3, app/assets/stylesheets/application-dashboard.scss */
+.grey-panel {
+  background-color: '#333';
+  color: '#999';
+}
+
+/* line 8, app/assets/stylesheets/application-dashboard.scss */
+.grey-panel h1,
+.grey-panel h2,
+.grey-panel h3,
+.grey-panel h4,
+.grey-panel h5,
+.grey-panel h6 {
+  color: '#999';
+}
+
+/* line 17, app/assets/stylesheets/application-dashboard.scss */
+.page-link {
+  background-color: #fff;
+}
+
+/* line 21, app/assets/stylesheets/application-dashboard.scss */
+.custom-select {
+  background-color: #fff;
+}
+/* line 1, app/assets/stylesheets/application-front.scss */
+#home-block {
+  background-position: center;
+}
+
+/* line 5, app/assets/stylesheets/application-front.scss */
+#home-content-row {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 3, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+}
+
+/* line 11, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable td,
+table.dataTable th {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* line 16, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+  text-align: center;
+}
+
+/* line 24, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+  white-space: nowrap;
+}
+
+/* line 35, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_length label {
+  font-weight: normal;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* line 41, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_length select {
+  width: auto;
+  display: inline-block;
+}
+
+/* line 47, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter {
+  text-align: right;
+}
+
+/* line 50, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter label {
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* line 56, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+}
+
+/* line 63, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_info {
+  padding-top: 0.85em;
+  white-space: nowrap;
+}
+
+/* line 68, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_paginate {
+  margin: 0;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* line 73, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+  margin: 2px 0;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+/* line 80, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_wrapper div.dataTables_processing {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  margin-top: -26px;
+  text-align: center;
+  padding: 1em 0;
+}
+
+/* line 97, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+  padding-right: 30px;
+}
+
+/* line 103, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead > tr > th:active,
+table.dataTable thead > tr > td:active {
+  outline: none;
+}
+
+/* line 108, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+  cursor: pointer;
+  position: relative;
+}
+
+/* line 116, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:before, table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  position: absolute;
+  bottom: 0.9em;
+  display: block;
+  opacity: 0.3;
+}
+
+/* line 124, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+  right: 1em;
+  content: "\2191";
+}
+
+/* line 129, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+  right: 0.5em;
+  content: "\2193";
+}
+
+/* line 135, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:after {
+  opacity: 1;
+}
+
+/* line 140, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+  opacity: 0;
+}
+
+/* line 148, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollHead table.dataTable {
+  margin-bottom: 0 !important;
+}
+
+/* line 153, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table {
+  border-top: none;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* line 159, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table thead .sorting:before,
+div.dataTables_scrollBody table thead .sorting_asc:before,
+div.dataTables_scrollBody table thead .sorting_desc:before,
+div.dataTables_scrollBody table thead .sorting:after,
+div.dataTables_scrollBody table thead .sorting_asc:after,
+div.dataTables_scrollBody table thead .sorting_desc:after {
+  display: none;
+}
+
+/* line 169, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+  border-top: none;
+}
+
+/* line 177, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner {
+  box-sizing: content-box;
+}
+
+/* line 180, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
+  margin-top: 0 !important;
+  border-top: none;
+}
+
+@media screen and (max-width: 767px) {
+  /* line 191, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+  div.dataTables_wrapper div.dataTables_length,
+  div.dataTables_wrapper div.dataTables_filter,
+  div.dataTables_wrapper div.dataTables_info,
+  div.dataTables_wrapper div.dataTables_paginate {
+    text-align: center;
+  }
+}
+
+/* line 208, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm > thead > tr > th {
+  padding-right: 20px;
+}
+
+/* line 215, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm .sorting:before,
+table.dataTable.table-sm .sorting_asc:before,
+table.dataTable.table-sm .sorting_desc:before {
+  top: 5px;
+  right: 0.85em;
+}
+
+/* line 220, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.dataTable.table-sm .sorting:after,
+table.dataTable.table-sm .sorting_asc:after,
+table.dataTable.table-sm .sorting_desc:after {
+  top: 5px;
+}
+
+/* line 231, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+  border-left-width: 0;
+}
+
+/* line 235, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+  border-right-width: 0;
+}
+
+/* line 241, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+  border-bottom-width: 0;
+}
+
+/* line 248, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.dataTables_scrollHead table.table-bordered {
+  border-bottom-width: 0;
+}
+
+/* line 254, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row {
+  margin: 0;
+}
+
+/* line 258, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child {
+  padding-left: 0;
+}
+
+/* line 261, ../../.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/jquery-datatables-1.10.20/app/assets/stylesheets/datatables/dataTables.bootstrap4.scss */
+div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+  padding-right: 0;
+}
+/* line 1, app/assets/stylesheets/devise_authy.sass */
+.devise_authy {
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+
+/* line 7, app/assets/stylesheets/devise_authy.sass */
+.authy-form legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+/* line 17, app/assets/stylesheets/devise_authy.sass */
+.authy-form label,
+.authy-form input,
+.authy-form button {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  padding: 8px;
+  margin: 8px;
+}
+/* line 5, app/assets/stylesheets/home.scss */
+#text-block {
+  vertical-align: middle;
+}
+
+/* line 9, app/assets/stylesheets/home.scss */
+#home-block {
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/* line 14, app/assets/stylesheets/home.scss */
+.front-nav {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 19, app/assets/stylesheets/home.scss */
+#page {
+  min-height: 600px;
+}
+
+/* line 23, app/assets/stylesheets/home.scss */
+#login-block {
+  background-color: #050505;
+}
+
+/* line 27, app/assets/stylesheets/home.scss */
+#dashboard-table_length select {
+  background: #333;
+}
+
+/* line 31, app/assets/stylesheets/home.scss */
+#dashboard-table_filter > label > input {
+  background: #fff;
+}
+/* jQuery Growl
+ * Copyright 2015 Kevin Sylvestre
+ * 1.3.5
+ */
+.ontop, #growls-default, #growls-tl, #growls-tr, #growls-bl, #growls-br, #growls-tc, #growls-bc, #growls-cc, #growls-cl, #growls-cr {
+  z-index: 50000;
+  position: fixed; }
+
+#growls-default {
+  top: 10px;
+  right: 10px; }
+#growls-tl {
+  top: 10px;
+  left: 10px; }
+#growls-tr {
+  top: 10px;
+  right: 10px; }
+#growls-bl {
+  bottom: 10px;
+  left: 10px; }
+#growls-br {
+  bottom: 10px;
+  right: 10px; }
+#growls-tc {
+  top: 10px;
+  right: 10px;
+  left: 10px; }
+#growls-bc {
+  bottom: 10px;
+  right: 10px;
+  left: 10px; }
+#growls-cc {
+  top: 50%;
+  left: 50%;
+  margin-left: -125px; }
+#growls-cl {
+  top: 50%;
+  left: 10px; }
+#growls-cr {
+  top: 50%;
+  right: 10px; }
+#growls-tc .growl, #growls-bc .growl {
+  margin-left: auto;
+  margin-right: auto; }
+
+.growl {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  position: relative;
+  border-radius: 4px;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }
+  .growl.growl-incoming {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  .growl.growl-outgoing {
+    opacity: 0;
+    filter: alpha(opacity=0); }
+  .growl.growl-small {
+    width: 200px;
+    padding: 5px;
+    margin: 5px; }
+  .growl.growl-medium {
+    width: 250px;
+    padding: 10px;
+    margin: 10px; }
+  .growl.growl-large {
+    width: 300px;
+    padding: 15px;
+    margin: 15px; }
+  .growl.growl-default {
+    color: #FFF;
+    background: #7f8c8d; }
+  .growl.growl-error {
+    color: #FFF;
+    background: #C0392B; }
+  .growl.growl-notice {
+    color: #FFF;
+    background: #2ECC71; }
+  .growl.growl-warning {
+    color: #FFF;
+    background: #F39C12; }
+  .growl .growl-close {
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    font-family: helvetica, verdana, sans-serif; }
+  .growl .growl-title {
+    font-size: 18px;
+    line-height: 24px; }
+  .growl .growl-message {
+    font-size: 14px;
+    line-height: 18px; }
+/* line 5, app/assets/stylesheets/messages.scss */
+.message {
+  opacity: 0.6;
+}
+
+/* line 7, app/assets/stylesheets/messages.scss */
+.message:hover {
+  opacity: 1;
+}
+.navbar_pre_sign_in {
+	font-size:18px;
+	font-weight: bold;
+}
+/* line 5, app/assets/stylesheets/profiles.scss */
+.profile {
+  opacity: 0.6;
+}
+
+/* line 7, app/assets/stylesheets/profiles.scss */
+.profile:hover {
+  opacity: 1;
+}
+
+/* line 9, app/assets/stylesheets/profiles.scss */
+.email {
+  font-size-adjust: 1.2;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+a {
+	text-decoration: none !important;
+}

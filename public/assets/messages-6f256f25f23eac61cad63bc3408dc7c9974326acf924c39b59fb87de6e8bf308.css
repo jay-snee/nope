@@ -1,0 +1,9 @@
+/* line 5, app/assets/stylesheets/messages.scss */
+.message {
+  opacity: 0.6;
+}
+
+/* line 7, app/assets/stylesheets/messages.scss */
+.message:hover {
+  opacity: 1;
+}
