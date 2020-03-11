@@ -31,6 +31,5 @@ class HomeController < ApplicationController
 
   def dash
     @messages = current_user.messages.order(created_at: :desc).last(10)
-    @profiles = current_user.profiles
   end
 end
