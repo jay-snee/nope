@@ -1,8 +1,6 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/backend', as: 'rails_admin'
-
   use_doorkeeper
 
   devise_for :users,
