@@ -10,20 +10,19 @@
   = render partial: 'dashhead'
 
 
-#page.container-fluid.grey-panel.p-5{data: {id: @message.id}}
+#page.container-fluid{data: {id: @message.id}}
   - unless @message.files.empty?
     .row.my-3
       .col-sm-14
-        .p-5
-          %h3
-            %i.fas.fa-clipboard
-            Attachments
-            = "(#{@message.files.size})"
-          %ul.list-group
-            - @message.files.each do |file|
-              %li.list-group-item
-                = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
+        %h3
+          %i.fas.fa-clipboard
+          Attachments
+          = "(#{@message.files.size})"
+        %ul.list-group
+          - @message.files.each do |file|
+            %li.list-group-item
+              = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
 
-  .row.mt-3
+  .row
     .col-sm-12
       %iframe{src: message_html_message_path(@message.id), width: "100%", id: "message_render"}

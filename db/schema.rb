@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_10_193450) do
+ActiveRecord::Schema.define(version: 2020_03_11_144844) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,24 +54,17 @@ ActiveRecord::Schema.define(version: 2020_03_10_193450) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "headers"
-    t.string "dkim"
     t.string "to"
     t.string "from"
-    t.text "html"
-    t.string "sender_ip"
-    t.string "envelope"
     t.string "subject"
-    t.string "charsets"
-    t.string "spf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "read_status", default: false
     t.integer "user_id"
     t.integer "profile_id"
-    t.text "text"
     t.text "raw_payload"
     t.integer "open_count", default: 0
+    t.text "content"
   end
 
   create_table "notifications", force: :cascade do |t|

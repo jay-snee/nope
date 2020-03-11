@@ -42,15 +42,10 @@ module Api
         message.raw_payload = inbound_params.to_s
 
         if message.save
-          logger.info 'Message saved'
           ApplicationCable::MessagesChannel.broadcast_to(profile.user, message)
-          Mail::CleanHTML.perform_later(message)
-        else
-          logger.info 'Message'
         end
       end
       Processing::EventJob.perform_later('inbound message', 'data', false)
-
       render json: { status: 'ok' }, status: 200
     end
 
