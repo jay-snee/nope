@@ -1,8 +1,3 @@
-- unless @message.parsed_html.text.length == 0
-  .card
-    .card-body.p-5
-      = @message.html.html_safe
-- else
-  .card
-    .card-body.p-5
-      %pre= simple_format(@message.text)
+.card
+  .card-body
+    %pre= @message.raw_payload

@@ -26,7 +26,7 @@ RSpec.describe ProcessingMailbox, type: :mailbox do
 
       receive_inbound_email_from_mail(
         from: 'from-address@example.com',
-        to: profile.display_email_address,
+        to: profile.email_address,
         subject: 'Subject Line',
         body: "I'm a sample body"
       )

@@ -1,10 +1,14 @@
 class ProcessingMailbox < ApplicationMailbox
-  before_processing :require_profile
+  
   def process
     if profile
       message = profile.messages.create(
+        to: to_address,
+        from: from_address,
         subject: mail.subject, 
-        user: profile.user
+        user: profile.user,
+        raw_payload: mail.raw_source,
+        content: mail.body.to_s
       )
     else
       bounced!
@@ -13,14 +17,15 @@ class ProcessingMailbox < ApplicationMailbox
 
   private
 
-  def require_profile
-  end
-
   def profile
     @profile ||= Profile.where(email_address: to_address).first
   end
 
   def to_address
     mail.to[0].downcase
+  end
+
+  def from_address
+    mail.from[0].downcase
   end
 end
