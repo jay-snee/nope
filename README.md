@@ -26,7 +26,18 @@ Required environment variables are:
   https://guides.rubyonrails.org/action_mailbox_basics.html
 
 * REDIS_URL
+* DATABASE_URL
 
+### ActiveStorage configuration
+
+```
+amazon:
+  service: S3
+  access_key_id: <%= ENV['S3_ACCESS_KEY_ID'] %>
+  secret_access_key: <%= ENV['S3_SECRET_ACCESS_ID'] %>
+  region: eu-west-1
+  bucket: YOUR-BUCKET-NAME-HERE
+```
 
 ## Test Suite
 
