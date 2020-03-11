@@ -95,6 +95,4 @@ Rails.application.configure do
 
   # Action Mailbox ingress adapter
   config.action_mailbox.ingress = :sendgrid
-
-
 end
