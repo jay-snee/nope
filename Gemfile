@@ -93,3 +93,7 @@ gem 'nokogiri'
 gem 'jquery-rails'
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
+
+
+# https://github.com/sass/sassc-ruby/issues/146
+gem 'sassc', '2.1.0'
