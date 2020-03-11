@@ -1,9 +1,27 @@
 # README
 
+![Test Suite](https://github.com/jay-snee/nope/workflows/Test%20Suite/badge.svg)
+
 ## Environment Variables
 
 In order to set environment variables on a locally running instance (assuming you have all the required gems installed) add the environment variables to the `.env` file and place it in the root folder.
 Current environment variables are:
+
+* SEND_EMAIL_DOMAIN
+  
+  Example value: `'lvh.me'`
+
+  `dokku config:set SEND_EMAIL_DOMAIN=lvh.me`
+
+* RAILS_INBOUND_EMAIL_PASSWORD
+
+  `dokku config:set RAILS_INBOUND_EMAIL_PASSWORD=INBOUND-EMAIL-SECRET`
+  
+  https://guides.rubyonrails.org/action_mailbox_basics.html
+
+
+-------------------------------------------------
+
 
 - APP_DOMAIN
 - DATABASE_URL
@@ -34,12 +52,7 @@ Current environment variables are:
 
 - REFERRER_REWARD=3
 
-- RAILS_INBOUND_EMAIL_PASSWORD
-Action Mailbox ingress adapter.
 
-Format: `https://actionmailbox:PASSWORD@example.com/rails/action_mailbox/sendgrid/inbound_emails`
-
-https://guides.rubyonrails.org/action_mailbox_basics.html
 
 ## Test Suite
 
