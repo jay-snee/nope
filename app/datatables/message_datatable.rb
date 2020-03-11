@@ -21,9 +21,9 @@ class MessageDatatable < AjaxDatatablesRails::ActiveRecord
     records.map do |record|
       {
         id: record.id,
-        from: link_to(record.from, record, class: 'text-info'),
-        subject: link_to(record.subject, record, class: 'text-info'),
-        profile_id: link_to(record.profile.name, record.profile, class: 'text-info'),
+        from: link_to(record.from, record, class: 'text-primary'),
+        subject: link_to(record.subject, record, class: 'text-primary'),
+        profile_id: link_to(record.profile.name, record.profile, class: 'text-primary'),
         created_at: record.created_at.strftime('%H:%M %d/%m/%Y'),
         DT_RowId: record.id
       }

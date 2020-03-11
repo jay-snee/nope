@@ -1,8 +1,12 @@
-.dashhead.mt-3.mb-5
-  .dashhead-titles
-    %h6.dashhead-subtitle= @message.from
-    %h3.dashhead-title= @message.subject
-  .dashhead-toolbar
+.d-flex
+  .mr-auto
+    %h2
+      From:
+      = @message.from
+    %h3.dashhead-title
+      Subject:
+      = @message.subject
+  .item
     = button_to message_path(@message), method: :delete, class: 'dashhead-toolbar-item btn btn-outline-danger' do
       %i.fas.fa-trash-alt
       Delete Message
