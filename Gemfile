@@ -49,6 +49,7 @@ group :development, :test do
   gem 'climate_control'
   gem 'rubocop'
   gem 'faker' # for generating the address strings
+  gem 'pry-rails'
 end
 
 group :development do

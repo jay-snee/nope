@@ -25,6 +25,7 @@ Required environment variables are:
   
   https://guides.rubyonrails.org/action_mailbox_basics.html
 
+* REDIS_URL
 
 
 ## Test Suite

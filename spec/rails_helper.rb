@@ -7,6 +7,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 require 'devise'
+require 'action_mailbox/test_helper'
+require 'pry'
 
 ActiveJob::Base.queue_adapter = :test
 
@@ -63,4 +65,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include Devise::Test::IntegrationHelpers, type: :request
+
+  # include ActionMailbox test helpers
+  # https://mikerogers.io/2019/05/20/testing-rails-action-mailbox-with-rspec.html
+  config.include ActionMailbox::TestHelper, type: :mailbox
 end
