@@ -1,0 +1,9 @@
+/* line 1, app/assets/stylesheets/application-front.scss */
+#home-block {
+  background-position: center;
+}
+
+/* line 5, app/assets/stylesheets/application-front.scss */
+#home-content-row {
+  background-color: rgba(0, 0, 0, 0.5);
+}

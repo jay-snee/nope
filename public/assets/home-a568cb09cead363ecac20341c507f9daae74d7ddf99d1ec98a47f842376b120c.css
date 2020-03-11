@@ -1,0 +1,36 @@
+/* line 5, app/assets/stylesheets/home.scss */
+#text-block {
+  vertical-align: middle;
+}
+
+/* line 9, app/assets/stylesheets/home.scss */
+#home-block {
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+
+/* line 14, app/assets/stylesheets/home.scss */
+.front-nav {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 19, app/assets/stylesheets/home.scss */
+#page {
+  min-height: 600px;
+}
+
+/* line 23, app/assets/stylesheets/home.scss */
+#login-block {
+  background-color: #050505;
+}
+
+/* line 27, app/assets/stylesheets/home.scss */
+#dashboard-table_length select {
+  background: #333;
+}
+
+/* line 31, app/assets/stylesheets/home.scss */
+#dashboard-table_filter > label > input {
+  background: #fff;
+}

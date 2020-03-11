@@ -1,0 +1,14 @@
+/* line 5, app/assets/stylesheets/profiles.scss */
+.profile {
+  opacity: 0.6;
+}
+
+/* line 7, app/assets/stylesheets/profiles.scss */
+.profile:hover {
+  opacity: 1;
+}
+
+/* line 9, app/assets/stylesheets/profiles.scss */
+.email {
+  font-size-adjust: 1.2;
+}
