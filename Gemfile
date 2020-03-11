@@ -81,8 +81,6 @@ gem 'typhoeus'
 
 gem "aws-sdk-s3", require: false
 
-gem 'rails_admin'
-
 # For 2FA with authy
 gem 'devise-authy'
 
