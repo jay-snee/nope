@@ -40,11 +40,11 @@ jobs:
       env:
         SEND_EMAIL_DOMAIN: 'lvh.me'
     - name: Merge to deploy branch
-        uses: devmasx/merge-branch@v1.1.0
-        with:
-          type: now
-          target_branch: 'deploy'
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      uses: devmasx/merge-branch@v1.1.0
+      with:
+        type: now
+        target_branch: 'deploy'
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
   
