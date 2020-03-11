@@ -34,11 +34,14 @@ jobs:
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
         bundle exec rails db:setup RAILS_ENV=test
+      env:
+        DATABASE_URL: 'postgres://test:password@localhost/profiler_test'
     - name: Run specs
       run: |
         bundle exec rspec
       env:
         SEND_EMAIL_DOMAIN: 'lvh.me'
+        DATABASE_URL: 'postgres://test:password@localhost/profiler_test'
     - name: Merge to deploy branch
       uses: devmasx/merge-branch@v1.1.0
       with:
