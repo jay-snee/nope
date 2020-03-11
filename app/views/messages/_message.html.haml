@@ -1,10 +1,8 @@
 %li.list-group-item.message{id: "message-#{message.id}"}
   = link_to message do
-    .row
-      .col-sm-12.col-md-6.p-2
+    .d-flex
+      .item
         = message.subject
-      .col-md-3.d-none.d-md-block
         = message.from
-      .col-md-3.d-none.d-md-block
+      .item.ml-auto
         = message.created_at.strftime('%H:%M %d/%m/%Y')
-  .mask.flex-center.rgba-blue-light

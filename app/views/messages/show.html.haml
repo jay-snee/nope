@@ -7,7 +7,7 @@
         = link_to @message.profile.name, @message.profile, class: 'text-primary'
       %li.breadcrumb-item.active{aria: {current: 'page'}}
         = @message.subject
-  = render partial: 'dashhead'
+
 
 
 #page.container-fluid{data: {id: @message.id}}
@@ -24,5 +24,10 @@
               = link_to file.filename.to_s, rails_blob_path(file, disposition: "attachment")
 
   .row
-    .col-sm-12
+    .col-sm-3
+      %h4 Inbox
+      - @message.profile.messages.each do |message|
+        = render message
+    .col-sm-9
+      = render partial: 'dashhead'
       %iframe{src: message_html_message_path(@message.id), width: "100%", id: "message_render"}
