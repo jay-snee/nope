@@ -2,10 +2,16 @@
 
 ![Test Suite](https://github.com/jay-snee/nope/workflows/Test%20Suite/badge.svg)
 
+# Dependencies
+
+* Ruby 2.6.5
+* Postgresql
+* Redis
+
 ## Environment Variables
 
 In order to set environment variables on a locally running instance (assuming you have all the required gems installed) add the environment variables to the `.env` file and place it in the root folder.
-Current environment variables are:
+Required environment variables are:
 
 * SEND_EMAIL_DOMAIN
   
@@ -20,7 +26,18 @@ Current environment variables are:
   https://guides.rubyonrails.org/action_mailbox_basics.html
 
 
+## Test Suite
+
+To run: `bundle exec rspec -f d`
+
+https://relishapp.com/rspec/
+https://github.com/rspec/rspec-rails
+https://github.com/thoughtbot/factory_bot_rails
+https://github.com/thoughtbot/climate_control
+
 -------------------------------------------------
+
+## Legacy:
 
 
 - APP_DOMAIN
@@ -51,14 +68,3 @@ Current environment variables are:
 - ASSET_SYNC_MANIFEST=true
 
 - REFERRER_REWARD=3
-
-
-
-## Test Suite
-
-To run: `bundle exec rspec -f d`
-
-https://relishapp.com/rspec/
-https://github.com/rspec/rspec-rails
-https://github.com/thoughtbot/factory_bot_rails
-https://github.com/thoughtbot/climate_control
