@@ -23,19 +23,9 @@ module Users
           trial_started: DateTime.now
         )
         referrer.update(max_profiles: ref_profile_count)
-        Processing::EventJob.perform_later(
-          "Referral Processed! Code: #{processed_code} From: #{referrer.email}",
-          'referral',
-          true
-        )
       else
         # we didn't find a referrer and bailed.
         user = User.find user_id
-        Processing::EventJob.perform_later(
-          "Referral processing failed: \n#{user.email}\n#{processed_code}",
-          'referral',
-          true
-        )
       end
     end
 
