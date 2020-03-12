@@ -4,8 +4,7 @@ RSpec.describe MessagesController, :type => :request do
   context '#show' do
     context 'with an existing object' do
       before(:each) do
-        @user = FactoryBot.create(:user)
-        @profile = FactoryBot.create(:profile_with_message, user: @user)
+        @profile = FactoryBot.create(:profile_with_message)
         @message = @profile.messages.first
       end
 
@@ -18,7 +17,7 @@ RSpec.describe MessagesController, :type => :request do
 
       context 'when signed in' do
         before(:each) do
-          sign_in @user
+          sign_in @profile.user
         end
 
         it 'renders a 200' do
@@ -57,8 +56,7 @@ RSpec.describe MessagesController, :type => :request do
 
       context 'when signed in as another user' do
         before(:each) do
-          @user_2 = FactoryBot.create(:user)
-          sign_in(@user_2)
+          sign_in(FactoryBot.create(:user))
         end
 
         it 'raises ActiveRecord::RecordNotFound' do

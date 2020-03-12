@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context '#generate_default_profiles' do
+  describe '#generate_default_profiles' do
     before(:each) do
       @user = FactoryBot.create(:user)
       @user.profiles.destroy_all
@@ -33,7 +33,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  context '#block_our_domain' do
+  describe '#block_our_domain' do
     it 'blocks registrations using fcml.mx accounts' do
       ClimateControl.modify SEND_EMAIL_DOMAIN: 'fcml.mx' do
         expect {
