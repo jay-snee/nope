@@ -16,10 +16,8 @@ class User < ApplicationRecord
 
   has_one :account_digest, dependent: :destroy
 
-  before_validation :generate_referral_code
   after_create :generate_default_profiles
 
-  validates :referral_code, uniqueness: true
   validate :block_our_domain
 
   has_many :referral_codes
@@ -35,12 +33,6 @@ class User < ApplicationRecord
 
   def can_create_profile?
     profiles.count < max_profiles
-  end
-
-  def generate_referral_code
-    return false unless referral_code.empty?
-
-    self.referral_code = ('a'..'z').to_a.sample(8).join
   end
 
   def referred_by

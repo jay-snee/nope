@@ -6,11 +6,6 @@ RSpec.describe User, type: :model do
       user = FactoryBot.create(:user)
       expect(user.profiles.size).to eq(3)
     end
-
-    it 'has a generated referral_code' do
-      user = FactoryBot.create(:user)
-      expect(user.referral_code).to match(/^[a-z]{8}$/)
-    end
   end
 
   describe '#generate_default_profiles' do

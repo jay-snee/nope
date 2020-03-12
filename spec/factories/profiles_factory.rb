@@ -18,7 +18,7 @@ FactoryBot.define do
     end
 
     factory :profile_with_multiple_messages do
-      before(:create) do |profile, _eval|
+      after(:create) do |profile, _eval|
         2.times do
           create(
             :message_with_sender_four,
