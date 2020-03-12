@@ -17,7 +17,7 @@ class User < ApplicationRecord
   has_one :account_digest, dependent: :destroy
 
   before_validation :generate_referral_code
-  after_create :generate_default_profiles, :notify_registration
+  after_create :generate_default_profiles
 
   validates :referral_code, uniqueness: true
   validate :block_our_domain
@@ -30,44 +30,17 @@ class User < ApplicationRecord
 
   def generate_default_profiles
     categories = ['Profile #3', 'Profile #2', 'Profile #1']
-    categories.each do |c|
-      profile = profiles.create!(name: c)
-      profile.generate_email
-      profile.save
-    end
-  end
-
-  def after_confirmation
-    Processing::EventJob.perform_later(
-      "new user confirmed - #{id}",
-      'sign up',
-      true
-    )
+    categories.collect {|title| profiles.create!(name: title) }
   end
 
   def can_create_profile?
-    return false if profiles.count >= max_profiles
-
-    true
-  end
-
-  def notify_registration
-    Processing::EventJob.perform_later(
-      "new user registration - #{id}",
-      'sign up',
-      true
-    )
-  end
-
-  def after_database_authentication
-    Processing::EventJob.perform_later("new login - #{id}", 'login', true)
+    profiles.count < max_profiles
   end
 
   def generate_referral_code
     return false unless referral_code.empty?
 
-    code = ('a'..'z').to_a.sample(8).join
-    self.referral_code = code
+    self.referral_code = ('a'..'z').to_a.sample(8).join
   end
 
   def referred_by

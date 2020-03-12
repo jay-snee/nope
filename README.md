@@ -27,6 +27,7 @@ Required environment variables are:
 
 * REDIS_URL
 * DATABASE_URL
+* SLACK_WEBHOOK_URL
 
 ### ActiveStorage configuration
 

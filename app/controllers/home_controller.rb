@@ -17,16 +17,6 @@ class HomeController < ApplicationController
 
   def privacy; end
 
-  def free_acct
-    Processing::EventJob.perform_later 'Signup free', 'signup_pref', false
-    redirect_to new_user_registration_path
-  end
-
-  def get_started
-    Processing::EventJob.perform_later 'Get Started', 'signup_pref', false
-    redirect_to new_user_registration_path
-  end
-
   def terms; end
 
   def dash

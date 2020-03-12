@@ -33,7 +33,7 @@ RSpec.describe MessagesController, :type => :request do
            @profile.messages.last.read_status
           }.from(false).to(true)
         end
-        
+
         it 'increments the message open count' do
           expect {
             get "/messages/#{@message.id}"

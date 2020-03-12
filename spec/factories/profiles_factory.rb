@@ -12,17 +12,17 @@ FactoryBot.define do
     end
 
     factory :profile_with_message do
-      before(:create) do |profile, eval|
+      before(:create) do |profile, _eval|
         create(:message, profile: profile, user: profile.user)
       end
     end
 
     factory :profile_with_multiple_messages do
-      before(:create) do |profile, eval|
+      before(:create) do |profile, _eval|
         2.times do
           create(:message_with_sender_four, profile: profile, user: profile.user)
         end
-        
+
         3.times do
           create(:message, profile: profile, user: profile.user)
         end

@@ -1,23 +1,35 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+RSpec.describe User, type: :model do
   context 'when being created' do
     it 'generates three profiles' do
       user = FactoryBot.create(:user)
       expect(user.profiles.size).to eq(3)
     end
 
-    it 'queues an event notification job' do
-      expect {
-        FactoryBot.create(:user)
-      }.to have_enqueued_job(
-        Processing::EventJob
-      ).with(/new user registration - \d*/, 'sign up', true)
-    end
-
     it 'has a generated referral_code' do
       user = FactoryBot.create(:user)
       expect(user.referral_code).to match(/^[a-z]{8}$/)
+    end
+  end
+
+  context '#generate_default_profiles' do
+    before(:each) do
+      @user = FactoryBot.create(:user)
+      @user.profiles.destroy_all
+    end
+
+    subject do
+      @user.generate_default_profiles
+    end
+
+    it 'should create three profiles' do
+      expect(subject.size).to eq(3)
+    end
+
+    it 'should use the correct names' do
+      names = ['Profile #3', 'Profile #2', 'Profile #1']
+      expect(subject.collect(&:name)).to eq(names)
     end
   end
 
