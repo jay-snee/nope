@@ -195,7 +195,8 @@ GEM
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.3)
-    puma (3.12.4)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
@@ -367,7 +368,7 @@ DEPENDENCIES
   nokogiri
   pg (>= 0.18, < 2.0)
   pry-rails
-  puma (~> 3.11)
+  puma (~> 4.3)
   rails (~> 6.0.2)
   redis (~> 4.0)
   rspec-rails (~> 3.8)
